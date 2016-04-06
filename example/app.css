@@ -1,0 +1,31 @@
+#wrapper{
+  width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header{
+  font-size: 20px;
+}
+
+.lists{
+  padding: 0;
+  text-align: left;
+  list-style: none;
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+
+.lists li{
+  margin-bottom: 8px;
+}
+
+.lists label{
+  display: block;
+  margin-bottom: 5px;
+}
+
+.lists textarea{
+  width: 100%;
+}

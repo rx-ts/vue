@@ -9,14 +9,35 @@
   <body>
     <div id="app">
       <div id="wrapper">
-        <qrcode val="xxx" size="128" bg-color="#FFFFFF" fg-color="#000000" level="L"></qrcode>
+        <h1> Vue Qrcode Demo </h1>
+
+        <ul class="lists">
+          <li>
+            <label>size(px)</label>
+            <input type="number" v-model="size">
+          </li>
+          <li>
+            <label>bg-color</label>
+            <input type="color" v-model="bgColor">
+          </li>
+          <li>
+            <label>fg-color</label>
+            <input type="color" v-model="fgColor">
+          </li>
+          <li>
+            <label>val</label>
+            <textarea rows="6" cols="80">{{val}}</textarea>
+          </li>
+        </ul>
+        
+        <qrcode :val="val" :size="size" :bg-color="bgColor" :fg-color="fgColor" level="L"></qrcode>
       </div>
     </div>
 
     
     <script src="node_modules/vue/dist/vue.min.js"></script>
-    <!-- <script src="build/bundle.js"></script> -->
-    <script src="dist/vue-qrcode.js"></script>
-    <script src="example/app.js"></script>
+    <script src="build/bundle.js"></script>
+    <!-- <script src="dist/vue-qrcode.js"></script>
+    <script src="example/app.js"></script> -->
   </body>
 </html>

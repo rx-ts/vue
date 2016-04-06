@@ -9,10 +9,10 @@ new Vue({
   },
   data () {
     return {
-   		color: '#5dc596',
-      size: '15px',
-      margin: '2px',
-      radius: '100%'
+   		val: "xxx",
+      bgColor: "#FFFFFF",
+      fgColor: "#000000",
+      size: 200,
     }
   }
 })
