@@ -74,7 +74,7 @@ function isRealTemplate (node) {
   return isTemplate(node) && isFragment(node.content)
 }
 
-const tagRE = /<([\w:]+)/
+const tagRE = /<([\w:-]+)/
 const entityRE = /&#?\w+?;/
 
 /**
@@ -200,6 +200,7 @@ var hasTextareaCloneBug = (function () {
  */
 
 export function cloneNode (node) {
+  /* istanbul ignore if */
   if (!node.querySelectorAll) {
     return node.cloneNode()
   }
