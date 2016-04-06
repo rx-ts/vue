@@ -15,12 +15,24 @@ import qr from 'qr.js'
 
 export default {
   props: {
-    val: String,
-    size: 10,
+    val: {
+      type: String,
+      required: true
+    },
+    size: {
+      type: Number,
+      default: 100
+    },
     // 'L', 'M', 'Q', 'H'
     level: String,
-    bgColor: String,
-    fgColor: String
+    bgColor: {
+      type: String,
+      default: '#FFFFFF'
+    },
+    fgColor: {
+      type: String,
+      default: '#000000'
+    },
   },
   watch: {
     size: function(){
