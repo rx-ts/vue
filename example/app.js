@@ -7,7 +7,7 @@ new Vue({
   },
   data () {
     return {
-      val: "http://github.com",
+      val: "https://github.com",
       bgColor: "#FFFFFF",
       fgColor: "#000000",
       size: 200
