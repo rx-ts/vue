@@ -1,12 +1,12 @@
 {
   "name": "vue-qrcode",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "QRCode of Vue Components",
   "keywords": [
     "qrcode",
     "vuejs"
   ],
-  "main": "src/app.js",
+  "main": "dist/vue-qrcode.js",
   "scripts": {
     "dev": "webpack-dev-server --inline --hot --quiet",
     "build": "NODE_ENV=production webpack --progress --hide-modules",
