@@ -1,10 +1,12 @@
 <template>
   <div>
+    <!-- todo: ':val' is set as workaround for update not being fired on props change.. -->
     <canvas
       :style="{height: size + 'px', width: size + 'px'}"
       :height="size"
       :width="size"
       ref="qr"
+      :val="val"
     ></canvas>
   </div>
 </template>
@@ -12,6 +14,10 @@
 
 <script>
 import qr from 'qr.js';
+
+const update = function() {
+  this.update();
+}
 
 export default {
   props: {
@@ -34,26 +40,8 @@ export default {
       default: '#000000'
     }
   },
-  watch: {
-    size: function() {
-      this.update();
-    },
-    val: function() {
-      this.update();
-    },
-    level: function() {
-      this.update();
-    },
-    bgColor: function() {
-      this.update();
-    },
-    fgColor: function() {
-      this.update();
-    }
-  },
-  ready() {
-    this.update();
-  },
+  beforeUpdate: update,
+  mounted: update,
   methods: {
     update() {
       var size = this.size;
@@ -96,8 +84,3 @@ function getBackingStorePixelRatio(ctx) {
 }
 
 </script>
-
-<style>
-
-
-</style>
