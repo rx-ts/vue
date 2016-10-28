@@ -1,17 +1,23 @@
 <template>
   <div>
+    <!-- todo: ':val' is set as workaround for update not being fired on props change.. -->
     <canvas
       :style="{height: size + 'px', width: size + 'px'}"
-      height={{size}}
-      width={{size}}
-      v-el:qr
+      :height="size"
+      :width="size"
+      ref="qr"
+      :val="val"
     ></canvas>
   </div>
 </template>
 
 
 <script>
-import qr from 'qr.js'
+import qr from 'qr.js';
+
+const update = function() {
+  this.update();
+}
 
 export default {
   props: {
@@ -32,59 +38,41 @@ export default {
     fgColor: {
       type: String,
       default: '#000000'
-    },
-  },
-  watch: {
-    size: function(){
-      this.update()
-    },
-    val: function(){
-      this.update()
-    },
-    level: function(){
-      this.update()
-    },
-    bgColor: function(){
-      this.update()
-    },
-    fgColor: function(){
-      this.update()
     }
   },
-  ready () {
-    this.update()
-  },
-  methods:{
-    update () {
-      var size = this.size
-      var bgColor = this.bgColor
-      var fgColor = this.fgColor
-      var $qr = this.$els.qr
+  beforeUpdate: update,
+  mounted: update,
+  methods: {
+    update() {
+      var size = this.size;
+      var bgColor = this.bgColor;
+      var fgColor = this.fgColor;
+      var $qr = this.$refs.qr;
 
-      var qrcode = qr(this.val)
+      var qrcode = qr(this.val);
 
-      var ctx = $qr.getContext('2d')
-      var cells = qrcode.modules
-      var tileW = size / cells.length
-      var tileH = size / cells.length
-      var scale = (window.devicePixelRatio || 1) / getBackingStorePixelRatio(ctx)
+      var ctx = $qr.getContext('2d');
+      var cells = qrcode.modules;
+      var tileW = size / cells.length;
+      var tileH = size / cells.length;
+      var scale = (window.devicePixelRatio || 1) / getBackingStorePixelRatio(ctx);
 
-      $qr.height = $qr.width = size * scale
-      ctx.scale(scale, scale)
+      $qr.height = $qr.width = size * scale;
+      ctx.scale(scale, scale);
 
-      cells.forEach(function (row, rdx) {
-        row.forEach(function (cell, cdx) {
-          ctx.fillStyle = cell ? fgColor : bgColor
-          var w = (Math.ceil((cdx + 1) * tileW) - Math.floor(cdx * tileW))
-          var h = (Math.ceil((rdx + 1) * tileH) - Math.floor(rdx * tileH))
-          ctx.fillRect(Math.round(cdx * tileW), Math.round(rdx * tileH), w, h)
-        })
-      })
+      cells.forEach(function(row, rdx) {
+        row.forEach(function(cell, cdx) {
+          ctx.fillStyle = cell ? fgColor : bgColor;
+          var w = (Math.ceil((cdx + 1) * tileW) - Math.floor(cdx * tileW));
+          var h = (Math.ceil((rdx + 1) * tileH) - Math.floor(rdx * tileH));
+          ctx.fillRect(Math.round(cdx * tileW), Math.round(rdx * tileH), w, h);
+        });
+      });
     }
   }
-}
+};
 
-function getBackingStorePixelRatio (ctx) {
+function getBackingStorePixelRatio(ctx) {
   return (
     ctx.webkitBackingStorePixelRatio ||
     ctx.mozBackingStorePixelRatio ||
@@ -92,12 +80,7 @@ function getBackingStorePixelRatio (ctx) {
     ctx.oBackingStorePixelRatio ||
     ctx.backingStorePixelRatio ||
     1
-  )
+  );
 }
 
 </script>
-
-<style>
-  
-
-</style>
