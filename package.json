@@ -1,0 +1,26 @@
+{
+  "name": "vue-qrious",
+  "version": "0.0.1",
+  "description": "a vue component of generating qrcode with `qrious`",
+  "main": "index.js",
+  "repository": "git@github.com:JounQin/vue-qrious.git",
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "rollup -c --watch",
+    "build": "rollup -c",
+    "build:prod": "cross-env NODE_ENV=production yarn build",
+    "dist": "yarn build && yarn build:prod"
+  },
+  "dependencies": {
+    "qrious": "^2.2.0"
+  },
+  "devDependencies": {
+    "cross-env": "^3.1.4",
+    "rollup": "^0.41.4",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-plugin-vue2": "^0.8.0",
+    "rollup-watch": "^3.2.2"
+  }
+}
