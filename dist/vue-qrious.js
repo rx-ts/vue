@@ -1,3 +1,11 @@
+/*!
+ * vue-qrious a vue component of generating qrcode with `qrious`
+ * Version 0.0.2
+ * Copyright (C) 2017 JounQin <admin@1stg.me>
+ * Released under the MIT license
+ *
+ * Github: https://github.com/JounQin/vue-qrious
+ */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('qrious')) :
 	typeof define === 'function' && define.amd ? define('vue-qrious', ['qrious'], factory) :

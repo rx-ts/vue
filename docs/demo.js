@@ -1,0 +1,19 @@
+new Vue({
+  el: '#app',
+  data: function () {
+    return {
+      background: '#ffffff',
+      backgroundAlpha: 1,
+      foreground: '#000000',
+      foregroundAlpha: 1,
+      level: 'L',
+      mime: 'image/png',
+      padding: null,
+      size: 100,
+      value: 'http://1stg.me'
+    }
+  },
+  components: {
+    Qrious: VueQrious
+  }
+})
