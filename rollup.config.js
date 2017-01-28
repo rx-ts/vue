@@ -1,5 +1,5 @@
 import buble from 'rollup-plugin-buble'
-import vue from 'rollup-plugin-vue2'
+import vue from 'rollup-plugin-vue'
 import uglify from 'rollup-plugin-uglify'
 
 const pkg = require('./package.json')
@@ -8,7 +8,9 @@ const NODE_ENV = process.env.NODE_ENV || 'development'
 
 const isProd = NODE_ENV === 'production'
 
-const plugins = [vue(), buble()]
+const plugins = [vue({
+  compileTemplate: true
+}), buble()]
 
 isProd && plugins.push(uglify({
   output: {

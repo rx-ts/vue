@@ -1,6 +1,9 @@
 # vue-qrious
 a vue component of generating qrcode with [qrious](https://github.com/neocotic/qrious)
 
+## Demo
+http://vue-qrious.1stg.me
+
 ## Usage
 
 ``` vue
