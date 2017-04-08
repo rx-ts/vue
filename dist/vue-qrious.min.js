@@ -1,6 +1,6 @@
 /*!
  * vue-qrious a vue component of generating qrcode with `qrious`
- * Version 0.1.0
+ * Version 0.1.1
  * Copyright (C) 2017 JounQin <admin@1stg.me>
  * Released under the MIT license
  *

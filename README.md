@@ -1,9 +1,11 @@
 # vue-qrious
 
-[![dependencies](https://david-dm.org/JounQin/vue-qrious.svg)](https://david-dm.org/JounQin/vue-qrious)
+[![peerDependencies status](https://david-dm.org/JounQin/vue-qrious/peer-status.svg)](https://david-dm.org/JounQin/vue-qrious?type=peer)
 [![devDependency Status](https://david-dm.org/JounQin/vue-qrious/dev-status.svg)](https://david-dm.org/JounQin/vue-qrious?type=dev)
 
-a vue component of generating qrcode with [qrious](https://github.com/neocotic/qrious)
+a [vue](https://www.npmjs.com/package/vue) component of generating qrcode with [qrious](https://github.com/neocotic/qrious)
+
+Now vue and qrious is required as **peerDependency** in order to support all versions of them.
 
 ## Demo
 http://vue-qrious.1stg.me

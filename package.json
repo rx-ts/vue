@@ -1,6 +1,6 @@
 {
   "name": "vue-qrious",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "a vue component of generating qrcode with `qrious`",
   "main": "dist/vue-qrious",
   "repository": "git@github.com:JounQin/vue-qrious.git",
