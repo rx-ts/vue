@@ -25,21 +25,21 @@
       size: Number
     },
     data() {
-      return this.init()
+      const qr = new QRious(this.$options.propsData)
+      return {
+        qr,
+        src: this.getSrc(qr)
+      }
     },
-    mounted() {
-      this.$options._propKeys.forEach(key => this.$watch(key, this.update))
+    created() {
+      this.$options._propKeys.forEach(key => this.$watch(key, () => {
+        this.qr[key] = this[key]
+        this.src = this.getSrc()
+      }))
     },
     methods: {
-      init() {
-        const qr = new QRious(this.$options.propsData)
-        return {
-          qr,
-          src: qr.toDataURL(this.mime)
-        }
-      },
-      update() {
-        Object.assign(this, this.init())
+      getSrc(qr) {
+        return (this.qr || qr).toDataURL(this.mime)
       }
     }
   }

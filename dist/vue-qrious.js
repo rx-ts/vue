@@ -1,6 +1,6 @@
 /*!
  * vue-qrious a vue component of generating qrcode with `qrious`
- * Version 0.0.3
+ * Version 0.1.0
  * Copyright (C) 2017 JounQin <admin@1stg.me>
  * Released under the MIT license
  *
@@ -35,23 +35,23 @@ var index = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_v
     size: Number
   },
   data: function data() {
-    return this.init()
+    var qr = new QRious(this.$options.propsData);
+    return {
+      qr: qr,
+      src: this.getSrc(qr)
+    }
   },
-  mounted: function mounted() {
+  created: function created() {
     var this$1 = this;
 
-    this.$options._propKeys.forEach(function (key) { return this$1.$watch(key, this$1.update); });
+    this.$options._propKeys.forEach(function (key) { return this$1.$watch(key, function () {
+      this$1.qr[key] = this$1[key];
+      this$1.src = this$1.getSrc();
+    }); });
   },
   methods: {
-    init: function init() {
-      var qr = new QRious(this.$options.propsData);
-      return {
-        qr: qr,
-        src: qr.toDataURL(this.mime)
-      }
-    },
-    update: function update() {
-      Object.assign(this, this.init());
+    getSrc: function getSrc(qr) {
+      return (this.qr || qr).toDataURL(this.mime)
     }
   }
 };

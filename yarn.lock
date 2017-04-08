@@ -215,12 +215,6 @@ camelcase@^4.0.0:
   version "4.0.0"
   resolved "http://registry.npm.taobao.org/camelcase/download/camelcase-4.0.0.tgz#8b0f90d44be5e281b903b9887349b92595ef07f2"
 
-canvas@^1.3.12:
-  version "1.6.2"
-  resolved "http://registry.npm.taobao.org/canvas/download/canvas-1.6.2.tgz#12b56e3f00e7880aa45e3aae59fe75237720aaa4"
-  dependencies:
-    nan "^2.4.0"
-
 caseless@~0.11.0:
   version "0.11.0"
   resolved "http://registry.npm.taobao.org/caseless/download/caseless-0.11.0.tgz#715b96ea9841593cc33067923f5ec60ebda4f7d7"
@@ -330,9 +324,9 @@ core-util-is@~1.0.0:
   version "1.0.2"
   resolved "http://registry.npm.taobao.org/core-util-is/download/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
 
-cross-env@^3.2.4:
-  version "3.2.4"
-  resolved "http://registry.npm.taobao.org/cross-env/download/cross-env-3.2.4.tgz#9e0585f277864ed421ce756f81a980ff0d698aba"
+cross-env@^4.0.0:
+  version "4.0.0"
+  resolved "http://registry.npm.taobao.org/cross-env/download/cross-env-4.0.0.tgz#16083862d08275a4628b0b243b121bedaa55dd80"
   dependencies:
     cross-spawn "^5.1.0"
     is-windows "^1.0.0"
@@ -1154,7 +1148,7 @@ ms@0.7.2:
   version "0.7.2"
   resolved "http://registry.npm.taobao.org/ms/download/ms-0.7.2.tgz#ae25cf2512b3885a1d95d7f037868d8431124765"
 
-nan@^2.3.2, nan@^2.4.0:
+nan@^2.3.2:
   version "2.5.1"
   resolved "http://registry.npm.taobao.org/nan/download/nan-2.5.1.tgz#d5b01691253326a97a2bbee9e61c55d8d60351e2"
 
@@ -1537,12 +1531,6 @@ pug@^2.0.0-beta11:
 punycode@^1.4.1:
   version "1.4.1"
   resolved "http://registry.npm.taobao.org/punycode/download/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
-
-qrious@^2.2.0:
-  version "2.2.0"
-  resolved "http://registry.npm.taobao.org/qrious/download/qrious-2.2.0.tgz#6a3510725d0911b063c71a0739fa855102b36f59"
-  optionalDependencies:
-    canvas "^1.3.12"
 
 qs@~6.3.0:
   version "6.3.0"
