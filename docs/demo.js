@@ -8,7 +8,7 @@ new Vue({
       foregroundAlpha: 1,
       level: 'L',
       mime: 'image/png',
-      padding: null,
+      padding: 0,
       size: 100,
       value: 'http://1stg.me'
     }

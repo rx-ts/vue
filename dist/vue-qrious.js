@@ -1,6 +1,6 @@
 /*!
  * vue-qrious a vue component of generating qrcode with `qrious`
- * Version 0.1.1
+ * Version 0.2.0
  * Copyright (C) 2017 JounQin <admin@1stg.me>
  * Released under the MIT license
  *
@@ -16,43 +16,66 @@ QRious = 'default' in QRious ? QRious['default'] : QRious;
 
 var LEVELS = ['L', 'M', 'Q', 'H'];
 
-var index = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('img',{attrs:{"src":_vm.src}})},staticRenderFns: [],
+var numberString = {
+  type: [Number, String],
+  validator: function validator(val) {
+    return !isNaN(+val);
+  }
+};
+
+var index = {
   props: {
     value: {
       type: String,
       required: true
     },
     background: String,
-    backgroundAlpha: Number,
+    backgroundAlpha: numberString,
     foreground: String,
-    foregroundAlpha: String,
+    foregroundAlpha: numberString,
     level: {
       type: String,
-      validator: function (level) { return LEVELS.indexOf(level) + 1; }
+      validator: function validator(level) {
+        return LEVELS.indexOf(level) + 1;
+      }
     },
     mime: String,
-    padding: Number,
-    size: Number
+    padding: numberString,
+    size: numberString
   },
   data: function data() {
     var qr = new QRious(this.$options.propsData);
     return {
       qr: qr,
       src: this.getSrc(qr)
-    }
+    };
   },
   created: function created() {
-    var this$1 = this;
+    var _this = this;
 
-    this.$options._propKeys.forEach(function (key) { return this$1.$watch(key, function () {
-      this$1.qr[key] = this$1[key];
-      this$1.src = this$1.getSrc();
-    }); });
+    this.$options._propKeys.forEach(function (key) {
+      return _this.$watch(key, function () {
+        _this.qr[key] = _this[key];
+        _this.src = _this.getSrc();
+      });
+    });
   },
+
   methods: {
     getSrc: function getSrc(qr) {
-      return (this.qr || qr).toDataURL(this.mime)
+      return (this.qr || qr).toDataURL(this.mime);
     }
+  },
+  render: function render() {
+    var h = this.$createElement;
+
+    return h(
+      'img',
+      {
+        attrs: { src: this.src }
+      },
+      []
+    );
   }
 };
 

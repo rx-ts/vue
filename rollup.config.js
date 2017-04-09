@@ -1,5 +1,4 @@
-import buble from 'rollup-plugin-buble'
-import vue from 'rollup-plugin-vue'
+import babel from 'rollup-plugin-babel'
 import uglify from 'rollup-plugin-uglify'
 
 const pkg = require('./package.json')
@@ -8,9 +7,7 @@ const NODE_ENV = process.env.NODE_ENV || 'development'
 
 const isProd = NODE_ENV === 'production'
 
-const plugins = [vue({
-  compileTemplate: true
-}), buble()]
+const plugins = [babel()]
 
 isProd && plugins.push(uglify({
   output: {
@@ -27,7 +24,7 @@ export default {
  *
  * Github: https://github.com/JounQin/vue-qrious
  */`,
-  entry: 'lib/index.vue',
+  entry: 'lib/index',
   dest: `dist/vue-qrious${isProd ? '.min' : ''}.js`,
   plugins,
   format: 'umd',

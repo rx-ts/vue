@@ -5,8 +5,6 @@
 
 a [vue](https://www.npmjs.com/package/vue) component of generating qrcode with [qrious](https://github.com/neocotic/qrious)
 
-Now vue and qrious is required as **peerDependency** in order to support all versions of them.
-
 ## Demo
 http://vue-qrious.1stg.me
 
