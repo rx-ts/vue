@@ -1,6 +1,6 @@
 /*!
  * vue-qrious a vue component of generating qrcode with `qrious`
- * Version 0.2.0
+ * Version 0.2.1
  * Copyright (C) 2017 JounQin <admin@1stg.me>
  * Released under the MIT license
  *
@@ -67,7 +67,7 @@ var index = {
     }
   },
   render: function render() {
-    var h = this.$createElement;
+    var h = arguments[0];
 
     return h(
       'img',

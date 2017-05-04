@@ -1,6 +1,6 @@
 {
   "name": "vue-qrious",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "a vue component of generating qrcode with `qrious`",
   "main": "dist/vue-qrious",
   "repository": "git@github.com:JounQin/vue-qrious.git",
@@ -21,13 +21,13 @@
   "devDependencies": {
     "babel-helper-vue-jsx-merge-props": "^2.0.2",
     "babel-plugin-syntax-jsx": "^6.18.0",
-    "babel-plugin-transform-vue-jsx": "^3.4.2",
-    "babel-preset-env": "^1.3.3",
+    "babel-plugin-transform-vue-jsx": "^3.4.3",
+    "babel-preset-env": "^1.4.0",
     "babel-preset-stage-0": "^6.24.1",
     "cross-env": "^4.0.0",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-uglify": "^1.0.1",
+    "rollup-plugin-uglify": "^1.0.2",
     "rollup-watch": "^3.2.2"
   }
 }
