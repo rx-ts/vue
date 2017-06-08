@@ -1,6 +1,7 @@
 # vue-qrious
 
 [![peerDependencies status](https://david-dm.org/JounQin/vue-qrious/peer-status.svg)](https://david-dm.org/JounQin/vue-qrious?type=peer)
+[![dependency Status](https://david-dm.org/JounQin/vue-qrious/status.svg)](https://david-dm.org/JounQin/vue-qrious)
 [![devDependency Status](https://david-dm.org/JounQin/vue-qrious/dev-status.svg)](https://david-dm.org/JounQin/vue-qrious?type=dev)
 
 a [vue](https://www.npmjs.com/package/vue) component of generating qrcode with [qrious](https://github.com/neocotic/qrious)
