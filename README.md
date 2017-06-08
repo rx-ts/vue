@@ -8,7 +8,7 @@ a [vue](https://www.npmjs.com/package/vue) component of generating qrcode with [
 
 ## Notice
 
-Since qrious has been split into multiple modules from 4.0.0 (https://github.com/neocotic/qrious/issues/53), so if your are using es module with webpack or rollup, remember add an alias/replacement-plugin from module `qrious` to `node-qrious` on node/server environment.
+Since qrious has been split into multiple modules from 4.0.0 (https://github.com/neocotic/qrious/issues/53), so if your are using es module with webpack or rollup, remember to add an alias/replacement-plugin from module `qrious` to `node-qrious` on node/server environment.
 
 Or you can manually choosing files in `vue-qrious/dist` folder as following.
 

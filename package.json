@@ -1,6 +1,6 @@
 {
   "name": "vue-qrious",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "a vue component of generating qrcode with `qrious`",
   "browser": "dist/vue-qrious.browser",
   "main": "dist/vue-qrious",
@@ -10,7 +10,7 @@
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "scripts": {
-    "dev": "yarn client --watch",
+    "dev": "yarn client -- --watch",
     "client": "rollup -c",
     "server": "cross-env ENV=server rollup -c",
     "build": "yarn client && yarn server",
