@@ -7,8 +7,8 @@
  * Github: https://github.com/JounQin/vue-qrious
  */
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('node-qrious')) :
-	typeof define === 'function' && define.amd ? define('vue-qrious', ['node-qrious'], factory) :
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('qrious')) :
+	typeof define === 'function' && define.amd ? define('vue-qrious', ['qrious'], factory) :
 	(global.VueQrious = factory(global.QRious));
 }(this, (function (QRious) { 'use strict';
 

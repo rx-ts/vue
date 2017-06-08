@@ -1,14 +1,19 @@
 {
   "name": "vue-qrious",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "a vue component of generating qrcode with `qrious`",
+  "browser": "dist/vue-qrious.browser",
   "main": "dist/vue-qrious",
+  "module": "lib/index",
+  "unpkg": "dist/vue-qrious.browser",
   "repository": "git@github.com:JounQin/vue-qrious.git",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "scripts": {
-    "dev": "rollup -c --watch",
-    "build": "rollup -c",
+    "dev": "yarn client --watch",
+    "client": "rollup -c",
+    "server": "cross-env ENV=server rollup -c",
+    "build": "yarn client && yarn server",
     "build:prod": "cross-env NODE_ENV=production yarn build",
     "dist": "yarn build && yarn build:prod"
   },
@@ -16,18 +21,20 @@
     "vue": "^2.0.0"
   },
   "dependencies": {
-    "qrious": "^2.2.0"
+    "node-qrious": "^4.0.0",
+    "qrious": "^4.0.2"
   },
   "devDependencies": {
     "babel-helper-vue-jsx-merge-props": "^2.0.2",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-vue-jsx": "^3.4.3",
-    "babel-preset-env": "^1.4.0",
+    "babel-preset-env": "^1.5.2",
     "babel-preset-stage-0": "^6.24.1",
-    "cross-env": "^4.0.0",
-    "rollup": "^0.41.6",
+    "cross-env": "^5.0.1",
+    "rollup": "^0.42.0",
     "rollup-plugin-babel": "^2.7.1",
-    "rollup-plugin-uglify": "^1.0.2",
-    "rollup-watch": "^3.2.2"
+    "rollup-plugin-replace": "^1.1.1",
+    "rollup-plugin-uglify": "^2.0.1",
+    "rollup-watch": "^4.0.0"
   }
 }
