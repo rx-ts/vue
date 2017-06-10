@@ -1,5 +1,4 @@
 import babel from 'rollup-plugin-babel'
-import replace from 'rollup-plugin-replace'
 import uglify from 'rollup-plugin-uglify'
 
 const pkg = require('./package.json')
@@ -12,17 +11,7 @@ const isProd = NODE_ENV === 'production'
 
 const plugins = [babel()]
 
-isServer && plugins.push(replace({
-  qrious: 'node-qrious'
-}))
-
-isProd && plugins.push(uglify({
-  output: {
-    comments: true
-  }
-}))
-
-export default {
+const configs = {
   banner: `/*!
  * ${pkg.name} ${pkg.description}
  * Version ${pkg.version}
@@ -45,3 +34,15 @@ export default {
   },
   moduleName: 'VueQrious'
 }
+
+isServer && (configs.paths = {
+  qrious: 'node-qrious'
+})
+
+isProd && plugins.push(uglify({
+  output: {
+    comments: true
+  }
+}))
+
+export default configs
