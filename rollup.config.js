@@ -9,9 +9,7 @@ const NODE_ENV = process.env.NODE_ENV || 'development'
 const isServer = ENV === 'server'
 const isProd = NODE_ENV === 'production'
 
-const plugins = [babel()]
-
-const configs = {
+const config = {
   banner: `/*!
  * ${pkg.name} ${pkg.description}
  * Version ${pkg.version}
@@ -22,7 +20,7 @@ const configs = {
  */`,
   entry: 'lib/index',
   dest: `dist/vue-qrious${isServer ? '' : '.browser'}${isProd ? '.min' : ''}.js`,
-  plugins,
+  plugins: [babel()],
   format: 'umd',
   external: ['qrious', 'node-qrious'],
   globals: {
@@ -35,14 +33,14 @@ const configs = {
   moduleName: 'VueQrious'
 }
 
-isServer && (configs.paths = {
+isServer && (config.paths = {
   qrious: 'node-qrious'
 })
 
-isProd && plugins.push(uglify({
+isProd && config.plugins.push(uglify({
   output: {
     comments: true
   }
 }))
 
-export default configs
+export default config
