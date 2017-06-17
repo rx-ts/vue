@@ -1,6 +1,6 @@
 /*!
  * vue-qrious a vue component of generating qrcode with `qrious`
- * Version 1.0.1
+ * Version 1.1.0
  * Copyright (C) 2017 JounQin <admin@1stg.me>
  * Released under the MIT license
  *
@@ -12,7 +12,7 @@
 	(global.VueQrious = factory(global.QRious));
 }(this, (function (QRious) { 'use strict';
 
-QRious = 'default' in QRious ? QRious['default'] : QRious;
+QRious = QRious && 'default' in QRious ? QRious['default'] : QRious;
 
 var LEVELS = ['L', 'M', 'Q', 'H'];
 
@@ -44,21 +44,21 @@ var index = {
     size: numberString
   },
   data: function data() {
-    var qr = new QRious(this.$options.propsData);
+    var qr = new QRious(this.$props);
     return {
       qr: qr,
       src: qr.toDataURL(this.mime)
     };
   },
-  created: function created() {
-    var _this = this;
 
-    this.$options._propKeys.forEach(function (key) {
-      return _this.$watch(key, function () {
-        _this.qr[key] = _this[key];
-        _this.src = _this.qr.toDataURL(_this.mime);
-      });
-    });
+  watch: {
+    $props: {
+      deep: true,
+      handler: function handler() {
+        this.qr.set(this.$props);
+        this.src = this.qr.toDataURL(this.mime);
+      }
+    }
   },
   render: function render() {
     var h = arguments[0];
