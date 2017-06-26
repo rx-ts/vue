@@ -19,7 +19,7 @@ Or you can manually choosing files in `vue-qrious/dist` folder as following.
 
 ## Demo
 
-http://vue-qrious.1stg.me
+https://JounQin.github.io/vue-qrious/
 
 ## Usage
 
