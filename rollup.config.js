@@ -18,10 +18,12 @@ const config = {
  *
  * Github: https://github.com/JounQin/vue-qrious
  */`,
-  entry: 'lib/index',
-  dest: `dist/vue-qrious${isServer ? '' : '.browser'}${isProd ? '.min' : ''}.js`,
+  input: 'lib/index',
+  output: {
+    file: `dist/vue-qrious${isServer ? '' : '.browser'}${isProd ? '.min' : ''}.js`,
+    format: 'umd'
+  },
   plugins: [babel()],
-  format: 'umd',
   external: ['qrious', 'node-qrious'],
   globals: {
     qrious: 'QRious',
@@ -30,17 +32,21 @@ const config = {
   amd: {
     id: 'vue-qrious'
   },
-  moduleName: 'VueQrious'
+  name: 'VueQrious'
 }
 
-isServer && (config.paths = {
-  qrious: 'node-qrious'
-})
+isServer &&
+  (config.paths = {
+    qrious: 'node-qrious'
+  })
 
-isProd && config.plugins.push(uglify({
-  output: {
-    comments: true
-  }
-}))
+isProd &&
+  config.plugins.push(
+    uglify({
+      output: {
+        comments: true
+      }
+    })
+  )
 
 export default config

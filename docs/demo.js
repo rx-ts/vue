@@ -1,6 +1,8 @@
+/* global Vue, VueQrious */
+// eslint-disable-next-line no-new
 new Vue({
   el: '#app',
-  data: function () {
+  data: function() {
     return {
       background: '#ffffff',
       backgroundAlpha: 1,

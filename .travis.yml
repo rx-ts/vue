@@ -1,0 +1,26 @@
+language: node_js
+
+node_js: stable
+
+cache: node_modules
+
+before_install: yarn global add greenkeeper-lockfile
+
+before_script: greenkeeper-lockfile-update
+
+script:
+  - yarn lint
+  - yarn dist
+
+after_script:
+  - greenkeeper-lockfile-upload
+  - yarn codecov
+
+deploy:
+  provider: npm
+  email: admin@1stg.me
+  skip_cleanup: true
+  api_key:
+    secure: zkdG+n97baa29WGbX2QaHWYa/0ilj1DPNZpEuXPq6vqNvuAl6lgcT7SsMVKdcqXO4degDPppE3DnjBQMoY5XDEnSefOLhHaTROz0btdlXqj8yDzeURHn0sZpljftNL3wjcNJzci2VR62lSO0mDVO84KFRzbA+XOxbjsGC2GBcUxqQJhzbnDfrvjjUyMaUvILt9kEVu+98G3AUCbkemLviq9g/k8BndxyimRzqusqDk65SLWWPKSnlkEYOeTbN8pHUhXWnrPabIjznete+ccBoYQfcTio3LCLXPCsUkFatGhsIqqdNhmA4vVS+DyKfqvK8juhJwo1MTyO20uGVRWNrvCTXn+m8SxxCxnnRWOmoJBRCGJLmQ3t3pSX5pyTq3DcUEmWFpCdqjW3xkAgGF3qYMJ2at00ylXzz9ZayRHg+Bmfrl3pBguJzqxaOwTzxJZGe9b6ptd5UgNtcnRxXCieG7nqbkNux+u/QQuZOfiHQbNJmsUAqIVvN+bVZi5O7DaqGeb26TdMcl0vhSBM2Li99D660NInVysTbVD4yGCB1DMLBmTSP7U1VE/91nV6OV8FQ5e4MabnJrcDIB3AjgS325jZ99aiBsaGdQFMrhP5Ym4ZiDI21dlgeXJVvTKFq3fq08t0uTydqtsCuYNKeJ6Bi/TeUr0ESDN5JoK0pliI4Rk=
+  on:
+    tags: true

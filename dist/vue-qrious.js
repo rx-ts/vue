@@ -1,6 +1,6 @@
 /*!
  * vue-qrious a vue component of generating qrcode with `qrious`
- * Version 1.1.0
+ * Version 1.1.1
  * Copyright (C) 2017 JounQin <admin@1stg.me>
  * Released under the MIT license
  *
@@ -12,7 +12,7 @@
 	(global.VueQrious = factory(global.QRious));
 }(this, (function (QRious) { 'use strict';
 
-QRious = QRious && 'default' in QRious ? QRious['default'] : QRious;
+QRious = QRious && QRious.hasOwnProperty('default') ? QRious['default'] : QRious;
 
 var LEVELS = ['L', 'M', 'Q', 'H'];
 
