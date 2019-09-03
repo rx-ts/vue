@@ -1,3 +1,7 @@
+# VueQRious
+
+> 🤳 A Vue component for QR code generation with qrious
+
 ## Usage
 
 ```vue
@@ -19,9 +23,9 @@ export default {
 
 | prop              | type                                 | default value |
 | ----------------- | ------------------------------------ | ------------- |
-| `background`      | `string` (CSS color)                 | `"#fff"`      |
+| `background`      | `string` (CSS color)                 | `"#ffffff"`   |
 | `backgroundAlpha` | `number` (0.1-1.0)                   | `1.0`         |
-| `foreground`      | `string` (CSS color)                 | `"#000"`      |
+| `foreground`      | `string` (CSS color)                 | `"#000000"`   |
 | `foregroundAlpha` | `number` (0.1-1.0)                   | `1.0`         |
 | `level`           | `string` ("L", "M", "Q", "H")        | `"L"`         |
 | `mime`            | `string` ("image/png", "image/jpeg") | `"image/png"` |

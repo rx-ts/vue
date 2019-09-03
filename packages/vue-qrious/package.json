@@ -19,7 +19,8 @@
     "qrious.d.ts"
   ],
   "peerDependencies": {
-    "qrious": "^4.0.0"
+    "qrious": "^4.0.0",
+    "vue": "^2.0.0"
   },
   "sideEffects": false
 }
