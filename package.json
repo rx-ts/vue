@@ -37,7 +37,7 @@
     "@commitlint/config-conventional": "^8.1.0",
     "@types/classnames": "^2.2.9",
     "@types/lodash": "^4.14.138",
-    "@types/node": "^12.7.3",
+    "@types/node": "^12.7.4",
     "autoprefixer": "^9.6.1",
     "classnames": "^2.2.6",
     "core-js": "^3.2.1",
@@ -63,8 +63,8 @@
     "rollup": "^1.20.3",
     "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-typescript": "^1.0.1",
-    "rxjs": "^6.5.2",
-    "sass": "^1.22.10",
+    "rxjs": "^6.5.3",
+    "sass": "^1.23.0-module.beta.1",
     "serve": "^11.1.0",
     "stylelint": "^10.1.0",
     "ts-node": "^8.3.0",
@@ -87,9 +87,9 @@
   "eslintIgnore": [
     ".cache",
     ".parcel-cache",
-    "CHANGELOG.md",
     "dist",
-    "lib"
+    "lib",
+    "packages/*/CHANGELOG.md"
   ],
   "prettier": "@1stg/prettier-config",
   "renovate": {

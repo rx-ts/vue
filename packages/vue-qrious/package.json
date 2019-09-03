@@ -16,7 +16,8 @@
   "files": [
     "lib",
     "src",
-    "qrious.d.ts"
+    "qrious.d.ts",
+    "typings.d.ts"
   ],
   "peerDependencies": {
     "qrious": "^4.0.0",
