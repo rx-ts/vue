@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "name": "@rxts/vue",
+  "alias": [
+    "rx-vue.now.sh",
+    "vue-rx.now.sh"
+  ],
+  "public": true,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@now/static-build"
+    }
+  ]
+}

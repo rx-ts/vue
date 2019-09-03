@@ -13,17 +13,17 @@ header {
   list-style: none;
   width: 300px;
   margin: 0 auto 30px;
-}
 
-.lists li {
-  margin-bottom: 8px;
-}
+  li {
+    margin-bottom: 8px;
+  }
 
-.lists label {
-  display: block;
-  margin-bottom: 5px;
-}
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
 
-.lists textarea {
-  width: 100%;
+  textarea {
+    width: 100%;
+  }
 }

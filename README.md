@@ -1,42 +1,70 @@
-# vue-qrious
+<p align="center">
+  <a href="https://rxjs.dev">
+    <img src="https://rxjs.dev/assets/images/logos/Rx_Logo_S.png" height="50">
+  </a>
+  <a href="#readme">
+    <img src="https://rx-ts.github.io/assets/heart.svg" height="50">
+  </a>
+  <a href="https://vuejs.org">
+    <img src="https://vuejs.org/images/logo.png"  height="50">
+  </a>
+</p>
 
-[![peerDependencies status](https://david-dm.org/JounQin/vue-qrious/peer-status.svg)](https://david-dm.org/JounQin/vue-qrious?type=peer)
-[![dependency Status](https://david-dm.org/JounQin/vue-qrious/status.svg)](https://david-dm.org/JounQin/vue-qrious)
-[![devDependency Status](https://david-dm.org/JounQin/vue-qrious/dev-status.svg)](https://david-dm.org/JounQin/vue-qrious?type=dev)
+[![Travis](https://img.shields.io/travis/com/rx-ts/vue.svg)](https://travis-ci.com/rx-ts/vue)
+[![Codacy Grade](https://img.shields.io/codacy/grade/d5e7b6c031264056a0d1c126f3cc4857)](https://www.codacy.com/app/JounQin/vue)
+[![type-coverage](https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Frx-ts%2Fvue%2Fmaster%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
+[![GitHub release](https://img.shields.io/github/release/rx-ts/vue)](https://github.com/rx-ts/vue/releases)
+[![David Dev](https://img.shields.io/david/dev/rx-ts/vue.svg)](https://david-dm.org/rx-ts/vue?type=dev)
 
-a [vue](https://www.npmjs.com/package/vue) component of generating qrcode with [qrious](https://github.com/neocotic/qrious)
+[![Conventional Commits](https://img.shields.io/badge/conventional%20commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Code Style: Prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org)
+[![codechecks.io](https://raw.githubusercontent.com/codechecks/docs/master/images/badges/badge-default.svg?sanitize=true)](https://codechecks.io)
 
-## Notice
+> Make [Vue][] greater with [RxTS][].
 
-Since qrious has been split into multiple modules from 4.0.0 (https://github.com/neocotic/qrious/issues/53), so if your are using es module with webpack or rollup, remember to add an alias/replacement-plugin from module `qrious` to `node-qrious` on node/server environment.
+## TOC <!-- omit in toc -->
 
-Or you can manually choosing files in `vue-qrious/dist` folder as following.
+- [Homepage](#homepage)
+- [Packages](#packages)
+- [Install](#install)
+- [Changelog](#changelog)
+- [License](#license)
 
-- vue-qrious.browser.js
-- vue-qrious.browser.min.js
-- vue-qrious.js
-- vue-qrious.min.js
+## Homepage
 
-## Demo
+<a href="https://rx-vue.now.sh" target="_blank">rx-vue</a>
 
-https://JounQin.github.io/vue-qrious/
+## Packages
 
-## Usage
+This repository is a monorepo managed by [Lerna][] what means we actually publish several packages to npm from same codebase, including:
 
-``` vue
-<qrious value="https://blog.1stg.me/"/>
+| Package                              | Description                                           | Version                                                                                         | Peer Dependencies                                                                                                                                            | Dependencies                                                                                                                             |
+| ------------------------------------ | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [`vue-qrious`](/packages/vue-qrious) | 🤳 A Vue component for QR code generation with qrious | [![npm](https://img.shields.io/npm/v/vue-qrious.svg)](https://www.npmjs.com/package/vue-qrious) | [![David Peer](https://img.shields.io/david/peer/rx-ts/vue.svg?path=packages/vue-qrious)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrious&type=peer) | [![David](https://img.shields.io/david/rx-ts/vue.svg?path=packages/vue-qrious)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrious) |
+
+## Install
+
+```sh
+# yarn
+yarn add vue-qrious
+
+# npm
+npm i vue-qrious
 ```
 
-## Available Props
+## Changelog
 
-prop      | type                 | default value
-----------|----------------------|--------------
-`background` | `string` (CSS color) | `"#ffffff"`
-`backgroundAlpha` | `number` (0.1-1.0) | `1.0`
-`foreground` | `string` (CSS color) | `"#000000"`
-`foregroundAlpha` | `number` (0.1-1.0) | `1.0`
-`level` | `string` ("L", "M", "Q", "H") | `"L"`
-`mime` | `string` ("image/png", "image/jpeg") | `"image/png"`
-`padding` | `number` | `null`
-`size`    | `number`             | `100`
-`value`   | `string`             |
+Detailed changes for each release are documented in [CHANGELOG.md](./CHANGELOG.md).
+
+## License
+
+[MIT][] © [JounQin][]@[1stG.me][]
+
+[1stg.me]: https://www.1stg.me
+[rxts]: https://rxjs.dev
+[vue]: https://vuejs.org
+[jounqin]: https://GitHub.com/JounQin
+[lerna]: https://github.com/lerna/lerna
+[mit]: http://opensource.org/licenses/MIT

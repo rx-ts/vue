@@ -1,8 +1,11 @@
-/* global Vue, VueQrious */
+import Qrious from 'vue-qrious'
+import Vue from 'vue/dist/vue.esm'
+
 // eslint-disable-next-line no-new
 new Vue({
+  // tslint:disable-line: no-unused-expression
   el: '#app',
-  data: function() {
+  data() {
     return {
       background: '#ffffff',
       backgroundAlpha: 1,
@@ -12,10 +15,10 @@ new Vue({
       mime: 'image/png',
       padding: 0,
       size: 100,
-      value: 'http://1stg.me'
+      value: 'http://www.1stg.me',
     }
   },
   components: {
-    Qrious: VueQrious
-  }
+    Qrious,
+  },
 })
