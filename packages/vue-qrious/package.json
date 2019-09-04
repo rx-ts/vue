@@ -19,6 +19,13 @@
     "qrious.d.ts",
     "typings.d.ts"
   ],
+  "keywords": [
+    "vue-qrcode",
+    "vue-qrious",
+    "qrcode",
+    "qrious",
+    "vue"
+  ],
   "peerDependencies": {
     "qrious": "^4.0.0",
     "vue": "^2.0.0"

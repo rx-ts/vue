@@ -79,7 +79,7 @@
     "vue-qrious": "link:packages/vue-qrious/src"
   },
   "alias": {
-    "vue": "./node_modules/vue/dist/vue.esm.js"
+    "vue": "./node_modules/vue/dist/vue.esm"
   },
   "babel": {
     "presets": [

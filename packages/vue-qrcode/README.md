@@ -6,7 +6,7 @@
 
 ```vue
 <template>
-  <qrious value="https://www.1stg.me" />
+  <qrcode value="https://www.1stg.me" />
 </template>
 <script>
 import Qrcode from 'vue-qrcode'
@@ -21,7 +21,7 @@ export default {
 
 ## Available Props
 
-| prop                   | type                                                               | default value                               |
+| prop                   | type (range)                                                       | default value                               |
 | ---------------------- | ------------------------------------------------------------------ | ------------------------------------------- |
 | `version`              | `number` (1-40)                                                    | N/A                                         |
 | `errorCorrectionLevel` | `String` ('low', 'medium', 'quartile', 'high', 'L', 'M', 'Q', 'H') | `'M'`                                       |
@@ -31,6 +31,6 @@ export default {
 | `scale`                | `number`                                                           | `4`                                         |
 | `width`                | `number`                                                           | N/A                                         |
 | `color`                | `{ dark: string; light:string }`                                   | `{ dark: '#000000ff', light: '#ffffffff' }` |
-| `type`                 | `string` ('image/png', 'image/jpeg', 'image/webp',)                | `'image/png'`                               |
+| `type`                 | `string` ('image/png', 'image/jpeg', 'image/webp')                 | `'image/png'`                               |
 | `quality`              | `number`(0-1)                                                      | `0.92`                                      |
 | `value`                | `string | Array<{ data: string; mode?: string }>`                  | N/A                                         |

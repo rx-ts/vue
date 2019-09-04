@@ -17,6 +17,11 @@
     "lib",
     "src"
   ],
+  "keywords": [
+    "vue-qrcode",
+    "qrcode",
+    "vue"
+  ],
   "peerDependencies": {
     "qrcode": "^1.0.0",
     "vue": "^2.0.0"

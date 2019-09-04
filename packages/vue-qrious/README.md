@@ -21,7 +21,7 @@ export default {
 
 ## Available Props
 
-| prop              | type                                 | default value |
+| prop              | type (range)                         | default value |
 | ----------------- | ------------------------------------ | ------------- |
 | `background`      | `string` (CSS color)                 | `"#ffffff"`   |
 | `backgroundAlpha` | `number` (0.1-1.0)                   | `1.0`         |
