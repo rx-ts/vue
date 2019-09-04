@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/rx-ts/vue/compare/@rxts/vue-qrcode@0.1.0...@rxts/vue-qrcode@0.1.1) (2019-09-04)
+
+
+### Bug Fixes
+
+* **qrcode:** example code, add keywords field in packages.json ([bc5fa40](https://github.com/rx-ts/vue/commit/bc5fa40))
+
+
+
+
+
 # 0.1.0 (2019-09-04)
 
 
