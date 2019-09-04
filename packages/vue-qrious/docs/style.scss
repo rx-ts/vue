@@ -1,0 +1,38 @@
+@import 'sanitize.css';
+@import 'sanitize.css/forms.css';
+
+#app {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lists {
+  padding: 0;
+  text-align: left;
+  list-style: none;
+  width: 300px;
+  margin: 0 auto 30px;
+
+  li {
+    margin-bottom: 8px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+
+    &:after {
+      content: ':';
+    }
+  }
+
+  input {
+    &[type='color'] {
+      padding: 0;
+    }
+  }
+
+  textarea {
+    width: 100%;
+  }
+}

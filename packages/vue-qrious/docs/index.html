@@ -10,8 +10,8 @@
     <link rel="stylesheet" href="./style.scss" />
   </head>
   <body>
-    <div id="app">
-      <h1>VueQrious Demo</h1>
+    <div id="app" v-cloak>
+      <h1>VueQrious</h1>
       <ul class="lists">
         <li>
           <label>background(color)</label>
@@ -32,10 +32,7 @@
         <li>
           <label>level</label>
           <select v-model="level">
-            <option value="L">L</option>
-            <option value="M">M</option>
-            <option value="Q">Q</option>
-            <option value="H">H</option>
+            <option v-for="l of LEVELS" :value="l">{{ l }}</option>
           </select>
         </li>
         <li>

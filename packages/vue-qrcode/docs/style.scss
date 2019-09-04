@@ -1,10 +1,13 @@
+@import 'sanitize.css';
+@import 'sanitize.css/forms.css';
+
+[v-cloak] {
+  display: none;
+}
+
 #app {
   margin: 0 auto;
   text-align: center;
-}
-
-header {
-  font-size: 20px;
 }
 
 .lists {
@@ -21,6 +24,16 @@ header {
   label {
     display: block;
     margin-bottom: 5px;
+
+    &:after {
+      content: ':';
+    }
+  }
+
+  input {
+    &[type='color'] {
+      padding: 0;
+    }
   }
 
   textarea {

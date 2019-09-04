@@ -1,5 +1,5 @@
-import Qrious from 'vue-qrious'
-import Vue from 'vue/dist/vue.esm'
+import Vue from 'vue'
+import Qrious, { LEVELS } from 'vue-qrious'
 
 // eslint-disable-next-line no-new
 new Vue({
@@ -7,6 +7,7 @@ new Vue({
   el: '#app',
   data() {
     return {
+      LEVELS,
       background: '#ffffff',
       backgroundAlpha: 1,
       foreground: '#000000',

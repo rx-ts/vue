@@ -1,12 +1,12 @@
 # VueQRious
 
-> 🤳 A Vue component for QR code generation with qrious
+> 🤳 A Vue component for QR code generation with [qrious](https://github.com/neocotic/qrious)
 
 ## Usage
 
 ```vue
 <template>
-  <qrious value="https://blog.1stg.me" />
+  <qrious value="https://www.1stg.me" />
 </template>
 <script>
 import Qrious from 'vue-qrious'

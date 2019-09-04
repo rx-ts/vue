@@ -11,5 +11,15 @@
       "src": "package.json",
       "use": "@now/static-build"
     }
+  ],
+  "routes": [
+    {
+      "src": "/vue-qrious/*",
+      "dest": "vue-qrious/docs/index.html"
+    },
+    {
+      "src": "/*",
+      "dest": "vue-qrcode/docs/index.html"
+    }
   ]
 }

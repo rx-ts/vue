@@ -10,14 +10,14 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "parcel demo/index.html",
+    "dev": "parcel packages/*/docs/index.html",
     "lint:es": "EFF_NO_LINK_RULES=true eslint . --ext js,md,mdx,ts,tsx -f friendly",
     "lint:style": "stylelint **/*.scss",
     "lint": "run-p lint:*",
     "build:es": "tsc -b --force",
     "build:bundle": "rollup -c node_modules/@1stg/rollup-config/module.js",
     "build:bundle:min": "cross-env NODE_ENV=production yarn build:bundle",
-    "build:demo": "parcel build demo/index.html --out-dir dist",
+    "build:docs": "parcel build packages/*/docs/index.html",
     "build": "rimraf dist packages/*/lib && run-p build:**",
     "serve": "serve dist",
     "type-coverage": "type-coverage --cache --ignore-catch --detail --ignore-files *.d.ts --strict"
@@ -35,9 +35,11 @@
     "@babel/core": "^7.5.5",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
+    "@rxts/vue-qrcode": "link:packages/vue-qrcode/src",
     "@types/classnames": "^2.2.9",
     "@types/lodash": "^4.14.138",
     "@types/node": "^12.7.4",
+    "@types/qrcode": "^1.3.4",
     "autoprefixer": "^9.6.1",
     "classnames": "^2.2.6",
     "core-js": "^3.2.1",
@@ -54,6 +56,7 @@
     "parcel": "^1.12.3",
     "postcss": "^7.0.17",
     "prettier": "^1.18.2",
+    "qrcode": "^1.4.1",
     "qrious": "^4.0.2",
     "remark-preset-lint-consistent": "^2.0.3",
     "remark-preset-lint-markdown-style-guide": "^2.1.3",
@@ -64,6 +67,7 @@
     "rollup-plugin-terser": "^5.1.1",
     "rollup-plugin-typescript": "^1.0.1",
     "rxjs": "^6.5.3",
+    "sanitize.css": "^11.0.0",
     "sass": "^1.23.0-module.beta.1",
     "serve": "^11.1.0",
     "stylelint": "^10.1.0",
@@ -73,6 +77,9 @@
     "typescript": "^3.6.2",
     "vue": "^2.6.10",
     "vue-qrious": "link:packages/vue-qrious/src"
+  },
+  "alias": {
+    "vue": "./node_modules/vue/dist/vue.esm.js"
   },
   "babel": {
     "presets": [
@@ -91,7 +98,7 @@
     "lib",
     "packages/*/CHANGELOG.md"
   ],
-  "prettier": "@1stg/prettier-config",
+  "prettier": "@1stg/prettier-config/vue",
   "renovate": {
     "extends": "@1stg"
   },

@@ -40,18 +40,19 @@
 
 This repository is a monorepo managed by [Lerna][] what means we actually publish several packages to npm from same codebase, including:
 
-| Package                              | Description                                           | Version                                                                                         | Peer Dependencies                                                                                                                                            | Dependencies                                                                                                                             |
-| ------------------------------------ | ----------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [`vue-qrious`](/packages/vue-qrious) | 🤳 A Vue component for QR code generation with qrious | [![npm](https://img.shields.io/npm/v/vue-qrious.svg)](https://www.npmjs.com/package/vue-qrious) | [![David Peer](https://img.shields.io/david/peer/rx-ts/vue.svg?path=packages/vue-qrious)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrious&type=peer) | [![David](https://img.shields.io/david/rx-ts/vue.svg?path=packages/vue-qrious)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrious) |
+| Package                              | Description                                               | Version                                                                                                     | Peer Dependencies                                                                                                                                            | Dependencies                                                                                                                             |
+| ------------------------------------ | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| [`vue-qrcode`](/packages/vue-qrcode) | 🤳 A Vue component for QR code generation with [qrcode][] | [![npm](https://img.shields.io/npm/v/@rxts/vue-qrcode.svg)](https://www.npmjs.com/package/@rxts/vue-qrcode) | [![David Peer](https://img.shields.io/david/peer/rx-ts/vue.svg?path=packages/vue-qrcode)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrcode&type=peer) | [![David](https://img.shields.io/david/rx-ts/vue.svg?path=packages/vue-qrcode)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrcode) |
+| [`vue-qrious`](/packages/vue-qrious) | 🤳 A Vue component for QR code generation with [qrious][] | [![npm](https://img.shields.io/npm/v/vue-qrious.svg)](https://www.npmjs.com/package/vue-qrious)             | [![David Peer](https://img.shields.io/david/peer/rx-ts/vue.svg?path=packages/vue-qrious)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrious&type=peer) | [![David](https://img.shields.io/david/rx-ts/vue.svg?path=packages/vue-qrious)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrious) |
 
 ## Install
 
 ```sh
 # yarn
-yarn add vue-qrious
+yarn add @rxts/vue-qrcode vue-qrious
 
 # npm
-npm i vue-qrious
+npm i @rxts/vue-qrcode vue-qrious
 ```
 
 ## Changelog
@@ -68,3 +69,5 @@ Detailed changes for each release are documented in [CHANGELOG.md](./CHANGELOG.m
 [jounqin]: https://GitHub.com/JounQin
 [lerna]: https://github.com/lerna/lerna
 [mit]: http://opensource.org/licenses/MIT
+[qrcode]: https://github.com/soldair/node-qrcode
+[qrious]: https://github.com/neocotic/qrious

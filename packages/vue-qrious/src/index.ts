@@ -1,7 +1,7 @@
 import QRious, { QRiousOptions } from 'qrious'
 import Vue from 'vue'
 
-const LEVELS = ['L', 'M', 'Q', 'H'] as const
+export const LEVELS = Object.freeze(['L', 'M', 'Q', 'H'] as const)
 
 // eslint-disable-next-line @typescript-eslint/no-type-alias
 export type Level = (typeof LEVELS)[number]

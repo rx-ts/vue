@@ -6,6 +6,9 @@
   },
   "references": [
     {
+      "path": "packages/vue-qrcode"
+    },
+    {
       "path": "packages/vue-qrious"
     }
   ]

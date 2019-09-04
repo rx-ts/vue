@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <title>VueQrcode</title>
+    <link rel="stylesheet" href="./style.scss" />
+  </head>
+  <body>
+    <div id="app" v-cloak>
+      <h1>VueQrcode</h1>
+      <ul class="lists">
+        <li>
+          <label>version</label>
+          <select v-model="version">
+            <option v-for="v of 40" :value="v">{{ v }}</option>
+          </select>
+        </li>
+        <li>
+          <label>errorCorrectionLevel</label>
+          <select v-model="errorCorrectionLevel">
+            <option v-for="level of LEVELS" :value="level">{{ level }}</option>
+          </select>
+        </li>
+        <li>
+          <label>maskPattern</label>
+          <select v-model="maskPattern">
+            <option v-for="pattern of MASK_PATTERNS" :value="pattern">
+              {{ pattern }}
+            </option>
+          </select>
+        </li>
+        <li>
+          <label>margin</label>
+          <input type="number" v-model.number="margin" />
+        </li>
+        <li></li>
+        <li>
+          <label>scale</label>
+          <input type="number" v-model.number="scale" />
+        </li>
+        <li>
+          <label>width</label>
+          <input type="number" v-model.number="width" />
+        </li>
+        <li>
+          <label>color.dark</label>
+          <input type="color" v-model="color.dark" />
+        </li>
+        <li>
+          <label>color.light</label>
+          <input type="color" v-model="color.light" />
+        </li>
+        <li>
+          <label>type</label>
+          <select v-model="type">
+            <option v-for="t of TYPES" :value="t">{{ t }}</option>
+          </select>
+        </li>
+        <li>
+          <label>quality</label>
+          <input type="number" step="0.01" v-model.number="quality" />
+        </li>
+        <li>
+          <label>
+            manualMode
+            <input type="checkbox" v-model="manualMode" />
+          </label>
+        </li>
+        <li>
+          <label>
+            value
+            <button v-if="manualMode" @click="addValue" is="button">+</button>
+          </label>
+          <ul v-if="manualMode">
+            <li v-for="(v, index) of value">
+              <label v-if="value.length">
+                maskPattern
+                <button @click="removeValue(index)" is="button">-</button>
+              </label>
+              <div>
+                <label>mode</label>
+                <select v-model="v.mode">
+                  <option v-for="mode of MODES" :value="mode">
+                    {{ mode }}
+                  </option>
+                </select>
+              </div>
+              <div>
+                <label>data</label>
+                <textarea rows="6" cols="80" v-model="v.data"></textarea>
+              </div>
+            </li>
+          </ul>
+          <textarea v-else rows="6" cols="80" v-model="value"></textarea>
+        </li>
+      </ul>
+      <qrcode v-bind="$data" />
+    </div>
+    <script src="./index.ts"></script>
+  </body>
+</html>
