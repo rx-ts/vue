@@ -35,7 +35,6 @@
     "@babel/core": "^7.5.5",
     "@commitlint/cli": "^8.1.0",
     "@commitlint/config-conventional": "^8.1.0",
-    "@rxts/vue-qrcode": "link:packages/vue-qrcode/src",
     "@types/classnames": "^2.2.9",
     "@types/lodash": "^4.14.138",
     "@types/node": "^12.7.4",
@@ -76,6 +75,7 @@
     "type-coverage": "^2.2.0",
     "typescript": "^3.6.2",
     "vue": "^2.6.10",
+    "vue-qrcode": "link:packages/vue-qrcode/src",
     "vue-qrious": "link:packages/vue-qrious/src"
   },
   "alias": {

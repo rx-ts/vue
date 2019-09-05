@@ -1,3 +1,4 @@
+import Vue from 'vue'
 import Qrcode, {
   LEVELS,
   MASK_PATTERNS,
@@ -5,8 +6,7 @@ import Qrcode, {
   QRCodeSegment,
   QRCodeValue,
   TYPES,
-} from '@rxts/vue-qrcode'
-import Vue from 'vue'
+} from 'vue-qrcode'
 
 const DEFAULT_TEXT = 'http://www.1stg.me'
 

@@ -1,5 +1,5 @@
 {
-  "name": "@rxts/vue-qrcode",
+  "name": "vue-qrcode",
   "version": "0.1.2",
   "description": "🤳 A Vue component for QR code generation with `qrcode`",
   "repository": "git@github.com:rx-ts/vue.git",
@@ -25,9 +25,6 @@
   "peerDependencies": {
     "qrcode": "^1.0.0",
     "vue": "^2.0.0"
-  },
-  "publishConfig": {
-    "access": "public"
   },
   "sideEffects": false
 }

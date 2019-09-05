@@ -2277,10 +2277,6 @@
     "@parcel/utils" "^1.11.0"
     physical-cpu-count "^2.0.0"
 
-"@rxts/vue-qrcode@link:packages/vue-qrcode/src":
-  version "0.0.0"
-  uid ""
-
 "@samverschueren/stream-to-observable@^0.3.0":
   version "0.3.0"
   resolved "https://registry.yarnpkg.com/@samverschueren/stream-to-observable/-/stream-to-observable-0.3.0.tgz#ecdf48d532c58ea477acfcab80348424f8d0662f"
@@ -12580,6 +12576,10 @@ vue-eslint-parser@^5.0.0:
     espree "^4.1.0"
     esquery "^1.0.1"
     lodash "^4.17.11"
+
+"vue-qrcode@link:packages/vue-qrcode/src":
+  version "0.0.0"
+  uid ""
 
 "vue-qrious@link:packages/vue-qrious/src":
   version "0.0.0"

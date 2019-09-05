@@ -7,24 +7,14 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 **Note:** Version bump only for package @rxts/vue-qrcode
 
-
-
-
-
 ## [0.1.1](https://github.com/rx-ts/vue/compare/@rxts/vue-qrcode@0.1.0...@rxts/vue-qrcode@0.1.1) (2019-09-04)
-
 
 ### Bug Fixes
 
-* **qrcode:** example code, add keywords field in packages.json ([bc5fa40](https://github.com/rx-ts/vue/commit/bc5fa40))
-
-
-
-
+- **qrcode:** example code, add keywords field in packages.json ([bc5fa40](https://github.com/rx-ts/vue/commit/bc5fa40))
 
 # 0.1.0 (2019-09-04)
 
-
 ### Features
 
-* add @rxts/qrcode package, improve documentation ([0cdcaa7](https://github.com/rx-ts/vue/commit/0cdcaa7))
+- add @rxts/vue-qrcode package, improve documentation ([0cdcaa7](https://github.com/rx-ts/vue/commit/0cdcaa7))
