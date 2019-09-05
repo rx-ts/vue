@@ -63,8 +63,6 @@
     "remark-preset-prettier": "^0.1.1",
     "rimraf": "^3.0.0",
     "rollup": "^1.20.3",
-    "rollup-plugin-terser": "^5.1.1",
-    "rollup-plugin-typescript": "^1.0.1",
     "rxjs": "^6.5.3",
     "sanitize.css": "^11.0.0",
     "sass": "^1.23.0-module.beta.1",
