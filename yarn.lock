@@ -21,10 +21,10 @@
   resolved "https://registry.yarnpkg.com/@1stg/browserslist-config/-/browserslist-config-0.2.1.tgz#17f52a729468ba7694d7bbde01ede1e01cd9ad54"
   integrity sha512-IRLw6rH5oEN06ai46D0QG6/pfgUpM9NGpBPlepX5Y/SWEXbUodqWOoOeTAJDbqNyRQPp3w24H+bWF11T9rMqEA==
 
-"@1stg/eslint-config@^0.8.1":
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/@1stg/eslint-config/-/eslint-config-0.8.1.tgz#7c2f5b58040da1309a80dc3190e29e7460875f2d"
-  integrity sha512-P3L/kDl7S/OLVN5GRBjaquPYuRFDz0RmqApUn2BO58KADd6n8HsJhzo1Dw6ZUsfRyx5wwVE30GMJzI7mLtst2Q==
+"@1stg/eslint-config@^0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@1stg/eslint-config/-/eslint-config-0.8.2.tgz#e440d70555c8a09a26173d8ace1ac01a23e32e93"
+  integrity sha512-Kb754/ZfnpTO9RBji30gMu7pkNG8WRlUqcgmDMkJwT4rjW/KVyzxH8SyMhLpdFMFGOeiSwviE+yJI1BTZJFFKw==
   dependencies:
     "@typescript-eslint/eslint-plugin" "^2.1.0"
     "@typescript-eslint/eslint-plugin-tslint" "^2.1.0"
@@ -34,7 +34,7 @@
     eslint-config-standard "^14.1.0"
     eslint-config-standard-jsx "^8.1.0"
     eslint-config-standard-react "^9.1.0"
-    eslint-import-resolver-typescript JounQin/eslint-import-resolver-typescript#feat/resolve_dts
+    eslint-import-resolver-typescript "github:JounQin/eslint-import-resolver-typescript#feat/resolve_dts"
     eslint-plugin-babel "^5.3.0"
     eslint-plugin-compat "^3.3.0"
     eslint-plugin-import "^2.18.2"
@@ -5157,8 +5157,9 @@ eslint-import-resolver-node@^0.3.2:
     debug "^2.6.9"
     resolve "^1.5.0"
 
-eslint-import-resolver-typescript@JounQin/eslint-import-resolver-typescript#feat/resolve_dts:
+"eslint-import-resolver-typescript@github:JounQin/eslint-import-resolver-typescript#feat/resolve_dts":
   version "1.1.1"
+  uid "23e2e8cf71ee6c19da9f55e85b2ab34543d2a12e"
   resolved "https://codeload.github.com/JounQin/eslint-import-resolver-typescript/tar.gz/23e2e8cf71ee6c19da9f55e85b2ab34543d2a12e"
   dependencies:
     debug "^4.0.1"
