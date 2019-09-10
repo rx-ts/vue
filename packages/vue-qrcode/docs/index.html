@@ -73,13 +73,12 @@
         <li>
           <label>
             value
-            <button v-if="manualMode" @click="addValue" is="button">+</button>
+            <button v-if="manualMode" @click="addValue">+</button>
           </label>
           <ul v-if="manualMode">
             <li v-for="(v, index) of value">
               <label v-if="value.length">
-                maskPattern
-                <button @click="removeValue(index)" is="button">-</button>
+                <button @click="removeValue(index)">-</button>
               </label>
               <div>
                 <label>mode</label>

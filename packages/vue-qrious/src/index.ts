@@ -48,9 +48,9 @@ export default {
   render(this: Vue & { dataUrl: string }) {
     return this.$createElement('img', {
       domProps: {
+        ...this.$attrs,
         src: this.dataUrl,
       },
-      attrs: this.$attrs,
     })
   },
 }

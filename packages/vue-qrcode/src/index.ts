@@ -1,4 +1,4 @@
-import qrcode, {
+import QRCode, {
   QRCodeErrorCorrectionLevel,
   QRCodeSegment as _QRCodeSegment,
   QRCodeToDataURLOptions,
@@ -46,6 +46,7 @@ export const TYPES = Object.freeze([
 
 export type QRCodeProps = Omit<QRCodeToDataURLOptions, 'renderOptions'> & {
   quality?: number
+  value: QRCodeValue
 }
 
 export default ({
@@ -115,24 +116,23 @@ export default ({
   methods: {
     toDataURL(this: { $props: QRCodeProps; dataUrl: string; value: string }) {
       const { quality, ...props } = this.$props
-      return qrcode
-        .toDataURL(
-          this.value,
-          Object.assign(
-            props,
-            quality == null || {
-              renderOptions: {
-                quality,
-              },
+      return QRCode.toDataURL(
+        this.value,
+        Object.assign(
+          props,
+          quality == null || {
+            renderOptions: {
+              quality,
             },
-          ),
-        )
-        .then(dataUrl => (this.dataUrl = dataUrl))
+          },
+        ),
+      ).then(dataUrl => (this.dataUrl = dataUrl))
     },
   },
   render(this: Vue & { dataUrl: string }) {
     return this.$createElement('img', {
       domProps: {
+        ...this.$attrs,
         src: this.dataUrl,
       },
     })
