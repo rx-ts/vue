@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/rx-ts/vue/compare/vue-qrious@1.4.0...vue-qrious@1.4.1) (2019-09-10)
+
+
+### Bug Fixes
+
+* **deps:** bump dependencies, pass $attrs as domProps ([7041167](https://github.com/rx-ts/vue/commit/7041167))
+
+
+
+
+
 # [1.4.0](https://github.com/rx-ts/vue/compare/vue-qrious@1.3.2...vue-qrious@1.4.0) (2019-09-07)
 
 
