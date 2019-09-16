@@ -58,10 +58,10 @@
   resolved "https://registry.yarnpkg.com/@1stg/lint-staged/-/lint-staged-0.6.1.tgz#2785e6f749a56d8a9a6c550abb7356a3aaf848c5"
   integrity sha512-kFiLmW4xID+jB4zTgSBxUZADZznfJs+GdyUDTlAs9jTzmG6bvCldbSSpzR1nr68emfrBSZg6rhQxx+SpZWdkLw==
 
-"@1stg/postcss-config@^0.2.0":
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/@1stg/postcss-config/-/postcss-config-0.2.0.tgz#6ed70966e2e2c416b8a20531f7224b55f9fb6e27"
-  integrity sha512-Yd6avKoEw75q0PXiFs43RqqZqByJdmha6fgSZ+oCwxqkFvOldAbhfNYtifBNjVkCJx3Ss8SDcBgxH12PuP1yOw==
+"@1stg/postcss-config@^0.2.1":
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/@1stg/postcss-config/-/postcss-config-0.2.1.tgz#f35427e2ac204aacecc9bf198b352c60f439adcd"
+  integrity sha512-qHaB0pPxdFejKyAcJIOXeajhszcnP5OceU2hKB/6VisFaAnmRcbME8bMH4sYiKn94hyCbh8RwPUYZVfjSmcqAg==
   dependencies:
     autoprefixer "^9.6.1"
     cssnano "^4.1.10"
