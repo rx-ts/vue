@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.2](https://github.com/rx-ts/vue/compare/vue-qrious@1.4.1...vue-qrious@1.4.2) (2019-09-23)
+
+
+### Bug Fixes
+
+* **deps:** bump dependencies, correct package homepages ([41b6894](https://github.com/rx-ts/vue/commit/41b6894))
+
+
+
+
+
 ## [1.4.1](https://github.com/rx-ts/vue/compare/vue-qrious@1.4.0...vue-qrious@1.4.1) (2019-09-10)
 
 
