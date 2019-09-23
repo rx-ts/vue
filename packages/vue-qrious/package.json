@@ -3,6 +3,7 @@
   "version": "1.4.1",
   "description": "🤳 A Vue component for QR code generation with qrious",
   "repository": "git@github.com:rx-ts/vue.git",
+  "homepage": "https://github.com/rx-ts/vue/blob/master/packages/vue-qrious",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
   "main": "lib/cjs",
@@ -10,6 +11,7 @@
   "jsdelivr": "lib/umd",
   "unpkg": "lib/umd",
   "es2015": "lib/es2015",
+  "esm5": "lib",
   "fesm5": "lib/esm",
   "types": "lib",
   "files": [

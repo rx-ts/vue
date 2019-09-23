@@ -1,11 +1,13 @@
 {
-  "version": 2,
   "name": "@rxts/vue",
+  "version": 2,
   "alias": [
     "rx-vue.now.sh",
     "vue-rx.now.sh"
   ],
-  "public": true,
+  "github": {
+    "silent": true
+  },
   "builds": [
     {
       "src": "package.json",

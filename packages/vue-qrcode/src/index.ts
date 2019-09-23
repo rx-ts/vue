@@ -5,7 +5,7 @@ import QRCode, {
 } from 'qrcode'
 import Vue, { ComponentOptions } from 'vue'
 
-export const LEVELS = Object.freeze([
+export const LEVELS = [
   'low',
   'medium',
   'quartile',
@@ -14,19 +14,15 @@ export const LEVELS = Object.freeze([
   'M',
   'Q',
   'H',
-] as const)
+] as const
 
-export const MASK_PATTERNS = Object.freeze([0, 1, 2, 3, 4, 5, 6, 7] as const)
+// eslint-disable-next-line @typescript-eslint/no-magic-numbers
+export const MASK_PATTERNS = [0, 1, 2, 3, 4, 5, 6, 7] as const
 
 // eslint-disable-next-line @typescript-eslint/no-type-alias
 export type MaskPattern = (typeof MASK_PATTERNS)[number]
 
-export const MODES = Object.freeze([
-  'alphanumeric',
-  'numeric',
-  'kanji',
-  'byte',
-] as const)
+export const MODES = ['alphanumeric', 'numeric', 'kanji', 'byte'] as const
 
 // eslint-disable-next-line @typescript-eslint/no-type-alias
 export type QRCodeMode = _QRCodeSegment['mode']
@@ -38,16 +34,14 @@ export interface QRCodeSegment {
 
 export type QRCodeValue = string | QRCodeSegment[]
 
-export const TYPES = Object.freeze([
-  'image/png',
-  'image/jpeg',
-  'image/webp',
-] as const)
+export const TYPES = ['image/png', 'image/jpeg', 'image/webp'] as const
 
 export type QRCodeProps = Omit<QRCodeToDataURLOptions, 'renderOptions'> & {
   quality?: number
   value: QRCodeValue
 }
+
+const MAX_QR_VERSION = 40
 
 export default ({
   props: {
@@ -56,7 +50,7 @@ export default ({
       validator: (version: number) =>
         version === parseInt(String(version), 10) &&
         version >= 1 &&
-        version <= 40,
+        version <= MAX_QR_VERSION,
     },
     errorCorrectionLevel: {
       type: String,
