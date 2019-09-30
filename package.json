@@ -29,7 +29,7 @@
     "@1stg/husky-config": "^0.3.0",
     "@1stg/lint-staged": "^0.8.3",
     "@1stg/postcss-config": "^0.3.0",
-    "@1stg/prettier-config": "^0.2.0",
+    "@1stg/prettier-config": "^0.3.3",
     "@1stg/remark-config": "^0.2.1",
     "@1stg/rollup-config": "^0.9.5",
     "@1stg/stylelint-config": "^0.6.3",
