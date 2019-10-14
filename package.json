@@ -22,7 +22,7 @@
     "type-coverage": "type-coverage --cache --detail --ignore-catch --ignore-files *.d.ts --strict"
   },
   "devDependencies": {
-    "@1stg/babel-preset": "^0.7.4",
+    "@1stg/babel-preset": "^0.7.8",
     "@1stg/browserslist-config": "^0.2.1",
     "@1stg/commitlint-config": "^0.1.0",
     "@1stg/eslint-config": "^0.12.10",
