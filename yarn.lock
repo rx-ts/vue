@@ -28,10 +28,10 @@
   resolved "https://registry.yarnpkg.com/@1stg/browserslist-config/-/browserslist-config-0.2.1.tgz#17f52a729468ba7694d7bbde01ede1e01cd9ad54"
   integrity sha512-IRLw6rH5oEN06ai46D0QG6/pfgUpM9NGpBPlepX5Y/SWEXbUodqWOoOeTAJDbqNyRQPp3w24H+bWF11T9rMqEA==
 
-"@1stg/commitlint-config@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@1stg/commitlint-config/-/commitlint-config-0.1.0.tgz#a6356e5cf0874e8b49041b4f88b9bf3eed9ce8ca"
-  integrity sha512-BwehTDuBUUz0A1R91/HeWFP2IKAQjmxEOOUG3JugXTmx/TLf6SQO7da+qLoP+1+C0gUtT5RliF5dTtc1bS/0jQ==
+"@1stg/commitlint-config@^0.1.2":
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/@1stg/commitlint-config/-/commitlint-config-0.1.2.tgz#aeffce49ae18f8f602e1015aeb42d0bdf2b0075a"
+  integrity sha512-6V7vagiMBa3jBh3bHvHZZPibehDGFSTq/gnbeK1NAg96h4yNqVhyvyPBCIuw9hucDJFMmsgXmd5mq1jE6ZEMMw==
   dependencies:
     "@commitlint/config-conventional" "^8.2.0"
     "@commitlint/config-lerna-scopes" "^8.2.0"
