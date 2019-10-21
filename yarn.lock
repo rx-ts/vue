@@ -69,13 +69,14 @@
   resolved "https://registry.yarnpkg.com/@1stg/husky-config/-/husky-config-0.3.2.tgz#ac0b38630d049b3088576efdb3f241a4a8006ea4"
   integrity sha512-akUH6QKQU8DbBSI0/FP3eQDsteW9/P8cPR9b7+yAaVR4o/NTzOdt6RK3hIM+hD5BKHN/O0mQ3uJm7rxOdG+O8Q==
 
-"@1stg/lint-staged@^0.8.6":
-  version "0.8.6"
-  resolved "https://registry.yarnpkg.com/@1stg/lint-staged/-/lint-staged-0.8.6.tgz#d836667e149af90d803963f13e25cfb8a44909cb"
-  integrity sha512-lpSwLWe7zyvLDNoOu6t5kK3/XiAkHKpnXAYRYqIxaumqGujfStb2hALzJSXBfp+6hjnK7/spVhu/gt7/YX1z+A==
+"@1stg/lint-staged@^0.8.11":
+  version "0.8.11"
+  resolved "https://registry.yarnpkg.com/@1stg/lint-staged/-/lint-staged-0.8.11.tgz#770f8047c51d6076c9d83cac5aa764aa05a004ab"
+  integrity sha512-C0rJ8eRAAl6T3KP84F8mKour+Gf2ebUi8/RwHPu3NatqW++IbxwhThSfvWulmFD7yJqZT78+2ZAZx9X0rsKr2Q==
   dependencies:
     "@prettier/plugin-pug" "^1.0.4"
-    prettier-plugin-sh "^0.2.0"
+    cross-env "^6.0.3"
+    prettier-plugin-sh "^0.2.1"
     prettier-plugin-toml "^0.3.1"
 
 "@1stg/postcss-config@^0.3.3":
@@ -4516,6 +4517,13 @@ cross-env@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-6.0.0.tgz#3c8e71440ea20aa6faaf5aec541235efc565dac6"
   integrity sha512-G/B6gtkjgthT8AP/xN1wdj5Xe18fVyk58JepK8GxpUbqcz3hyWxegocMbvnZK+KoTslwd0ACZ3woi/DVUdVjyQ==
+  dependencies:
+    cross-spawn "^7.0.0"
+
+cross-env@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/cross-env/-/cross-env-6.0.3.tgz#4256b71e49b3a40637a0ce70768a6ef5c72ae941"
+  integrity sha512-+KqxF6LCvfhWvADcDPqo64yVIB31gv/jQulX2NGzKS/g3GEVz6/pt4wjHFtFWsHMddebWD/sDthJemzM4MaAag==
   dependencies:
     cross-spawn "^7.0.0"
 
@@ -10306,10 +10314,10 @@ prettier-plugin-pkg@^0.4.4:
   resolved "https://registry.yarnpkg.com/prettier-plugin-pkg/-/prettier-plugin-pkg-0.4.4.tgz#e7b20cba16995d04fe22b0aa2fe3974d9dc8a757"
   integrity sha512-3rIuIjGLoe8tNdG6I1ybAybNxy3O5SgpZsqypxTzPN4hkBtYbGAhBey1ROclKsFpH6SBYny9Y2djXq9y1b+adQ==
 
-prettier-plugin-sh@^0.2.0:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-sh/-/prettier-plugin-sh-0.2.1.tgz#9729452c216cb43a045d16b40b9881924350c1ac"
-  integrity sha512-wQVIOneOuM1IJmxRHC85t4r5Fvf4XPMrbekJFLWmuWwCFjpvbgzqyoyS2xlP2PzB/obrMc8Vo8TlxBQ+ElgVuA==
+prettier-plugin-sh@^0.2.1:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-sh/-/prettier-plugin-sh-0.2.2.tgz#26714b34324f17884a7d74fee043ff25b462cc1c"
+  integrity sha512-yL7Mdm+GZ7I7OwISZM2Y4NiaZsg1vKMd2JF5ixfa8BwdQCWUltr8gHW5buiaG9KXEvrBhIvoyFm4MsbtzpWtHQ==
   dependencies:
     mvdan-sh "^0.4.0"
 
