@@ -132,17 +132,18 @@
     rollup-plugin-typescript "^1.0.1"
     umd-globals "^0.3.0"
 
-"@1stg/stylelint-config@^0.7.4":
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/@1stg/stylelint-config/-/stylelint-config-0.7.4.tgz#eabff6afcedc693ef6c3e62bbdc601c231960955"
-  integrity sha512-84gvLO2s9tN+/v7GYcIegetEDHw3IGnEofOlLN7FqF0pcJW8R1YLiEK6F+lFvd3NlWuWHxywByJriUfE8QfLpA==
+"@1stg/stylelint-config@^0.7.5":
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/@1stg/stylelint-config/-/stylelint-config-0.7.5.tgz#677abc2327d6d25271632305320f958a3ccc9525"
+  integrity sha512-vq1sYl3qlPhnVn6f8c5YLkZU8zAk9VDtsgQ0ZMP9BKJHCCjov1zIU7CvRw3BFJ6soe4VobDqG/EBinOQx8Tdtw==
   dependencies:
+    "@pkgr/utils" "^0.1.2"
     stylelint-config-prettier "^6.0.0"
     stylelint-config-standard "^19.0.0"
     stylelint-high-performance-animation "^1.3.0"
     stylelint-no-unsupported-browser-features "^3.0.2"
     stylelint-prettier "^1.1.1"
-    stylelint-scss "^3.11.1"
+    stylelint-scss "^3.12.0"
 
 "@1stg/tsconfig@^0.5.1":
   version "0.5.1"
@@ -8070,10 +8071,25 @@ lodash.get@^4.4.2:
   resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
   integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
 
+lodash.isboolean@^3.0.3:
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/lodash.isboolean/-/lodash.isboolean-3.0.3.tgz#6c2e171db2a257cd96802fd43b01b20d5f5870f6"
+  integrity sha1-bC4XHbKiV82WgC/UOwGyDV9YcPY=
+
 lodash.ismatch@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.ismatch/-/lodash.ismatch-4.4.0.tgz#756cb5150ca3ba6f11085a78849645f188f85f37"
   integrity sha1-dWy1FQyjum8RCFp4hJZF8Yj4Xzc=
+
+lodash.isregexp@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/lodash.isregexp/-/lodash.isregexp-4.0.1.tgz#e13e647b30cd559752a04cd912086faf7da1c30b"
+  integrity sha1-4T5kezDNVZdSoEzZEghvr32hwws=
+
+lodash.isstring@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/lodash.isstring/-/lodash.isstring-4.0.1.tgz#d527dfb5456eca7cc9bb95d5daeaf88ba54a5451"
+  integrity sha1-1SfftUVuynzJu5XV2ur4i6VKVFE=
 
 lodash.kebabcase@^4.1.1:
   version "4.1.1"
@@ -13070,12 +13086,14 @@ stylelint-prettier@^1.1.1:
   dependencies:
     prettier-linter-helpers "^1.0.0"
 
-stylelint-scss@^3.11.1:
-  version "3.12.0"
-  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-3.12.0.tgz#8b4e4b365eaa90da99d7fd5256fd9092d3344a8c"
-  integrity sha512-RvZqmCnILJ0etFBjSGTXQKOspYjF+jjtFdUGoqjuis2YILy/3LCtgSdBP2I+LUOfRT+eJFCrb8g+j3ZND4FaNA==
+stylelint-scss@^3.12.0:
+  version "3.13.0"
+  resolved "https://registry.yarnpkg.com/stylelint-scss/-/stylelint-scss-3.13.0.tgz#875c76e61d95333c4f0ae737a310be6f1d27d780"
+  integrity sha512-SaLnvQyndaPcsgVJsMh6zJ1uKVzkRZJx+Wg/stzoB1mTBdEmGketbHrGbMQNymzH/0mJ06zDSpeCDvNxqIJE5A==
   dependencies:
-    lodash "^4.17.15"
+    lodash.isboolean "^3.0.3"
+    lodash.isregexp "^4.0.1"
+    lodash.isstring "^4.0.1"
     postcss-media-query-parser "^0.2.3"
     postcss-resolve-nested-selector "^0.1.1"
     postcss-selector-parser "^6.0.2"
