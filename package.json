@@ -10,70 +10,52 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "parcel packages/*/docs/index.html",
-    "lint:es": "eslint . --ext js,md,mdx,ts,tsx -f friendly",
-    "lint:style": "stylelint **/*.scss",
-    "lint": "run-p lint:*",
-    "build:es": "tsc -b",
-    "build:bundle": "r --prod",
-    "build:docs": "parcel build packages/*/docs/index.html",
     "build": "rimraf dist && run-p build:**",
+    "build:docs": "parcel build packages/*/docs/index.html",
+    "build:r": "r --prod",
+    "build:ts": "tsc -b",
+    "dev": "parcel packages/*/docs/index.html",
+    "lint": "run-p lint:*",
+    "lint:es": "cross-env PARSER_NO_WATCH=true eslint . --cache --ext js,md,mdx,ts,tsx -f friendly",
+    "lint:style": "stylelint '**/*.scss'",
+    "lint:tsc": "tsc --noEmit",
+    "postinstall": "yarn-deduplicate",
     "serve": "serve dist",
-    "type-coverage": "type-coverage --cache --detail --ignore-catch --ignore-files *.d.ts --strict"
+    "type-coverage": "type-coverage --cache --detail --ignore-catch --ignore-files '*.d.ts' --strict"
   },
   "devDependencies": {
-    "@1stg/babel-preset": "^0.7.0",
-    "@1stg/browserslist-config": "^0.2.1",
-    "@1stg/commitlint-config": "^0.1.0",
-    "@1stg/eslint-config": "^0.12.10",
-    "@1stg/husky-config": "^0.3.0",
-    "@1stg/lint-staged": "^0.7.4",
-    "@1stg/postcss-config": "^0.3.0",
-    "@1stg/prettier-config": "^0.2.0",
-    "@1stg/remark-config": "^0.2.1",
-    "@1stg/rollup-config": "^0.9.5",
-    "@1stg/stylelint-config": "^0.6.3",
-    "@1stg/tsconfig": "^0.5.1",
-    "@1stg/tslint-config": "^0.3.3",
-    "@babel/core": "^7.6.0",
-    "@commitlint/cli": "^8.2.0",
-    "@commitlint/config-conventional": "^8.2.0",
+    "@1stg/app-config": "^0.1.21",
+    "@1stg/lib-config": "^0.1.19",
+    "@babel/core": "^7.8.3",
     "@types/classnames": "^2.2.9",
-    "@types/lodash": "^4.14.138",
-    "@types/node": "^12.7.5",
+    "@types/lodash": "^4.14.149",
+    "@types/node": "^13.1.8",
     "@types/qrcode": "^1.3.4",
-    "autoprefixer": "^9.6.1",
-    "browserslist": "^4.7.0",
+    "autoprefixer": "^9.7.4",
     "classnames": "^2.2.6",
-    "core-js": "^3.2.1",
-    "cross-env": "^6.0.0",
-    "eslint": "^6.4.0",
-    "husky": "^3.0.5",
-    "lerna": "^3.16.4",
-    "lerna-changelog": "^0.8.2",
-    "lint-staged": "^9.3.0",
+    "core-js": "^3.6.4",
+    "cross-env": "^6.0.3",
+    "lerna": "^3.20.2",
+    "lerna-changelog": "^1.0.0",
+    "lint-staged": "^9.5.0",
     "lodash": "^4.17.15",
     "npm-run-all": "^4.1.5",
-    "parcel": "^1.12.3",
-    "postcss": "^7.0.18",
-    "prettier": "^1.18.2",
-    "qrcode": "^1.4.2",
+    "parcel": "^1.12.4",
+    "qrcode": "^1.4.4",
     "qrious": "^4.0.2",
-    "react": "^16.9.0",
+    "react": "^16.12.0",
     "rimraf": "^3.0.0",
-    "rollup": "^1.21.4",
-    "rxjs": "^6.5.3",
+    "rxjs": "^6.5.4",
     "sanitize.css": "^11.0.0",
-    "sass": "^1.23.0-module.beta.1",
-    "serve": "^11.1.0",
-    "stylelint": "^11.0.0",
-    "ts-node": "^8.4.1",
-    "tslint": "^5.20.0",
-    "type-coverage": "^2.3.0",
-    "typescript": "^3.6.3",
-    "vue": "^2.6.10",
+    "sass": "^1.24.5",
+    "serve": "^11.3.0",
+    "ts-node": "^8.6.2",
+    "type-coverage": "^2.4.0",
+    "typescript": "^3.7.5",
+    "vue": "^2.6.11",
     "vue-qrcode": "link:packages/vue-qrcode/src",
-    "vue-qrious": "link:packages/vue-qrious/src"
+    "vue-qrious": "link:packages/vue-qrious/src",
+    "yarn-deduplicate": "^1.1.1"
   },
   "alias": {
     "vue": "./node_modules/vue/dist/vue.esm"
@@ -83,28 +65,13 @@
       "@1stg"
     ]
   },
-  "browserslist": [
-    "extends @1stg/browserslist-config"
-  ],
   "commitlint": {
     "extends": [
       "@1stg"
     ]
   },
-  "eslintIgnore": [
-    ".cache",
-    ".parcel-cache",
-    "dist",
-    "lib",
-    "packages/*/CHANGELOG.md",
-    "!.*.js"
-  ],
-  "prettier": "@1stg/prettier-config/vue",
   "renovate": {
     "extends": "@1stg"
-  },
-  "stylelint": {
-    "extends": "@1stg/stylelint-config/scss"
   },
   "typeCoverage": {
     "atLeast": 100

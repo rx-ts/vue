@@ -1,7 +1,6 @@
 *.log
 *.tsbuildinfo
-.cache
-.parcel-cache
+.*cache
 dist
 lib
 node_modules

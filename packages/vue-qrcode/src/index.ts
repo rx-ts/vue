@@ -20,7 +20,7 @@ export const LEVELS = [
 export const MASK_PATTERNS = [0, 1, 2, 3, 4, 5, 6, 7] as const
 
 // eslint-disable-next-line @typescript-eslint/no-type-alias
-export type MaskPattern = (typeof MASK_PATTERNS)[number]
+export type MaskPattern = typeof MASK_PATTERNS[number]
 
 export const MODES = ['alphanumeric', 'numeric', 'kanji', 'byte'] as const
 
@@ -97,7 +97,7 @@ export default ({
   },
   data() {
     return {
-      dataUrl: null,
+      dataUrl: '',
     }
   },
   watch: {

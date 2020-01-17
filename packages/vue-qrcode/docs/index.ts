@@ -14,6 +14,9 @@ const DEFAULT_TEXT = 'http://www.1stg.me'
 new Vue({
   // tslint:disable-line: no-unused-expression
   el: '#app',
+  components: {
+    Qrcode,
+  },
   data() {
     return {
       LEVELS,
@@ -56,8 +59,5 @@ new Vue({
     removeValue(index: number) {
       ;(this.value as QRCodeSegment[]).splice(index, 1)
     },
-  },
-  components: {
-    Qrcode,
   },
 })

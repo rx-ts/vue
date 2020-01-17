@@ -5,6 +5,9 @@ import Qrious, { LEVELS } from 'vue-qrious'
 new Vue({
   // tslint:disable-line: no-unused-expression
   el: '#app',
+  components: {
+    Qrious,
+  },
   data() {
     return {
       LEVELS,
@@ -18,8 +21,5 @@ new Vue({
       size: 100,
       value: 'http://www.1stg.me',
     }
-  },
-  components: {
-    Qrious,
   },
 })
