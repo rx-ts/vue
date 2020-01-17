@@ -114,10 +114,10 @@
     remark-preset-lint-recommended "^3.0.3"
     remark-preset-prettier "^0.2.2"
 
-"@1stg/rollup-config@^0.9.5":
-  version "0.9.5"
-  resolved "https://registry.yarnpkg.com/@1stg/rollup-config/-/rollup-config-0.9.5.tgz#c918cad1ca8687773168f5159deafc66dbd3e074"
-  integrity sha512-7w1nrfmAI0dPlv3dVG7p3RlOLrXvimEZ/hppwdCx43NM4vzFbrMGkBQVwClQkZJJp6FEBqSailozdduYNbWbVA==
+"@1stg/rollup-config@^0.9.7":
+  version "0.9.7"
+  resolved "https://registry.yarnpkg.com/@1stg/rollup-config/-/rollup-config-0.9.7.tgz#b74c8e249e7342cad1c6eee6f3c23f69f185e543"
+  integrity sha512-XLFkx4XIjrZc/br1KZrXCXKP7mMV0AYkZ2DPBuzbLY5vEnff0w6+7hm0RJgiNOrJzyOUb4vTB/O50kbEJab0rA==
   dependencies:
     "@babel/preset-env" "^7.6.0"
     builtin-modules "^3.1.0"

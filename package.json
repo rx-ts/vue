@@ -31,7 +31,7 @@
     "@1stg/postcss-config": "^0.3.3",
     "@1stg/prettier-config": "^0.3.3",
     "@1stg/remark-config": "^0.2.2",
-    "@1stg/rollup-config": "^0.9.5",
+    "@1stg/rollup-config": "^0.9.7",
     "@1stg/stylelint-config": "^0.7.4",
     "@1stg/tsconfig": "^0.5.1",
     "@1stg/tslint-config": "^0.3.3",
