@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/rx-ts/vue/compare/vue-qrcode@0.2.2...vue-qrcode@0.2.3) (2020-01-17)
+
+
+### Bug Fixes
+
+* dataUrl initialize value should be empty string ([846220d](https://github.com/rx-ts/vue/commit/846220ddf5bc47416e144e02ff559f35edc17789))
+
+
+
+
+
 ## [0.2.2](https://github.com/rx-ts/vue/compare/vue-qrcode@0.2.1...vue-qrcode@0.2.2) (2019-09-23)
 
 
