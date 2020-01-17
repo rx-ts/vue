@@ -28,7 +28,7 @@
     "@1stg/eslint-config": "^0.12.10",
     "@1stg/husky-config": "^0.3.2",
     "@1stg/lint-staged": "^0.8.12",
-    "@1stg/postcss-config": "^0.3.3",
+    "@1stg/postcss-config": "^0.3.5",
     "@1stg/prettier-config": "^0.3.3",
     "@1stg/remark-config": "^0.2.2",
     "@1stg/rollup-config": "^0.9.5",
