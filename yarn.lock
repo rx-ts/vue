@@ -149,17 +149,17 @@
   resolved "https://registry.yarnpkg.com/@1stg/tsconfig/-/tsconfig-0.5.1.tgz#69d609085d48ac622220ab51e99f5f2182b35861"
   integrity sha512-6nSDziDeMMDNaeSwwPbaHJ22DckKYmOuq7SuO7WqvIqSmYI9endY2IsHgds07aOmMejRA22djBzzF38+3AFf4Q==
 
-"@1stg/tslint-config@^0.3.3":
-  version "0.3.3"
-  resolved "https://registry.yarnpkg.com/@1stg/tslint-config/-/tslint-config-0.3.3.tgz#c5615dffb4c541262c3b130e2bc291bdc2c353e8"
-  integrity sha512-/xSpcRfMn4tuiZzr+l6yIZTQ3Q4nMBy1SAwN1UmrbxphMIoHsdeHd6phPDKOxh3kz5QSGKIYBBAZMrAStm9vCw==
+"@1stg/tslint-config@^0.3.4":
+  version "0.3.4"
+  resolved "https://registry.yarnpkg.com/@1stg/tslint-config/-/tslint-config-0.3.4.tgz#bac892c67a44faab58b3df1db812609611086368"
+  integrity sha512-av6KC5BhHWdtnon2Gq5Tw+pdinic1gNW71CXuQ8HvUvV6sL8Jw37NxlUXxC44nTx3HXVBXLm8qIYNUQz0Axwxw==
   dependencies:
     codelyzer "^5.1.0"
     rxjs-tslint "^0.1.7"
     tslint-angular "^3.0.2"
     tslint-config-prettier "^1.18.0"
     tslint-plugin-prettier "^2.0.1"
-    tslint-react "^4.0.0"
+    tslint-react "^4.1.0"
 
 "@babel/code-frame@7.0.0", "@babel/code-frame@^7.0.0 <7.4.0":
   version "7.0.0"
@@ -13511,7 +13511,7 @@ tslint-plugin-prettier@^2.0.1:
     lines-and-columns "^1.1.6"
     tslib "^1.7.1"
 
-tslint-react@^4.0.0:
+tslint-react@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/tslint-react/-/tslint-react-4.1.0.tgz#7153b724a8cfbea52423d0ffa469e8eba3bcc834"
   integrity sha512-Y7CbFn09X7Mpg6rc7t/WPbmjx9xPI8p1RsQyiGCLWgDR6sh3+IBSlT+bEkc0PSZcWwClOkqq2wPsID8Vep6szQ==
