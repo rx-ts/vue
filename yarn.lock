@@ -23,10 +23,10 @@
     core-js "^3.2.1"
     fast-async "^7.0.6"
 
-"@1stg/browserslist-config@^0.2.1":
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/@1stg/browserslist-config/-/browserslist-config-0.2.1.tgz#17f52a729468ba7694d7bbde01ede1e01cd9ad54"
-  integrity sha512-IRLw6rH5oEN06ai46D0QG6/pfgUpM9NGpBPlepX5Y/SWEXbUodqWOoOeTAJDbqNyRQPp3w24H+bWF11T9rMqEA==
+"@1stg/browserslist-config@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@1stg/browserslist-config/-/browserslist-config-0.2.3.tgz#9a11391448099adc57938225453738f492a1f599"
+  integrity sha512-rn9zmj5TT7cJQDsG056jBP1M+2gVllOv2+K1FW2NZmpDS9EF6irSNBEGNByb+SbCJe1tMiw9vvw8hMcyNBO9qA==
 
 "@1stg/commitlint-config@^0.1.2":
   version "0.1.2"
