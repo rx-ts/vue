@@ -47,7 +47,7 @@
     "rimraf": "^3.0.0",
     "rxjs": "^6.5.4",
     "sanitize.css": "^11.0.0",
-    "sass": "^1.24.5",
+    "sass": "^1.25.0",
     "serve": "^11.3.0",
     "ts-node": "^8.6.2",
     "type-coverage": "^2.4.0",
