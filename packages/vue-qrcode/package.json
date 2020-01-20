@@ -24,7 +24,7 @@
     "vue"
   ],
   "peerDependencies": {
-    "qrcode": "^1.0.0",
+    "qrcode": "^1.4.4",
     "vue": "^2.0.0"
   },
   "sideEffects": false
