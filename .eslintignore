@@ -1,5 +1,5 @@
+!/.*.js
 .*cache
 dist
 lib
 packages/*/CHANGELOG.md
-!.*.js
