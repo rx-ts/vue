@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "@1stg/app-config": "^0.1.21",
-    "@1stg/lib-config": "^0.1.19",
+    "@1stg/lib-config": "^0.1.21",
     "@types/classnames": "^2.2.9",
     "@types/lodash": "^4.14.149",
     "@types/node": "^13.5.0",
