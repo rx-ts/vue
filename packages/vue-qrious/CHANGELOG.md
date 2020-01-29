@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.5.1 (2020-01-29)
+
+
+### Bug Fixes
+
+* incorrect pkg contents ([f0ea685](https://github.com/rx-ts/vue/commit/f0ea685c51d95e9ce24c91e2e4cd1d955b7c46aa))
+
+
+
+
+
 # [1.5.0](https://github.com/rx-ts/vue/compare/vue-qrious@1.4.3...vue-qrious@1.5.0) (2020-01-29)
 
 
