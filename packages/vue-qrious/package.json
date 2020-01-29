@@ -18,7 +18,8 @@
     "lib",
     "src",
     "qrious.d.ts",
-    "typings.d.ts"
+    "typings.d.ts",
+    "!lib/*.tsbuildinfo"
   ],
   "keywords": [
     "vue-qrcode",

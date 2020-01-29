@@ -7,7 +7,7 @@ import Qrcode, {
   QRCodeSegment,
   QRCodeValue,
   TYPES,
-} from 'vue-qrcode'
+} from '..'
 
 const DEFAULT_TEXT = 'http://www.1stg.me'
 

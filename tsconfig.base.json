@@ -1,5 +1,5 @@
 {
-  "extends": "@1stg/tsconfig/tsconfig",
+  "extends": "@1stg/tsconfig/lib",
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

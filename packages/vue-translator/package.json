@@ -26,12 +26,5 @@
   "peerDependencies": {
     "vue": "^2.0.0"
   },
-  "sideEffects": false,
-  "devDependencies": {
-    "@vue/component-compiler-utils": "^3.1.1",
-    "vue-template-compiler": "^2.6.11"
-  },
-  "dependencies": {
-    "vue-hot-reload-api": "^2.3.4"
-  }
+  "sideEffects": false
 }

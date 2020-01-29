@@ -10,8 +10,9 @@ jobs:
         os: [macOS-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-node@v1
+      - uses: actions/checkout@master
+
+      - uses: actions/setup-node@master
         with:
           node-version: ${{ matrix.node }}
 
@@ -19,6 +20,17 @@ jobs:
         run: |
           curl -o- -L https://yarnpkg.com/install.sh | bash
           export PATH="$HOME/.yarn/bin:$PATH"
+
+      - name: Get yarn cache
+        id: yarn-cache
+        run: echo "::set-output name=dir::$(yarn cache dir)"
+
+      - uses: actions/cache@v1
+        with:
+          path: ${{ steps.yarn-cache.outputs.dir }}
+          key: ${{ matrix.os }}-${{ matrix.node }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ matrix.os }}-${{ matrix.node }}-yarn-
 
       - name: Install Dependencies
         run: yarn --frozen-lockfile
@@ -61,12 +73,9 @@ jobs:
           git remote set-url origin "https://$GITHUB_ACTOR:$GH_TOKEN@github.com/$GITHUB_REPOSITORY.git"
           git checkout master
           npm set //registry.npmjs.org/:_authToken $NPM_TOKEN
-          yarn global add lerna-changelog
-          lerna-changelog
           yarn lerna publish --create-release github --yes
         env:
           CI: 'true'
-          GITHUB_AUTH: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 

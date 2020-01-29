@@ -16,7 +16,8 @@
   "types": "lib",
   "files": [
     "lib",
-    "src"
+    "src",
+    "!lib/*.tsbuildinfo"
   ],
   "keywords": [
     "vue-qrcode",
