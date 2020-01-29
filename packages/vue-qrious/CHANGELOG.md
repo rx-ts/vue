@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.5.0](https://github.com/rx-ts/vue/compare/vue-qrious@1.4.3...vue-qrious@1.5.0) (2020-01-29)
+
+
+### Features
+
+* **vue-translator:** migrate to lerna monorepo ([1e3ce18](https://github.com/rx-ts/vue/commit/1e3ce180af238aa612b28f2b7944f5eeb9664c40))
+
+
+
+
+
 ## [1.4.3](https://github.com/rx-ts/vue/compare/vue-qrious@1.4.2...vue-qrious@1.4.3) (2020-01-17)
 
 
