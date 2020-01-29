@@ -5,3 +5,4 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 - [vue-qrcode](./packages/vue-qrcode/CHANGELOG.md)
 - [vue-qrious](./packages/vue-qrious/CHANGELOG.md)
+- [vue-translator](./packages/vue-translator/CHANGELOG.md)

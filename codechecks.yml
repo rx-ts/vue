@@ -5,8 +5,7 @@ checks:
         - path: 'packages/*/lib/esm.min.js'
   - name: type-coverage-watcher
     options:
-      atLeast: 100
+      atLeast: 98.6
       ignoreCatch: true
       ignoreFiles:
         - '**/*.d.ts'
-      strict: true

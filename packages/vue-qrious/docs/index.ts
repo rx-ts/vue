@@ -1,4 +1,5 @@
 import Vue from 'vue'
+
 import Qrious, { LEVELS } from 'vue-qrious'
 
 // eslint-disable-next-line no-new

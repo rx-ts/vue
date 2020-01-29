@@ -29,6 +29,7 @@ jobs:
         run: |
           yarn build
           yarn lint
+          yarn test
         env:
           EFF_NO_LINK_RULES: 'true'
           PARSER_NO_WATCH: 'true'
@@ -38,8 +39,7 @@ jobs:
         run: |
           yarn global add codecov codacy-coverage
           codecov
-        # FIXME: it's not working temporarily
-        # cat ./coverage/lcov.info | codacy-coverage -u JounQin -n rx-ts/vue
+          cat ./coverage/lcov.info | codacy-coverage -u rx-ts -n vue
         env:
           CI: 'true'
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
@@ -47,7 +47,7 @@ jobs:
           CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
 
       - name: Code Checks
-        if: matrix.os == 'macOS-latest'
+        if: matrix.os == 'macOS-latest' && github.event_name == 'push'
         run: |
           yarn global add @codechecks/client @codechecks/build-size-watcher @codechecks/type-coverage-watcher typescript
           codechecks

@@ -1,7 +1,6 @@
 {
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "incremental": false,
     "noEmit": true
   },
   "references": [
@@ -10,6 +9,9 @@
     },
     {
       "path": "packages/vue-qrious"
+    },
+    {
+      "path": "packages/vue-translator"
     }
   ]
 }

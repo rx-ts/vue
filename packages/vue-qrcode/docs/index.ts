@@ -1,4 +1,5 @@
 import Vue from 'vue'
+
 import Qrcode, {
   LEVELS,
   MASK_PATTERNS,

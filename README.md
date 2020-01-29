@@ -34,25 +34,26 @@
 
 ## Homepage
 
-<a href="https://rx-vue.now.sh" target="_blank">rx-vue</a>
+<a href="https://vue-rx.now.sh" target="_blank">vue-rx</a>
 
 ## Packages
 
 This repository is a monorepo managed by [Lerna][] what means we actually publish several packages to npm from same codebase, including:
 
-| Package                              | Description                                               | Version                                                                                         | Peer Dependencies                                                                                                                                            | Dependencies                                                                                                                             |
-| ------------------------------------ | --------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| [`vue-qrcode`](/packages/vue-qrcode) | 🤳 A Vue component for QR code generation with [qrcode][] | [![npm](https://img.shields.io/npm/v/vue-qrcode.svg)](https://www.npmjs.com/package/vue-qrcode) | [![David Peer](https://img.shields.io/david/peer/rx-ts/vue.svg?path=packages/vue-qrcode)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrcode&type=peer) | [![David](https://img.shields.io/david/rx-ts/vue.svg?path=packages/vue-qrcode)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrcode) |
-| [`vue-qrious`](/packages/vue-qrious) | 🤳 A Vue component for QR code generation with [qrious][] | [![npm](https://img.shields.io/npm/v/vue-qrious.svg)](https://www.npmjs.com/package/vue-qrious) | [![David Peer](https://img.shields.io/david/peer/rx-ts/vue.svg?path=packages/vue-qrious)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrious&type=peer) | [![David](https://img.shields.io/david/rx-ts/vue.svg?path=packages/vue-qrious)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrious) |
+| Package                                      | Description                                                                     | Version                                                                                                 | Peer Dependencies                                                                                                                                                    | Dependencies                                                                                                                                     |
+| -------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| [`vue-qrcode`](/packages/vue-qrcode)         | 🤳 A Vue component for QR code generation with [qrcode][]                       | [![npm](https://img.shields.io/npm/v/vue-qrcode.svg)](https://www.npmjs.com/package/vue-qrcode)         | [![David Peer](https://img.shields.io/david/peer/rx-ts/vue.svg?path=packages/vue-qrcode)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrcode&type=peer)         | [![David](https://img.shields.io/david/rx-ts/vue.svg?path=packages/vue-qrcode)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrcode)         |
+| [`vue-qrious`](/packages/vue-qrious)         | 🤳 A Vue component for QR code generation with [qrious][]                       | [![npm](https://img.shields.io/npm/v/vue-qrious.svg)](https://www.npmjs.com/package/vue-qrious)         | [![David Peer](https://img.shields.io/david/peer/rx-ts/vue.svg?path=packages/vue-qrious)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrious&type=peer)         | [![David](https://img.shields.io/david/rx-ts/vue.svg?path=packages/vue-qrious)](https://david-dm.org/rx-ts/vue?path=packages/vue-qrious)         |
+| [`vue-translator`](/packages/vue-translator) | A deadly simple i18n translate plugin for Vue, ready for Server Side Rendering. | [![npm](https://img.shields.io/npm/v/vue-translator.svg)](https://www.npmjs.com/package/vue-translator) | [![David Peer](https://img.shields.io/david/peer/rx-ts/vue.svg?path=packages/vue-translator)](https://david-dm.org/rx-ts/vue?path=packages/vue-translator&type=peer) | [![David](https://img.shields.io/david/rx-ts/vue.svg?path=packages/vue-translator)](https://david-dm.org/rx-ts/vue?path=packages/vue-translator) |
 
 ## Install
 
 ```sh
 # yarn
-yarn add vue-{qrcode,qrious}
+yarn add vue-{qrcode,qrious,translator}
 
 # npm
-npm i vue-{qrcode,qrious}
+npm i vue-{qrcode,qrious,translator}
 ```
 
 ## Changelog

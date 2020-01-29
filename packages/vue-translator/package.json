@@ -1,0 +1,37 @@
+{
+  "name": "vue-translator",
+  "version": "0.8.0",
+  "description": "A deadly simple i18n translate plugin for Vue, ready for Server Side Rendering.",
+  "repository": "git@github.com:rx-ts/vue.git",
+  "homepage": "https://github.com/rx-ts/vue/blob/master/packages/vue-translator",
+  "author": "JounQin <admin@1stg.me>",
+  "license": "MIT",
+  "main": "lib/cjs",
+  "module": "lib",
+  "jsdelivr": "lib/umd",
+  "unpkg": "lib/umd",
+  "es2015": "lib/es2015",
+  "esm5": "lib",
+  "fesm5": "lib/esm",
+  "types": "lib",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "keywords": [
+    "vue-translate",
+    "vue-translator",
+    "vue"
+  ],
+  "peerDependencies": {
+    "vue": "^2.0.0"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "@vue/component-compiler-utils": "^3.1.1",
+    "vue-template-compiler": "^2.6.11"
+  },
+  "dependencies": {
+    "vue-hot-reload-api": "^2.3.4"
+  }
+}

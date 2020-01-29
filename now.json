@@ -16,12 +16,15 @@
   ],
   "routes": [
     {
-      "src": "/vue-qrious/*",
-      "dest": "vue-qrious/docs/index.html"
+      "src": "/vue-(?<id>[^/]*)",
+      "dest": "/vue-$id/docs/index.html"
     },
     {
       "src": "/*",
-      "dest": "vue-qrcode/docs/index.html"
+      "status": 301,
+      "headers": {
+        "Location": "/vue-translator"
+      }
     }
   ]
 }

@@ -1,3 +1,17 @@
 {
-  "extends": "@1stg"
+  "extends": "@1stg",
+  "overrides": [
+    {
+      "files": "**/docs/**",
+      "rules": {
+        "node/no-extraneous-import": 0
+      }
+    },
+    {
+      "files": "**/test/**",
+      "rules": {
+        "@typescript-eslint/unbound-method": 0
+      }
+    }
+  ]
 }

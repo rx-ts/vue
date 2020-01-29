@@ -1,5 +1,6 @@
 !/.*.js
 .*cache
+coverage
 dist
 lib
 packages/*/CHANGELOG.md
