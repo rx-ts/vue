@@ -22,7 +22,8 @@
     },
     "publish": {
       "ignoreChanges": [
-        "**/docs/**",
+        "**/.*/**",
+        "**/test/**",
         "**/test/**",
         "**/tsconfig.json",
         "**/*.md",

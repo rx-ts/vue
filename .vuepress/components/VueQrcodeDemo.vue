@@ -4,58 +4,64 @@
       <li>
         <label>version</label>
         <select v-model="version">
-          <option v-for="v of 40" :value="v">{{ v }}</option>
+          <option v-for="v of 40" :key="v" :value="v">{{ v }}</option>
         </select>
       </li>
       <li>
         <label>errorCorrectionLevel</label>
         <select v-model="errorCorrectionLevel">
-          <option v-for="level of LEVELS" :value="level">{{ level }}</option>
+          <option v-for="level of LEVELS" :key="level" :value="level">
+            {{ level }}
+          </option>
         </select>
       </li>
       <li>
         <label>maskPattern</label>
         <select v-model="maskPattern">
-          <option v-for="pattern of MASK_PATTERNS" :value="pattern">
+          <option
+            v-for="pattern of MASK_PATTERNS"
+            :key="pattern"
+            :value="pattern"
+          >
             {{ pattern }}
           </option>
         </select>
       </li>
       <li>
         <label>margin</label>
-        <input type="number" v-model.number="margin" />
+        <input v-model.number="margin" type="number" />
       </li>
       <li></li>
       <li>
         <label>scale</label>
-        <input type="number" v-model.number="scale" />
+        <input v-model.number="scale" type="number" />
       </li>
       <li>
         <label>width</label>
-        <input type="number" v-model.number="width" />
+        <input v-model.number="width" type="number" />
       </li>
       <li>
         <label>color.dark</label>
-        <input type="color" v-model="color.dark" />
+        <input v-model="color.dark" type="color" />
       </li>
       <li>
         <label>color.light</label>
-        <input type="color" v-model="color.light" />
+        <input v-model="color.light" type="color" />
       </li>
       <li>
         <label>type</label>
         <select v-model="type">
-          <option v-for="t of TYPES" :value="t">{{ t }}</option>
+          <option v-for="t of TYPES" :key="t" :value="t">{{ t }}</option>
         </select>
       </li>
       <li>
         <label>quality</label>
-        <input type="number" step="0.01" v-model.number="quality" />
+        <input v-model.number="quality" type="number" step="0.01" />
       </li>
       <li>
         <label>
           manualMode
-          <input type="checkbox" v-model="manualMode" />
+          <input v-model="manualMode" type="checkbox" />
         </label>
       </li>
       <li>
@@ -64,25 +70,25 @@
           <button v-if="manualMode" @click="addValue">+</button>
         </label>
         <ul v-if="manualMode">
-          <li v-for="(v, index) of value">
+          <li v-for="(v, index) of value" :key="v">
             <label v-if="value.length">
               <button @click="removeValue(index)">-</button>
             </label>
             <div>
               <label>mode</label>
               <select v-model="v.mode">
-                <option v-for="mode of MODES" :value="mode">
+                <option v-for="mode of MODES" :key="mode" :value="mode">
                   {{ mode }}
                 </option>
               </select>
             </div>
             <div>
               <label>data</label>
-              <textarea rows="6" cols="80" v-model="v.data"></textarea>
+              <textarea v-model="v.data" rows="6" cols="80"></textarea>
             </div>
           </li>
         </ul>
-        <textarea v-else rows="6" cols="80" v-model="value"></textarea>
+        <textarea v-else v-model="value" rows="6" cols="80"></textarea>
       </li>
     </ul>
     <vue-qrcode v-bind="$data" />
@@ -90,6 +96,7 @@
 </template>
 <script lang="ts">
 import Vue from 'vue'
+
 import VueQrcode, {
   LEVELS,
   MASK_PATTERNS,

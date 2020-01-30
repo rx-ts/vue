@@ -3,24 +3,24 @@
     <ul class="lists">
       <li>
         <label>background(color)</label>
-        <input type="color" v-model="background" />
+        <input v-model="background" type="color" />
       </li>
       <li>
         <label>backgroundAlpha(0.1-1.0)</label>
-        <input type="number" v-model.number="backgroundAlpha" />
+        <input v-model.number="backgroundAlpha" type="number" />
       </li>
       <li>
         <label>foreground(color)</label>
-        <input type="color" v-model="foreground" />
+        <input v-model="foreground" type="color" />
       </li>
       <li>
         <label>foregroundAlpha(0.1-1.0)</label>
-        <input type="number" v-model.number="foregroundAlpha" />
+        <input v-model.number="foregroundAlpha" type="number" />
       </li>
       <li>
         <label>level</label>
         <select v-model="level">
-          <option v-for="l of LEVELS" :value="l">{{ l }}</option>
+          <option v-for="l of LEVELS" :key="l" :value="l">{{ l }}</option>
         </select>
       </li>
       <li>
@@ -32,15 +32,15 @@
       </li>
       <li>
         <label>padding(px)</label>
-        <input type="number" v-model.number="padding" />
+        <input v-model.number="padding" type="number" />
       </li>
       <li>
         <label>size(px)</label>
-        <input type="number" v-model.number="size" />
+        <input v-model.number="size" type="number" />
       </li>
       <li>
         <label>value</label>
-        <textarea rows="6" cols="80" v-model="value"></textarea>
+        <textarea v-model="value" rows="6" cols="80"></textarea>
       </li>
     </ul>
     <client-only>

@@ -67,6 +67,9 @@
   </table>
 </template>
 <script>
+// eslint-disable-next-line import/no-unresolved
+import { setItem } from '@@/utils'
+
 const CustomEl = {
   name: 'custom-el',
   translator: {
@@ -81,6 +84,7 @@ const CustomEl = {
     return h('div', null, [this.$t('x_man')])
   },
 }
+
 export default {
   components: {
     CustomEl,
@@ -142,6 +146,7 @@ export default {
       console.log('curr:', curr)
       setItem('locale', curr)
 
+      // eslint-disable-next-line no-magic-numbers
       if (++this.changed % 3 === 0) {
         alert(`you have changed locale ${this.changed} times!`)
       }
