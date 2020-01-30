@@ -2,11 +2,23 @@
 
 > A deadly simple i18n translate plugin for Vue, ready for Server Side Rendering.
 
+## TOC <!-- omit in toc -->
+
+- [Demo](#demo)
+- [Usage](#usage)
+  - [Basic Usage](#basic-usage)
+  - [SSR related](#ssr-related)
+- [template syntax](#template-syntax)
+- [Changelog](#changelog)
+- [License](#license)
+
 ## Demo
 
-client side rendering: <https://vue-rx.now.sh/vue-translator>
+- client side rendering
 
-server side rendering: <https://rubick.1stg.me> ([source code](https://github.com/JounQin/Rubick))
+<VueTranslatorDemo />
+
+- [server side rendering](https://rubick.1stg.me) ([source code](https://github.com/JounQin/Rubick))
 
 ## Usage
 
@@ -200,6 +212,14 @@ new Vue({
 })
 ```
 
-## Feature Request or Troubleshooting
+## Changelog
 
-Feel free to [create an issue](https://github.com/JounQin/vue-translator/issues/new).
+Detailed changes for each release are documented in [CHANGELOG.md](./CHANGELOG.md).
+
+## License
+
+[MIT][] © [JounQin][]@[1stG.me][]
+
+[1stg.me]: https://www.1stg.me
+[jounqin]: https://GitHub.com/JounQin
+[mit]: http://opensource.org/licenses/MIT

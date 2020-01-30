@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "@@/*": ["./*"],
       "vue-qrcode": ["packages/vue-qrcode/src"],
       "vue-qrious": ["packages/vue-qrious/src"],
       "vue-translator": ["packages/vue-translator/src"]

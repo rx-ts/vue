@@ -13,18 +13,5 @@
       "src": "package.json",
       "use": "@now/static-build"
     }
-  ],
-  "routes": [
-    {
-      "src": "/vue-(?<id>[^/]*)",
-      "dest": "/vue-$id/docs/index.html"
-    },
-    {
-      "src": "/*",
-      "status": 301,
-      "headers": {
-        "Location": "/vue-translator"
-      }
-    }
   ]
 }
