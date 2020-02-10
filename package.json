@@ -55,7 +55,7 @@
     "vue-template-compiler": "^2.6.11",
     "vuepress": "^1.2.0",
     "vuepress-plugin-typescript": "^0.1.1",
-    "vuepress-types": "^0.8.0",
+    "vuepress-types": "^0.8.1",
     "yarn-deduplicate": "^1.1.1"
   },
   "resolutions": {
