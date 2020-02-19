@@ -47,7 +47,7 @@
     "sass": "^1.25.0",
     "sass-loader": "^8.0.2",
     "serve": "^11.3.0",
-    "ts-jest": "^25.0.0",
+    "ts-jest": "^25.2.1",
     "ts-node": "^8.6.2",
     "type-coverage": "^2.4.0",
     "typescript": "^3.7.5",
