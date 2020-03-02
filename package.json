@@ -56,7 +56,7 @@
     "vuepress": "^1.2.0",
     "vuepress-plugin-typescript": "^0.1.1",
     "vuepress-types": "^0.8.0",
-    "yarn-deduplicate": "^1.1.1"
+    "yarn-deduplicate": "^2.0.0"
   },
   "resolutions": {
     "@babel/core": "^7.8.3",
