@@ -60,7 +60,7 @@
   },
   "resolutions": {
     "@babel/core": "^7.8.3",
-    "imagemin-gifsicle": "^6.0.1",
+    "imagemin-gifsicle": "^7.0.0",
     "webpack-chain": "^6.3.1"
   },
   "babel": {
