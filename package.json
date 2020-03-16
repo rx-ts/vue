@@ -61,7 +61,7 @@
   "resolutions": {
     "@babel/core": "^7.8.3",
     "imagemin-gifsicle": "^6.0.1",
-    "webpack-chain": "^6.3.1"
+    "webpack-chain": "^6.4.0"
   },
   "babel": {
     "presets": [
