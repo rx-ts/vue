@@ -59,7 +59,7 @@
     "yarn-deduplicate": "^1.1.1"
   },
   "resolutions": {
-    "@babel/core": "^7.8.3",
+    "@babel/core": "^7.9.0",
     "imagemin-gifsicle": "^6.0.1",
     "webpack-chain": "^6.3.1"
   },
