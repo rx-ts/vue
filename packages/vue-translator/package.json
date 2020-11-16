@@ -1,6 +1,6 @@
 {
   "name": "vue-translator",
-  "version": "0.9.4",
+  "version": "0.9.5",
   "description": "A deadly simple i18n translate plugin for Vue, ready for Server Side Rendering.",
   "repository": "git@github.com:rx-ts/vue.git",
   "homepage": "https://github.com/rx-ts/vue/blob/master/packages/vue-translator",
