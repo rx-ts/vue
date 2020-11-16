@@ -3,7 +3,7 @@ import QRCode, {
   QRCodeSegment as _QRCodeSegment,
   QRCodeToDataURLOptions,
 } from 'qrcode'
-import Vue, { ComponentOptions } from 'vue'
+import * as Vue from 'vue'
 
 export const LEVELS = [
   'low',
@@ -43,7 +43,7 @@ export type QRCodeProps = Omit<QRCodeToDataURLOptions, 'renderOptions'> & {
 
 const MAX_QR_VERSION = 40
 
-export default ({
+export default {
   props: {
     version: {
       type: Number,
@@ -106,31 +106,45 @@ export default ({
     $props: {
       deep: true,
       immediate: true,
-      handler: 'toDataURL',
-    },
-  },
-  methods: {
-    toDataURL(this: { $props: QRCodeProps; dataUrl: string; value: string }) {
-      const { quality, ...props } = this.$props
-      return QRCode.toDataURL(
-        this.value,
-        Object.assign(
-          props,
-          quality == null || {
-            renderOptions: {
-              quality,
+      handler(this: { $props: QRCodeProps; dataUrl: string; value: string }) {
+        const { quality, ...props } = this.$props
+        return QRCode.toDataURL(
+          this.value,
+          Object.assign(
+            props,
+            quality == null || {
+              renderOptions: {
+                quality,
+              },
             },
-          },
-        ),
-      ).then(dataUrl => (this.dataUrl = dataUrl))
+          ),
+        ).then(dataUrl => (this.dataUrl = dataUrl))
+      },
     },
   },
-  render(this: Vue & { dataUrl: string }) {
-    return this.$createElement('img', {
-      domProps: {
-        ...this.$attrs,
-        src: this.dataUrl,
-      },
-    })
+  // ! hack, compatible with Vue2 and Vue3 at the same time
+  render(
+    this: Vue & {
+      dataUrl: string
+    },
+    h,
+  ) {
+    // @ts-expect-error
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, import/namespace
+    const vueH = Vue.h
+    const imgProps = {
+      ...this.$attrs,
+      src: this.dataUrl,
+    }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
+    return h(
+      'img',
+      // @ts-expect-error
+      vueH
+        ? imgProps
+        : {
+            domProps: imgProps,
+          },
+    )
   },
-} as unknown) as ComponentOptions<Vue>
+} as Vue.ComponentOptions<Vue>

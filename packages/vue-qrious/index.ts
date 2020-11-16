@@ -45,12 +45,29 @@ export default {
       },
     },
   },
-  render(this: Vue & { dataUrl: string }) {
-    return this.$createElement('img', {
-      domProps: {
-        ...this.$attrs,
-        src: this.dataUrl,
-      },
-    })
+  // ! hack, compatible with Vue2 and Vue3 at the same time
+  render(
+    this: Vue & {
+      dataUrl: string
+    },
+    h,
+  ) {
+    // @ts-expect-error
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, import/namespace
+    const vueH = Vue.h
+    const imgProps = {
+      ...this.$attrs,
+      src: this.dataUrl,
+    }
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-call, @typescript-eslint/no-unsafe-return
+    return h(
+      'img',
+      // @ts-expect-error
+      vueH
+        ? imgProps
+        : {
+            domProps: imgProps,
+          },
+    )
   },
-}
+} as Vue.ComponentOptions<Vue>
