@@ -91,10 +91,13 @@
         <textarea v-else v-model="value" rows="6" cols="80"></textarea>
       </li>
     </ul>
-    <vue-qrcode v-bind="$data" />
+    <a download="qrcode-demo.png" href>
+      <vue-qrcode v-bind="qrcodeProps" />
+    </a>
   </div>
 </template>
 <script lang="ts">
+import { pick } from 'lodash'
 import Vue from 'vue'
 
 import VueQrcode, {
@@ -107,6 +110,20 @@ import VueQrcode, {
 } from 'vue-qrcode'
 
 const DEFAULT_TEXT = 'http://www.1stg.me'
+
+const QRCODE_PROPS = [
+  'version',
+  'errorCorrectionLevel',
+  'maskPattern',
+  'margin',
+  'scale',
+  'width',
+  'color',
+  'type',
+  'quality',
+  'value',
+  'manualMode',
+]
 
 export default Vue.extend({
   components: {
@@ -133,6 +150,11 @@ export default Vue.extend({
       value: DEFAULT_TEXT as QRCodeValue,
       manualMode: false,
     }
+  },
+  computed: {
+    qrcodeProps() {
+      return pick(this, QRCODE_PROPS)
+    },
   },
   watch: {
     manualMode() {

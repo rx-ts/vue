@@ -21,6 +21,7 @@ module.exports = {
     config.plugin('injections').tap(([options]) => [
       Object.assign(options, {
         'process.env.VUE_ENV': JSON.stringify(isServer ? 'server' : 'client'),
+        global: isServer ? 'global' : 'window',
       }),
     ])
   },

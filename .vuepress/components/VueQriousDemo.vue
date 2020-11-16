@@ -44,12 +44,28 @@
       </li>
     </ul>
     <client-only>
-      <vue-qrious v-bind="$data" />
+      <a download="qrious-demo.png" href>
+        <vue-qrious v-bind="qriousProps" />
+      </a>
     </client-only>
   </div>
 </template>
 <script>
+import { pick } from 'lodash'
+
 import VueQrious, { LEVELS } from 'vue-qrious'
+
+const QRIOUS_PROPS = [
+  'background',
+  'backgroundAlpha',
+  'foreground',
+  'foregroundAlpha',
+  'level',
+  'mime',
+  'padding',
+  'size',
+  'value',
+]
 
 export default {
   components: {
@@ -68,6 +84,11 @@ export default {
       size: 100,
       value: 'http://www.1stg.me',
     }
+  },
+  computed: {
+    qriousProps() {
+      return pick(this, QRIOUS_PROPS)
+    },
   },
 }
 </script>
