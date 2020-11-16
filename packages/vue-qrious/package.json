@@ -15,6 +15,7 @@
   "types": "lib",
   "files": [
     "!lib/*.tsbuildinfo",
+    "index.ts",
     "lib",
     "qrious.d.ts",
     "typings.d.ts"

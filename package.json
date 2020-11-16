@@ -81,6 +81,6 @@
     "preset": "ts-jest"
   },
   "typeCoverage": {
-    "atLeast": 99.18
+    "atLeast": 99.21
   }
 }

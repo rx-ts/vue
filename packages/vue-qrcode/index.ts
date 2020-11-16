@@ -132,6 +132,8 @@ export default {
     // @ts-expect-error
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, import/namespace
     const vueH = Vue.h
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    h = vueH || h
     const imgProps = {
       ...this.$attrs,
       src: this.dataUrl,
