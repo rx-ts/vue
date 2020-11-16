@@ -17,7 +17,7 @@ const { defineReactive } = Vue.util
 
 let translations: Translations
 
-const getValue = (input: unknown, key: string): string => {
+const getValue = (input: unknown, key: string): string | undefined => {
   key = key.replace(/\[(\d+)]/g, '.$1')
   let value = input
 
@@ -72,6 +72,7 @@ export const createTranslator = (
     ) {
       Vue.util.warn('translations should only be injected once!')
     }
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
   } else if (process.env.NODE_ENV === 'development' && !translations) {
     Vue.util.warn('translations has not be injected, translator will not work!')
   }
@@ -105,11 +106,10 @@ export const createTranslator = (
       }
     }
 
-    value =
-      value &&
-      value.replace(/{([^{}]+)}/g, (_matched, $0: string) =>
-        getValue(params, $0.trim()),
-      )
+    value = value?.replace(
+      /{([^{}]+)}/g,
+      (_matched, $0: string) => getValue(params, $0.trim())!,
+    )
     return value == null ? key : value
   }
 

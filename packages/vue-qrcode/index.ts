@@ -48,7 +48,7 @@ export default ({
     version: {
       type: Number,
       validator: (version: number) =>
-        version === parseInt(String(version), 10) &&
+        version === Number.parseInt(String(version), 10) &&
         version >= 1 &&
         version <= MAX_QR_VERSION,
     },
@@ -79,7 +79,9 @@ export default ({
     quality: {
       type: Number,
       validator: (quality: number) =>
-        quality === parseFloat(String(quality)) && quality >= 0 && quality <= 1,
+        quality === Number.parseFloat(String(quality)) &&
+        quality >= 0 &&
+        quality <= 1,
     },
     value: {
       type: [String, Array],

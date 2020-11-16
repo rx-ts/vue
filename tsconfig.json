@@ -13,5 +13,6 @@
     {
       "path": "packages/vue-translator"
     }
-  ]
+  ],
+  "exclude": ["**/test/**"]
 }

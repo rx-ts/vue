@@ -8,16 +8,14 @@
   "license": "MIT",
   "main": "lib/cjs",
   "module": "lib",
+  "es2015": "lib/es2015",
+  "fesm5": "lib/esm",
   "jsdelivr": "lib/umd",
   "unpkg": "lib/umd",
-  "es2015": "lib/es2015",
-  "esm5": "lib",
-  "fesm5": "lib/esm",
   "types": "lib",
   "files": [
-    "lib",
-    "src",
-    "!lib/*.tsbuildinfo"
+    "!lib/*.tsbuildinfo",
+    "lib"
   ],
   "keywords": [
     "vue-qrcode",
@@ -28,5 +26,6 @@
     "qrcode": "^1.0.0",
     "vue": "^2.0.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "esm5": "lib"
 }

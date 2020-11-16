@@ -4,7 +4,7 @@ export const getItem = (sKey: string) => {
       document.cookie.replace(
         new RegExp(
           '(?:(?:^|.*;)\\s*' +
-            encodeURIComponent(sKey).replace(/[*+\-.]/g, '\\$&') +
+            encodeURIComponent(sKey).replace(/[*+.-]/g, '\\$&') +
             '\\s*\\=\\s*([^;]*).*$)|^.*$',
         ),
         '$1',

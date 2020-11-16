@@ -4,8 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@@/*": ["./*"],
-      "vue-qrcode": ["packages/vue-qrcode/src"],
-      "vue-qrious": ["packages/vue-qrious/src"],
+      "vue-qrcode": ["packages/vue-qrcode"],
+      "vue-qrious": ["packages/vue-qrious"],
       "vue-translator": ["packages/vue-translator/src"]
     },
     "typeRoots": ["./node_modules/@types", "./node_modules/@d-ts"]

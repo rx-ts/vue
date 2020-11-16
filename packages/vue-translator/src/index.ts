@@ -21,6 +21,7 @@ declare module 'vue/types/vue' {
   interface VueConstructor {
     translator: Translator
     util: {
+      // eslint-disable-next-line @typescript-eslint/ban-types
       defineReactive: (obj: object, key: string, val: unknown) => void
       warn: (msg: string) => void
     }
@@ -40,7 +41,7 @@ const VueTranslator = (
   $Vue: VueConstructor,
   options: string | VueTranslatorOptions,
   // eslint-disable-next-line sonarjs/cognitive-complexity
-) => {
+): void => {
   if (typeof options === 'string') {
     options = {
       locale: options,
@@ -61,7 +62,8 @@ const VueTranslator = (
     beforeCreate() {
       const { translator } = this.$options
 
-      const { cid } = Object.getPrototypeOf(this).constructor
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+      const { cid } = Object.getPrototypeOf(this).constructor as { cid: number }
 
       if (!translator || mergedCache.indexOf(cid) + 1) {
         return
@@ -89,7 +91,9 @@ const VueTranslator = (
     process.env.VUE_ENV === 'server'
       ? {
           get(this: Vue) {
-            const { translator } = this.$ssrContext
+            const { translator } = this.$ssrContext as {
+              translator: Translator | undefined
+            }
 
             if (process.env.NODE_ENV === 'development' && !translator) {
               $Vue.util.warn(
@@ -118,20 +122,25 @@ const VueTranslator = (
   }
 
   if (process.env.VUE_ENV !== 'server') {
+    // eslint-disable-next-line unicorn/no-fn-reference-in-iterator
     $Vue.filter(filter, defaultTranslator)
     return
   }
 
-  const { _f } = $Vue.prototype
+  const { _f } = $Vue.prototype as { _f: (...args: unknown[]) => unknown }
 
   // a hacky way to support filter on server, so `filter` is not enabled by default
-  $Vue.prototype._f = function(this: Vue, id: string) {
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+  $Vue.prototype._f = function (this: Vue, id: string) {
     if (
       process.env.NODE_ENV === 'development' &&
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
       this.$options.filters![filter as string]
     ) {
       $Vue.util.warn(
-        `duplicate filter \`${filter}\` found, please rename to a unique filter name`,
+        `duplicate filter \`${
+          filter as string
+        }\` found, please rename to a unique filter name`,
       )
     }
 

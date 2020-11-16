@@ -10,7 +10,7 @@ const mockFn = (_Vue.config.warnHandler = jest.fn())
 
 const Vue = createLocalVue()
 
-const { _f } = Vue.prototype
+const { _f } = Vue.prototype as { _f: (...args: unknown[]) => unknown }
 
 Vue.use(VueTranslator, {
   locale: 'zh',

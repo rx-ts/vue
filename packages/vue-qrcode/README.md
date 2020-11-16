@@ -45,7 +45,7 @@ export default {
 | `color`                | `{ dark: string; light:string }`                                   | `{ dark: '#000000ff', light: '#ffffffff' }` |
 | `type`                 | `string` ('image/png', 'image/jpeg', 'image/webp')                 | `'image/png'`                               |
 | `quality`              | `number`(0-1)                                                      | `0.92`                                      |
-| `value`                | `string | Array<{ data: string; mode?: string }>`                  | N/A                                         |
+| `value`                | `string                                                            | Array<{ data: string; mode?: string }>`     | N/A |
 
 ## Changelog
 

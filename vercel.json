@@ -2,8 +2,8 @@
   "name": "@rxts/vue",
   "version": 2,
   "alias": [
-    "rx-vue.now.sh",
-    "vue-rx.now.sh"
+    "rx-vue.vercel.app",
+    "vue-rx.vercel.app"
   ],
   "github": {
     "silent": true
@@ -11,7 +11,7 @@
   "builds": [
     {
       "src": "package.json",
-      "use": "@now/static-build"
+      "use": "@vercel/static-build"
     }
   ]
 }
