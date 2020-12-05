@@ -11,6 +11,7 @@
 - [License](#license)
 
 ## Demo
+- [vue-qrcode-example](https://codesandbox.io/s/vue-qrcode-example-i0930)
 
 <VueQrcodeDemo/>
 
