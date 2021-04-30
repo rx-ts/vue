@@ -1,3 +1,12 @@
 {
-  "extends": "@1stg"
+  "root": true,
+  "extends": "@1stg",
+  "settings": {
+    "jsdoc": {
+      "mode": "typescript"
+    }
+  },
+  "rules": {
+    "jsdoc/require-param-description": 0
+  }
 }

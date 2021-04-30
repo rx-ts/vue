@@ -1,7 +1,8 @@
 {
-  "extends": "@1stg/tsconfig/lib",
+  "extends": "./node_modules/@1stg/tsconfig/lib",
   "compilerOptions": {
     "baseUrl": ".",
+    "lib": ["DOM", "ESNext"],
     "paths": {
       "@@/*": ["./*"],
       "vue-qrcode": ["packages/vue-qrcode"],

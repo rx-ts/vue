@@ -8,6 +8,7 @@ import {
 } from './translator'
 
 declare module 'vue/types/options' {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   interface ComponentOptions<V extends Vue> {
     translator?: Translations
   }
@@ -37,6 +38,7 @@ export type VueTranslatorOptions = TranslatorOptions & {
 
 const mergedCache: number[] = []
 
+// eslint-disable-next-line sonar/function-name
 const VueTranslator = (
   $Vue: VueConstructor,
   options: string | VueTranslatorOptions,
@@ -122,7 +124,6 @@ const VueTranslator = (
   }
 
   if (process.env.VUE_ENV !== 'server') {
-    // eslint-disable-next-line unicorn/no-fn-reference-in-iterator
     $Vue.filter(filter, defaultTranslator)
     return
   }
@@ -134,8 +135,7 @@ const VueTranslator = (
   $Vue.prototype._f = function (this: Vue, id: string) {
     if (
       process.env.NODE_ENV === 'development' &&
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-      this.$options.filters![filter as string]
+      this.$options.filters?.[filter as string]
     ) {
       $Vue.util.warn(
         `duplicate filter \`${

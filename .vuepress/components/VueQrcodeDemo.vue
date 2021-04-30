@@ -92,7 +92,7 @@
       </li>
     </ul>
     <a download="qrcode-demo.png" href>
-      <vue-qrcode v-bind="qrcodeProps" />
+      <vue-qrcode v-bind="qrcodeProps" @error="onError" />
     </a>
   </div>
 </template>
@@ -135,7 +135,7 @@ export default Vue.extend({
       MASK_PATTERNS,
       MODES,
       TYPES,
-      version: undefined,
+      version: 2,
       errorCorrectionLevel: 'M',
       maskPattern: undefined,
       margin: 4,
@@ -175,6 +175,9 @@ export default Vue.extend({
     },
     removeValue(index: number) {
       ;(this.value as QRCodeSegment[]).splice(index, 1)
+    },
+    onError(err: Error) {
+      window.alert(err.message)
     },
   },
 })

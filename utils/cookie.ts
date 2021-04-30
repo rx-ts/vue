@@ -1,17 +1,14 @@
-export const getItem = (sKey: string) => {
-  return (
-    decodeURIComponent(
-      document.cookie.replace(
-        new RegExp(
-          '(?:(?:^|.*;)\\s*' +
-            encodeURIComponent(sKey).replace(/[*+.-]/g, '\\$&') +
-            '\\s*\\=\\s*([^;]*).*$)|^.*$',
-        ),
-        '$1',
+export const getItem = (sKey: string) =>
+  decodeURIComponent(
+    document.cookie.replace(
+      new RegExp(
+        '(?:(?:^|.*;)\\s*' +
+          encodeURIComponent(sKey).replace(/[*+.-]/g, '\\$&') +
+          '\\s*\\=\\s*([^;]*).*$)|^.*$',
       ),
-    ) || null
-  )
-}
+      '$1',
+    ),
+  ) || null
 
 export const setItem = (
   sKey: string,
@@ -29,7 +26,7 @@ export const setItem = (
     switch (vEnd.constructor) {
       case Number:
         sExpires =
-          vEnd === Infinity
+          vEnd === Number.POSITIVE_INFINITY
             ? '; expires=Fri, 31 Dec 9999 23:59:59 GMT'
             : '; max-age=' + String(vEnd)
         break

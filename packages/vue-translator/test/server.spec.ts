@@ -26,7 +26,6 @@ Vue.use(VueTranslator, {
 })
 
 describe('work on server', () => {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const app: Vue & {
     _f: (...args: unknown[]) => unknown
   } = new Vue({

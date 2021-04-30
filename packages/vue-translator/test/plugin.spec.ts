@@ -20,8 +20,8 @@ Vue.use(VueTranslator, {
 
 const { translator } = Vue
 
-test('plugin should be able to be watched', () => {
-  return new Promise(resolve => {
+test('plugin should be able to be watched', () =>
+  new Promise<void>(resolve => {
     const app = new Vue()
     const unwatch = app.$watch('$t.locale', (curr: string, prev: string) => {
       expect(curr).toBe('en')
@@ -30,8 +30,7 @@ test('plugin should be able to be watched', () => {
       resolve()
     })
     translator.locale = 'en'
-  })
-})
+  }))
 
 test('render correct locale text and watch locale change', () => {
   const wrapper = mount(

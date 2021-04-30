@@ -1,6 +1,7 @@
 *.log
 *.tsbuildinfo
 .*cache
+.type-coverage
 dist
 coverage
 lib

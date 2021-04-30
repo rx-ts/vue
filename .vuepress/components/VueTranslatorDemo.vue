@@ -67,7 +67,6 @@
   </table>
 </template>
 <script>
-// eslint-disable-next-line import/no-unresolved
 import { setItem } from '@@/utils'
 
 const CustomEl = {

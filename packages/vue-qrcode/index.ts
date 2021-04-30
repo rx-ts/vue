@@ -110,7 +110,9 @@ export default ({
     },
   },
   methods: {
-    toDataURL(this: { $props: QRCodeProps; dataUrl: string; value: string }) {
+    toDataURL(
+      this: { $props: QRCodeProps; dataUrl: string; value: string } & Vue,
+    ) {
       const { quality, ...props } = this.$props
       return QRCode.toDataURL(
         this.value,
@@ -122,7 +124,9 @@ export default ({
             },
           },
         ),
-      ).then(dataUrl => (this.dataUrl = dataUrl))
+      )
+        .then(dataUrl => (this.dataUrl = dataUrl))
+        .catch(err => this.$emit('error', err))
     },
   },
   render(this: Vue & { dataUrl: string }) {

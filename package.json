@@ -17,53 +17,53 @@
     "clean": "rimraf dist packages/*/{lib,*.tsbuildinfo}",
     "dev": "vuepress dev",
     "lint": "run-p lint:*",
-    "lint:es": "cross-env PARSER_NO_WATCH=true eslint . --cache --ext js,md,mdx,ts,tsx,vue -f friendly",
+    "lint:es": "cross-env EFF_NO_LINK_RULESPARSER_NO_WATCH=true eslint . --cache -f friendly",
     "lint:style": "stylelint --cache '.vuepress/**/*.{scss,vue}'",
     "lint:tsc": "tsc",
-    "postinstall": "yarn-deduplicate || exit 0",
+    "postinstall": "simple-git-hooks && yarn-deduplicate --strategy fewer || exit 0",
     "start": "serve dist",
     "test": "cross-env NODE_ENV=development jest",
-    "type-coverage": "type-coverage --cache --detail --ignore-catch --ignore-files '**/*.d.ts' --update"
+    "typecov": "type-coverage"
   },
   "devDependencies": {
-    "@1stg/app-config": "^0.5.5",
-    "@1stg/lib-config": "^0.5.5",
-    "@d-ts/vue": "^0.4.3",
-    "@types/jest": "^26.0.15",
-    "@types/lodash": "^4.14.165",
-    "@types/node": "^14.14.7",
-    "@types/qrcode": "^1.3.5",
-    "@types/webpack": "^4.41.25",
-    "@vue/test-utils": "^1.1.1",
-    "lerna": "^3.22.1",
+    "@1stg/app-config": "^1.5.1",
+    "@1stg/lib-config": "^1.2.10",
+    "@d-ts/vue": "^1.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/lodash": "^4.14.168",
+    "@types/node": "^15.0.1",
+    "@types/qrcode": "^1.4.0",
+    "@types/webpack": "^4.41.27",
+    "@vue/test-utils": "^1.1.4",
+    "lerna": "^4.0.0",
     "lodash": "^4.17.20",
-    "lodash-es": "^4.17.15",
+    "lodash-es": "^4.17.21",
     "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.13",
     "qrcode": "^1.4.4",
     "qrious": "^4.0.2",
-    "react": "^17.0.1",
+    "react": "^17.0.2",
     "rimraf": "^3.0.2",
-    "rxjs": "^6.6.3",
-    "sass": "^1.29.0",
-    "sass-loader": "^10.1.0",
+    "rxjs": "^7.0.0",
+    "sass": "^1.32.12",
+    "sass-loader": "^10.1.1",
     "serve": "^11.3.2",
-    "ts-jest": "^26.4.4",
-    "ts-node": "^9.0.0",
-    "tsconfig-paths-webpack-plugin": "^3.3.0",
-    "type-coverage": "^2.14.2",
-    "typescript": "^4.0.5",
+    "ts-jest": "^26.5.5",
+    "ts-node": "^9.1.1",
+    "tsconfig-paths-webpack-plugin": "^3.5.1",
+    "type-coverage": "^2.17.5",
+    "typescript": "^4.2.4",
     "vue": "^2.6.12",
     "vue-template-compiler": "^2.6.12",
-    "vuepress": "^1.7.1",
+    "vuepress": "^1.8.2",
     "vuepress-plugin-typescript": "^0.3.1",
     "vuepress-types": "^0.9.4",
     "yarn-deduplicate": "^3.1.0"
   },
   "resolutions": {
     "@babel/core": "^7.12.3",
-    "imagemin-gifsicle": "^6.0.1",
-    "prettier": "^2.1.2",
-    "webpack-chain": "^6.5.1"
+    "prettier": "^2.2.1",
+    "webpack": "^4.46.0"
   },
   "babel": {
     "presets": [
@@ -81,6 +81,16 @@
     "preset": "ts-jest"
   },
   "typeCoverage": {
-    "atLeast": 99.18
+    "atLeast": 99.37,
+    "cache": true,
+    "detail": true,
+    "ignoreCatch": true,
+    "ignoreAsAssertion": true,
+    "ignoreFiles": [
+      "*.d.ts"
+    ],
+    "ignoreNonNullAssertion": true,
+    "strict": true,
+    "update": true
   }
 }

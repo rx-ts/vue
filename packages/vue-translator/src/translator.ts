@@ -17,10 +17,11 @@ const { defineReactive } = Vue.util
 
 let translations: Translations
 
-const getValue = (input: unknown, key: string): string | undefined => {
+const getValue = (input: unknown, key: string): string | null | undefined => {
   key = key.replace(/\[(\d+)]/g, '.$1')
   let value = input
 
+  // eslint-disable-next-line array-callback-return
   key.split('.').some(k => {
     if (!value || typeof value !== 'object') {
       return true
@@ -34,7 +35,7 @@ const getValue = (input: unknown, key: string): string | undefined => {
     if (process.env.NODE_ENV === 'development' && value !== null) {
       Vue.util.warn('you are trying to get non-literal value')
     }
-    return (value && String(value)) as string
+    return value && String(value)
   }
 
   return value as string

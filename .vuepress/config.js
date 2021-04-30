@@ -3,7 +3,7 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin')
 const description = process.env.npm_package_description
 
 /**
- * @return {import('vuepress-types').SiteConfig}
+ * @returns {import('vuepress-types').SiteConfig}
  */
 module.exports = {
   title: [process.env.npm_package_name, description].join(' - '),
@@ -11,6 +11,7 @@ module.exports = {
   dest: 'dist',
   /**
    * @param {import('webpack-chain')} config
+   * @param {boolean} isServer
    */
   chainWebpack(config, isServer) {
     config.resolve.alias
