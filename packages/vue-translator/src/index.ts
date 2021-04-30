@@ -38,7 +38,6 @@ export type VueTranslatorOptions = TranslatorOptions & {
 
 const mergedCache: number[] = []
 
-// eslint-disable-next-line sonar/function-name
 const VueTranslator = (
   $Vue: VueConstructor,
   options: string | VueTranslatorOptions,
