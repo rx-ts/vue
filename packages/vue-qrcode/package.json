@@ -26,6 +26,8 @@
     "qrcode": "^1.0.0",
     "vue": "^2.0.0"
   },
-  "sideEffects": false,
-  "esm5": "lib"
+  "dependencies": {
+    "tslib": "^2.2.0"
+  },
+  "sideEffects": false
 }

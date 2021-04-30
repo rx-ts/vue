@@ -8,11 +8,10 @@
   "license": "MIT",
   "main": "lib/cjs",
   "module": "lib",
+  "es2015": "lib/es2015",
+  "fesm5": "lib/esm",
   "jsdelivr": "lib/umd",
   "unpkg": "lib/umd",
-  "es2015": "lib/es2015",
-  "esm5": "lib",
-  "fesm5": "lib/esm",
   "types": "lib",
   "files": [
     "lib",
@@ -25,6 +24,9 @@
   ],
   "peerDependencies": {
     "vue": "^2.0.0"
+  },
+  "dependencies": {
+    "tslib": "^2.2.0"
   },
   "sideEffects": false
 }
