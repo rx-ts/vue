@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 0.3.6 (2021-04-30)
+
+
+### Bug Fixes
+
+* mark tslib as dependency ([7f53641](https://github.com/rx-ts/vue/commit/7f53641e2c9c57432b3cc59a4a47aacaecf9267b))
+
+
+
+
+
 ## 0.3.5 (2020-11-16)
 
 **Note:** Version bump only for package vue-qrcode
