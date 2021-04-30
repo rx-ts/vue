@@ -1,6 +1,6 @@
 {
   "name": "vue-qrcode",
-  "version": "0.3.6",
+  "version": "0.4.0",
   "description": "🤳 A Vue component for QR code generation with `qrcode`",
   "repository": "git@github.com:rx-ts/vue.git",
   "homepage": "https://github.com/rx-ts/vue/blob/master/packages/vue-qrcode",
@@ -14,8 +14,8 @@
   "unpkg": "lib/umd",
   "types": "lib",
   "files": [
-    "!lib/*.tsbuildinfo",
-    "lib"
+    "lib",
+    "!lib/*.tsbuildinfo"
   ],
   "keywords": [
     "vue-qrcode",

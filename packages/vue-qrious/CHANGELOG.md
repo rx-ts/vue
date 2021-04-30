@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 1.6.0 (2021-04-30)
+
+
+### Features
+
+* bump all (dev)Dependencies, add error event for vue-qrcode ([67a3cc7](https://github.com/rx-ts/vue/commit/67a3cc75cd160beb971646eb33f9e05f30ee09f0))
+
+
+
+
+
 ## 1.5.6 (2021-04-30)
 
 
