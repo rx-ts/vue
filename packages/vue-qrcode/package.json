@@ -1,17 +1,16 @@
 {
   "name": "vue-qrcode",
   "version": "0.4.0",
+  "type": "module",
   "description": "🤳 A Vue component for QR code generation with `qrcode`",
   "repository": "git@github.com:rx-ts/vue.git",
   "homepage": "https://github.com/rx-ts/vue/blob/master/packages/vue-qrcode",
   "author": "JounQin <admin@1stg.me>",
   "license": "MIT",
-  "main": "lib/cjs",
-  "module": "lib",
-  "es2015": "lib/es2015",
-  "fesm5": "lib/esm",
-  "jsdelivr": "lib/umd",
-  "unpkg": "lib/umd",
+  "exports": {
+    "import": "./lib/index.js",
+    "require": "./lib/index.cjs"
+  },
   "types": "lib",
   "files": [
     "lib",
@@ -23,11 +22,18 @@
     "vue"
   ],
   "peerDependencies": {
+    "@vue/composition-api": "^1.0.0",
     "qrcode": "^1.0.0",
-    "vue": "^2.0.0"
+    "vue": "^2.0.0 || ^3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
   },
   "dependencies": {
-    "tslib": "^2.2.0"
+    "tslib": "^2.2.0",
+    "vue-demi": "^0.11.3"
   },
   "sideEffects": false
 }

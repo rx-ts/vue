@@ -1,17 +1,11 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "noEmit": true
-  },
+  "extends": "./tsconfig.base",
   "references": [
     {
       "path": "packages/vue-qrcode"
     },
     {
       "path": "packages/vue-qrious"
-    },
-    {
-      "path": "packages/vue-translator"
     }
   ],
   "exclude": ["**/test/**"]

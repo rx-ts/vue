@@ -1,9 +1,11 @@
-import QRCode, {
+import type {
   QRCodeErrorCorrectionLevel,
-  QRCodeSegment as _QRCodeSegment,
+  QRCodeSegment,
   QRCodeToDataURLOptions,
 } from 'qrcode'
-import Vue, { ComponentOptions } from 'vue'
+import QRCode from 'qrcode'
+import type { PropType } from 'vue-demi'
+import { defineComponent, h, ref, watch } from 'vue-demi'
 
 export const LEVELS = [
   'low',
@@ -19,31 +21,24 @@ export const LEVELS = [
 // eslint-disable-next-line @typescript-eslint/no-magic-numbers
 export const MASK_PATTERNS = [0, 1, 2, 3, 4, 5, 6, 7] as const
 
-// eslint-disable-next-line @typescript-eslint/no-type-alias
 export type MaskPattern = typeof MASK_PATTERNS[number]
 
 export const MODES = ['alphanumeric', 'numeric', 'kanji', 'byte'] as const
 
-// eslint-disable-next-line @typescript-eslint/no-type-alias
-export type QRCodeMode = _QRCodeSegment['mode']
+export { QRCodeSegment }
 
-export interface QRCodeSegment {
-  data: string
-  mode?: QRCodeMode | null
-}
-
-export type QRCodeValue = string | QRCodeSegment[]
+export type QRCodeValue = QRCodeSegment[] | string
 
 export const TYPES = ['image/png', 'image/jpeg', 'image/webp'] as const
 
-export type QRCodeProps = Omit<QRCodeToDataURLOptions, 'renderOptions'> & {
-  quality?: number
-  value: QRCodeValue
-}
+export type QRCodeProps = Omit<QRCodeToDataURLOptions, 'renderOptions'> &
+  QRCodeToDataURLOptions['rendererOpts'] & {
+    value: QRCodeSegment[] | string
+  }
 
 const MAX_QR_VERSION = 40
 
-export default ({
+export default defineComponent({
   props: {
     version: {
       type: Number,
@@ -53,7 +48,7 @@ export default ({
         version <= MAX_QR_VERSION,
     },
     errorCorrectionLevel: {
-      type: String,
+      type: String as PropType<QRCodeErrorCorrectionLevel>,
       validator: (level: QRCodeErrorCorrectionLevel) => LEVELS.includes(level),
     },
     maskPattern: {
@@ -61,7 +56,7 @@ export default ({
       validator: (maskPattern: MaskPattern) =>
         MASK_PATTERNS.includes(maskPattern),
     },
-    toSJISFunc: Function,
+    toSJISFunc: Function as PropType<QRCodeProps['toSJISFunc']>,
     margin: Number,
     scale: Number,
     width: Number,
@@ -71,10 +66,12 @@ export default ({
         (['dark', 'light'] as const).every(c =>
           ['string', 'undefined'].includes(typeof color![c]),
         ),
+      required: true,
     },
     type: {
-      type: String,
+      type: String as PropType<QRCodeProps['type']>,
       validator: (type: QRCodeProps['type']) => TYPES.includes(type!),
+      required: true,
     },
     quality: {
       type: Number,
@@ -82,42 +79,30 @@ export default ({
         quality === Number.parseFloat(String(quality)) &&
         quality >= 0 &&
         quality <= 1,
+      required: true,
     },
     value: {
-      type: [String, Array],
+      type: [String, Array] as PropType<QRCodeSegment[] | string>,
       required: true,
-      validator(value: string | QRCodeSegment[]) {
+      validator(value: QRCodeSegment[] | string) {
         if (typeof value === 'string') {
           return true
         }
         return value.every(
-          ({ data, mode }) =>
-            typeof data === 'string' && (mode == null || MODES.includes(mode)),
+          ({ data, mode }) => typeof data === 'string' && MODES.includes(mode),
         )
       },
     },
   },
-  data() {
-    return {
-      dataUrl: '',
-    }
-  },
-  watch: {
-    $props: {
-      deep: true,
-      immediate: true,
-      handler: 'toDataURL',
-    },
-  },
-  methods: {
-    toDataURL(
-      this: { $props: QRCodeProps; dataUrl: string; value: string } & Vue,
-    ) {
-      const { quality, ...props } = this.$props
-      return QRCode.toDataURL(
-        this.value,
+  setup(props: QRCodeProps, { attrs, emit }) {
+    const dataUrlRef = ref<string>()
+
+    const toDataURL = (props: QRCodeProps) => {
+      const { quality, value, ...rest } = props
+      QRCode.toDataURL(
+        value,
         Object.assign(
-          props,
+          rest,
           quality == null || {
             renderOptions: {
               quality,
@@ -125,16 +110,16 @@ export default ({
           },
         ),
       )
-        .then(dataUrl => (this.dataUrl = dataUrl))
-        .catch(err => this.$emit('error', err))
-    },
+        .then(dataUrl => (dataUrlRef.value = dataUrl))
+        .catch((err: unknown) => emit('error', err))
+    }
+
+    watch(props, toDataURL)
+
+    return () =>
+      h('image', {
+        ...attrs,
+        src: dataUrlRef.value,
+      })
   },
-  render(this: Vue & { dataUrl: string }) {
-    return this.$createElement('img', {
-      domProps: {
-        ...this.$attrs,
-        src: this.dataUrl,
-      },
-    })
-  },
-} as unknown) as ComponentOptions<Vue>
+})

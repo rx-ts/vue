@@ -1,12 +1,12 @@
-import QRious, { QRiousOptions } from 'qrious'
-import Vue from 'vue'
+import QRious from 'qrious'
+import type { PropType } from 'vue-demi'
+import { defineComponent, h, ref, watch } from 'vue-demi'
 
 export const LEVELS = ['L', 'M', 'Q', 'H'] as const
 
-// eslint-disable-next-line @typescript-eslint/no-type-alias
 export type Level = typeof LEVELS[number]
 
-export default {
+export default defineComponent({
   props: {
     value: {
       type: String,
@@ -17,40 +17,26 @@ export default {
     foreground: String,
     foregroundAlpha: Number,
     level: {
-      type: String,
+      type: String as PropType<Level>,
       validator: (level: Level) => LEVELS.includes(level),
     },
     mime: String,
     padding: Number,
     size: Number,
   },
-  data(this: { $props: QRiousOptions; mime: string }) {
-    const qrious = new QRious(this.$props)
-    return {
-      qrious,
-      dataUrl: qrious.toDataURL(this.mime),
-    }
-  },
-  watch: {
-    $props: {
-      deep: true,
-      handler(this: {
-        $props: QRiousOptions
-        mime: string
-        qrious: QRious
-        dataUrl: string
-      }) {
-        this.qrious.set(this.$props)
-        this.dataUrl = this.qrious.toDataURL(this.mime)
-      },
-    },
-  },
-  render(this: Vue & { dataUrl: string }) {
-    return this.$createElement('img', {
-      domProps: {
-        ...this.$attrs,
-        src: this.dataUrl,
-      },
+  setup(props, { attrs }) {
+    const qrious = new QRious(props)
+
+    const dataUrlRef = ref<string>(qrious.toDataURL(props.mime))
+
+    watch(props, props => {
+      qrious.set(props)
+      dataUrlRef.value = qrious.toDataURL(props.mime)
+    })
+
+    return h('img', {
+      ...attrs,
+      src: dataUrlRef.value,
     })
   },
-}
+})

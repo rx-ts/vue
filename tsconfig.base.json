@@ -1,13 +1,10 @@
 {
-  "extends": "./node_modules/@1stg/tsconfig/lib",
+  "extends": "@1stg/tsconfig/dom-lib",
   "compilerOptions": {
     "baseUrl": ".",
-    "lib": ["DOM", "ESNext"],
     "paths": {
-      "@@/*": ["./*"],
       "vue-qrcode": ["packages/vue-qrcode"],
-      "vue-qrious": ["packages/vue-qrious"],
-      "vue-translator": ["packages/vue-translator/src"]
+      "vue-qrious": ["packages/vue-qrious"]
     },
     "typeRoots": ["./node_modules/@types", "./node_modules/@d-ts"]
   }

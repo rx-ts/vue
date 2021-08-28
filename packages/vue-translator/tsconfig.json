@@ -1,9 +1,0 @@
-{
-  "extends": "../../tsconfig.base",
-  "compilerOptions": {
-    "composite": true,
-    "rootDir": "src",
-    "outDir": "lib"
-  },
-  "exclude": ["lib", "test"]
-}

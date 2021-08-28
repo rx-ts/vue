@@ -1,12 +1,32 @@
 {
   "root": true,
   "extends": "@1stg",
-  "settings": {
-    "jsdoc": {
-      "mode": "typescript"
+  "overrides": [
+    {
+      "files": [
+        "*.ts",
+        "*.vue"
+      ],
+      "rules": {
+        "vue/require-default-prop": 0
+      }
+    },
+    {
+      "files": [
+        "*.ts"
+      ],
+      "rules": {
+        "@typescript-eslint/consistent-type-imports": 2,
+        "import/order": [
+          2,
+          {
+            "alphabetize": {
+              "order": "asc"
+            },
+            "newlines-between": "always"
+          }
+        ]
+      }
     }
-  },
-  "rules": {
-    "jsdoc/require-param-description": 0
-  }
+  ]
 }

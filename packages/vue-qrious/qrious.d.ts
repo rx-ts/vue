@@ -5,7 +5,7 @@ declare namespace QRious {
     backgroundAlpha?: number
     foreground?: string
     foregroundAlpha?: number
-    level?: 'L' | 'M' | 'Q' | 'H'
+    level?: 'H' | 'L' | 'M' | 'Q'
     mime?: string
     padding?: number
     size?: number
