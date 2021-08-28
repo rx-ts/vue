@@ -29,14 +29,15 @@ export default defineComponent({
 
     const dataUrlRef = ref<string>(qrious.toDataURL(props.mime))
 
-    watch(props, props => {
+    watch(props, () => {
       qrious.set(props)
       dataUrlRef.value = qrious.toDataURL(props.mime)
     })
 
-    return h('img', {
-      ...attrs,
-      src: dataUrlRef.value,
-    })
+    return () =>
+      h('img', {
+        ...attrs,
+        src: dataUrlRef.value,
+      })
   },
 })

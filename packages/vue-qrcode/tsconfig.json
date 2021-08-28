@@ -4,5 +4,5 @@
     "composite": true,
     "outDir": "lib"
   },
-  "exclude": ["lib"]
+  "include": ["./index.ts"]
 }

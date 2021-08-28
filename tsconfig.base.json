@@ -3,9 +3,11 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
+      "lodash": ["lodash-es"],
       "vue-qrcode": ["packages/vue-qrcode"],
       "vue-qrious": ["packages/vue-qrious"]
     },
     "typeRoots": ["./node_modules/@types", "./node_modules/@d-ts"]
-  }
+  },
+  "include": [".vuepress/**/*.{ts,vue}", "**/*.ts"]
 }

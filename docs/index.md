@@ -1,3 +1,0 @@
-# @rxts/vue
-
-TODO

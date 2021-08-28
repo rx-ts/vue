@@ -97,8 +97,10 @@ export default defineComponent({
   setup(props: QRCodeProps, { attrs, emit }) {
     const dataUrlRef = ref<string>()
 
-    const toDataURL = (props: QRCodeProps) => {
-      const { quality, value, ...rest } = props
+    const toDataURL = () => {
+      // no idea why, but vuepress emits error saying `props` is undefined
+      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
+      const { quality, value, ...rest } = props || {}
       QRCode.toDataURL(
         value,
         Object.assign(
@@ -110,14 +112,16 @@ export default defineComponent({
           },
         ),
       )
-        .then(dataUrl => (dataUrlRef.value = dataUrl))
+        .then(dataUrl => {
+          dataUrlRef.value = dataUrl
+        })
         .catch((err: unknown) => emit('error', err))
     }
 
-    watch(props, toDataURL)
+    watch(props, toDataURL, { immediate: true })
 
     return () =>
-      h('image', {
+      h('img', {
         ...attrs,
         src: dataUrlRef.value,
       })
