@@ -20,6 +20,7 @@
     "lint:es": "eslint . --cache -f friendly",
     "lint:tsc": "vue-tsc --incremental false --noEmit",
     "prepare": "simple-git-hooks && yarn-deduplicate --strategy fewer || exit 0",
+    "prerelease": "run-p build:r build:ts",
     "release": "changeset publish",
     "start": "vitepress serve docs --port 8000",
     "test": "jest",
