@@ -29,7 +29,7 @@
   "devDependencies": {
     "@1stg/app-config": "^2.3.0",
     "@1stg/lib-config": "^4.0.0",
-    "@changesets/changelog-github": "^0.4.0",
+    "@changesets/changelog-github": "^0.4.3",
     "@changesets/cli": "^2.16.0",
     "@d-ts/vue": "^1.0.0",
     "@types/jest": "^27.0.1",
