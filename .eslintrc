@@ -1,6 +1,14 @@
 {
   "root": true,
   "extends": "@1stg",
+  "rules": {
+    "unicorn/prefer-export-from": [
+      2,
+      {
+        "ignoreUsedVariables": true
+      }
+    ]
+  },
   "overrides": [
     {
       "files": [
@@ -8,7 +16,6 @@
         "*.vue"
       ],
       "rules": {
-        "vue/no-multiple-template-root": 0,
         "vue/require-default-prop": 0
       }
     },
@@ -17,16 +24,7 @@
         "*.ts"
       ],
       "rules": {
-        "@typescript-eslint/consistent-type-imports": 2,
-        "import/order": [
-          2,
-          {
-            "alphabetize": {
-              "order": "asc"
-            },
-            "newlines-between": "always"
-          }
-        ]
+        "@typescript-eslint/consistent-type-imports": 2
       }
     }
   ]
