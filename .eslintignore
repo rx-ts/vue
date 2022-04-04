@@ -1,5 +1,5 @@
 !/.*.js
-!/docs/.vitepress
+# !/.vitepress # Disable temporarily
 .*cache
 coverage
 dist
