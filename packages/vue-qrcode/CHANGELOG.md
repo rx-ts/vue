@@ -1,5 +1,11 @@
 # Change Log
 
+## 1.0.1
+
+### Patch Changes
+
+- [#131](https://github.com/rx-ts/vue/pull/131) [`7fff181`](https://github.com/rx-ts/vue/commit/7fff181ac816fed5aa9ced8e5cfb2ff20c50a105) Thanks [@JounQin](https://github.com/JounQin)! - fix: add main and module fields for compatibility
+
 ## 1.0.0
 
 ### Major Changes
