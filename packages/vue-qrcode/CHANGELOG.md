@@ -1,5 +1,13 @@
 # Change Log
 
+## 2.0.0
+
+### Major Changes
+
+- [`dbe5c27`](https://github.com/rx-ts/vue/commit/dbe5c2774639fabe1a67650c83f97f8d2ff8ff15) Thanks [@JounQin](https://github.com/JounQin)! - feat!: require vue 2.7.0+
+
+  close #140
+
 ## 1.0.1
 
 ### Patch Changes
