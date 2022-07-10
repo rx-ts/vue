@@ -1,6 +1,6 @@
 {
   "name": "vue-qrcode",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "type": "module",
   "description": "🤳 A Vue component for QR code generation with `qrcode`",
   "repository": "git@github.com:rx-ts/vue.git",
