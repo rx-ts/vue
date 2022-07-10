@@ -1,14 +1,6 @@
 {
   "root": true,
   "extends": "@1stg",
-  "rules": {
-    "unicorn/prefer-export-from": [
-      2,
-      {
-        "ignoreUsedVariables": true
-      }
-    ]
-  },
   "overrides": [
     {
       "files": [
@@ -16,7 +8,7 @@
         "*.vue"
       ],
       "rules": {
-        "vue/require-default-prop": 0
+        "vue/require-default-prop": "off"
       }
     },
     {
@@ -24,7 +16,7 @@
         "*.ts"
       ],
       "rules": {
-        "@typescript-eslint/consistent-type-imports": 2
+        "@typescript-eslint/consistent-type-imports": "error"
       }
     }
   ]

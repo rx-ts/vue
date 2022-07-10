@@ -10,9 +10,9 @@ jobs:
     strategy:
       matrix:
         node:
-          - 12
           - 14
           - 16
+          - 18
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
@@ -24,28 +24,14 @@ jobs:
           node-version: ${{ matrix.node }}
           cache: yarn
 
-      - name: Link Yarn global binaries into PATH
-        run: echo "$(yarn global bin)" >> $GITHUB_PATH
-
       - name: Install Dependencies
         run: yarn --frozen-lockfile
 
-      - name: Build, Lint and Test
-        run: |
-          yarn build
-          yarn lint
-          # yarn test
+      - name: Build and Lint
+        run: yarn run-s build lint
         env:
           EFF_NO_LINK_RULES: true
           PARSER_NO_WATCH: true
 
-      # - name: Codecov
-      #   run: |
-      #     yarn global add codecov codacy-coverage
-      #     codecov
-      #     cat ./coverage/lcov.info | codacy-coverage -u rx-ts -n vue
-      #   env:
-      #     CI: 'true'
-      #     CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-      #     CODACY_ACCOUNT_TOKEN: ${{ secrets.CODACY_ACCOUNT_TOKEN }}
-      #     CODACY_PROJECT_TOKEN: ${{ secrets.CODACY_PROJECT_TOKEN }}
+      - name: Codecov
+        uses: codecov/codecov-action@v3

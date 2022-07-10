@@ -4,8 +4,7 @@ import type {
   QRCodeToDataURLOptions,
 } from 'qrcode'
 import QRCode from 'qrcode'
-import type { PropType } from 'vue-demi'
-import { defineComponent, h, ref, watch } from 'vue-demi'
+import { type PropType, defineComponent, h, ref, watch } from 'vue'
 
 export const LEVELS = [
   'low',
@@ -25,7 +24,7 @@ export type MaskPattern = typeof MASK_PATTERNS[number]
 
 export const MODES = ['alphanumeric', 'numeric', 'kanji', 'byte'] as const
 
-export { QRCodeSegment }
+export { QRCodeSegment } from 'qrcode'
 
 export type QRCodeValue = QRCodeSegment[] | string
 
@@ -98,9 +97,7 @@ export default defineComponent({
     const dataUrlRef = ref<string>()
 
     const toDataURL = () => {
-      // no idea why, but vuepress emits error saying `props` is undefined
-      // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
-      const { quality, value, ...rest } = props || {}
+      const { quality, value, ...rest } = props
       QRCode.toDataURL(
         value,
         Object.assign(

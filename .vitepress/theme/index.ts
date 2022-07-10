@@ -1,14 +1,14 @@
 import DefaultTheme from 'vitepress/theme'
 import { Theme } from 'vitepress'
 
-import VueQrcodeDemo from '../components/VueQrcodeDemo.vue'
-import VueQriousDemo from '../components/VueQriousDemo.vue'
+import * as components from '../components'
 
 const config: Theme = {
   ...DefaultTheme,
   enhanceApp({ app, router }) {
-    app.component('VueQrcodeDemo', VueQrcodeDemo)
-    app.component('VueQriousDemo', VueQriousDemo)
+    Object.entries(components).forEach(([name, component]) => {
+      app.component(name, component)
+    })
   },
 }
 

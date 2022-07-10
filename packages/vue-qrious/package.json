@@ -5,21 +5,53 @@
   "description": "🤳 A Vue component for QR code generation with qrious",
   "repository": "git@github.com:rx-ts/vue.git",
   "homepage": "https://github.com/rx-ts/vue/blob/master/packages/vue-qrious",
-  "author": "JounQin <admin@1stg.me>",
+  "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
+  "donate": {
+    "recipients": [
+      {
+        "name": "unts",
+        "platform": "opencollective",
+        "address": "https://opencollective.com/unts",
+        "weight": 60
+      },
+      {
+        "name": "rxts",
+        "platform": "opencollective",
+        "address": "https://opencollective.com/rxts",
+        "weight": 20
+      },
+      {
+        "name": "1stG",
+        "email": "i@1stg.me",
+        "weight": 20,
+        "platforms": [
+          {
+            "platform": "opencollective",
+            "address": "https://opencollective.com/1stG"
+          },
+          {
+            "platform": "patreon",
+            "address": "https://www.patreon.com/1stG"
+          }
+        ]
+      }
+    ]
+  },
+  "funding": "https://opencollective.com/rxts",
   "license": "MIT",
   "main": "./lib/index.cjs",
   "module": "./lib/index.js",
   "exports": {
+    "types": "./lib/index.d.ts",
     "import": "./lib/index.js",
-    "require": "./lib/index.cjs",
-    "types": "./lib/index.d.ts"
+    "require": "./lib/index.cjs"
   },
   "types": "./lib/index.d.ts",
   "files": [
     "lib",
     "qrious.d.ts",
     "typings.d.ts",
-    "!lib/*.tsbuildinfo"
+    "!**/*.tsbuildinfo"
   ],
   "keywords": [
     "vue-qrcode",
@@ -29,18 +61,11 @@
     "vue"
   ],
   "peerDependencies": {
-    "@vue/composition-api": "^1.0.0",
     "qrious": "^4.0.0",
-    "vue": "^2.0.0 || ^3.0.0"
-  },
-  "peerDependenciesMeta": {
-    "@vue/composition-api": {
-      "optional": true
-    }
+    "vue": "^2.7.0 || ^3.0.0"
   },
   "dependencies": {
-    "tslib": "^2.2.0",
-    "vue-demi": "^0.12.5"
+    "tslib": "^2.4.0"
   },
   "publishConfig": {
     "access": "public"

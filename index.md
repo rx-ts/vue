@@ -11,10 +11,9 @@
 </p>
 
 [![GitHub Actions](https://github.com/rx-ts/eslint/workflows/CI/badge.svg)](https://github.com/rx-ts/eslint/actions/workflows/ci.yml)
-[![Codacy Grade](https://img.shields.io/codacy/grade/16b92cd21d844d74b399de3207ae6cb9)](https://www.codacy.com/gh/rx-ts/vue)
+[![Language grade: JavaScript](https://img.shields.io/lgtm/grade/javascript/g/rx-ts/vue.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/rx-ts/vue/context:javascript)
 [![type-coverage](https://img.shields.io/badge/dynamic/json.svg?label=type-coverage&prefix=%E2%89%A5&suffix=%&query=$.typeCoverage.atLeast&uri=https%3A%2F%2Fraw.githubusercontent.com%2Frx-ts%2Fvue%2Fmaster%2Fpackage.json)](https://github.com/plantain-00/type-coverage)
 [![GitHub release](https://img.shields.io/github/release/rx-ts/vue)](https://github.com/rx-ts/vue/releases)
-[![David Dev](https://img.shields.io/david/dev/rx-ts/vue.svg)](https://david-dm.org/rx-ts/vue?type=dev)
 
 [![Conventional Commits](https://img.shields.io/badge/conventional%20commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![Renovate enabled](https://img.shields.io/badge/renovate-enabled-brightgreen.svg)](https://renovatebot.com/)
@@ -29,6 +28,8 @@
 - [Homepage](#homepage)
 - [Packages](#packages)
 - [Install](#install)
+- [Sponsors](#sponsors)
+- [Backers](#backers)
 - [Changelog](#changelog)
 - [License](#license)
 
@@ -47,13 +48,25 @@ This repository is a monorepo managed by [Changesets][] what means we actually p
 
 ## Install
 
-```sh
+```shell
 # yarn
-yarn add vue-{qrcode,qrious,translator}
+yarn add vue-{qrcode,qrious}
 
 # npm
-npm i vue-{qrcode,qrious,translator}
+npm i vue-{qrcode,qrious}
 ```
+
+## Sponsors
+
+| 1stG                                                                                                                               | RxTS                                                                                                                               | UnTS                                                                                                                               |
+| ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| [![1stG Open Collective backers and sponsors](https://opencollective.com/1stG/organizations.svg)](https://opencollective.com/1stG) | [![RxTS Open Collective backers and sponsors](https://opencollective.com/rxts/organizations.svg)](https://opencollective.com/rxts) | [![UnTS Open Collective backers and sponsors](https://opencollective.com/unts/organizations.svg)](https://opencollective.com/unts) |
+
+## Backers
+
+| 1stG                                                                                                                             | RxTS                                                                                                                             | UnTS                                                                                                                             |
+| -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| [![1stG Open Collective backers and sponsors](https://opencollective.com/1stG/individuals.svg)](https://opencollective.com/1stG) | [![RxTS Open Collective backers and sponsors](https://opencollective.com/rxts/individuals.svg)](https://opencollective.com/rxts) | [![UnTS Open Collective backers and sponsors](https://opencollective.com/unts/individuals.svg)](https://opencollective.com/unts) |
 
 ## Changelog
 

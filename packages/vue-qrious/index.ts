@@ -1,6 +1,5 @@
 import QRious from 'qrious'
-import type { PropType } from 'vue-demi'
-import { defineComponent, h, ref, watch } from 'vue-demi'
+import { type PropType, defineComponent, h, ref, watch } from 'vue'
 
 export const LEVELS = ['L', 'M', 'Q', 'H'] as const
 
