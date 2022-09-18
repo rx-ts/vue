@@ -1,5 +1,15 @@
 # Change Log
 
+## 2.1.0
+
+### Minor Changes
+
+- [`0fdda1f`](https://github.com/rx-ts/vue/commit/0fdda1f91fea0393753c044134a19fbed13e5843) Thanks [@JounQin](https://github.com/JounQin)! - feat: upgrade qrcode to v1.5.0+
+
+### Patch Changes
+
+- [`0fdda1f`](https://github.com/rx-ts/vue/commit/0fdda1f91fea0393753c044134a19fbed13e5843) Thanks [@JounQin](https://github.com/JounQin)! - chore: remove unstandard donate field in package.json
+
 ## 2.0.0
 
 ### Major Changes

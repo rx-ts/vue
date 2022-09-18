@@ -1,5 +1,11 @@
 # Change Log
 
+## 3.0.1
+
+### Patch Changes
+
+- [`0fdda1f`](https://github.com/rx-ts/vue/commit/0fdda1f91fea0393753c044134a19fbed13e5843) Thanks [@JounQin](https://github.com/JounQin)! - chore: remove unstandard donate field in package.json
+
 ## 3.0.0
 
 ### Major Changes
