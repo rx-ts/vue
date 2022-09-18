@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.0
+
+### Minor Changes
+
+- [#146](https://github.com/rx-ts/vue/pull/146) [`71ccf87`](https://github.com/rx-ts/vue/commit/71ccf876d1e838c9d3cd2ee1ccbef94bbde73fc1) Thanks [@JounQin](https://github.com/JounQin)! - feat: support dataURL `change` event
+
 ## 2.1.0
 
 ### Minor Changes
