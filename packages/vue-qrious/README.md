@@ -2,6 +2,17 @@
 
 > 🤳 A Vue component for QR code generation with [qrious](https://github.com/neocotic/qrious)
 
+## TOC <!-- omit in toc -->
+
+- [Demo](#demo)
+- [Usage](#usage)
+- [Available Props](#available-props)
+- [Available Events](#available-events)
+- [Sponsors](#sponsors)
+- [Backers](#backers)
+- [Changelog](#changelog)
+- [License](#license)
+
 ## Demo
 
 <VueQriousDemo />
@@ -10,14 +21,27 @@
 
 ```vue
 <template>
-  <vue-qrious value="https://www.1stg.me" />
+  <vue-qrious
+    value="https://www.1stg.me"
+    @change="onDataUrlChange"
+  />
 </template>
 <script>
 import VueQrious from 'vue-qrious'
 
 export default {
+  data() {
+    return {
+      dataUrl: null,
+    }
+  },
   components: {
     VueQrious,
+  },
+  methods: {
+    onDataUrlChange(dataUrl) {
+      this.dataUrl = dataUrl
+    },
   },
 }
 </script>
@@ -35,7 +59,13 @@ export default {
 | `mime`            | `string` ("image/png", "image/jpeg") | `"image/png"` |
 | `padding`         | `number`                             | `null`        |
 | `size`            | `number`                             | `100`         |
-| `value`           | `string`                             |
+| `value`           | `string`                             | N/A           |
+
+## Available Events
+
+| event  | type              |
+| ------ | ----------------- |
+| change | `dataUrl: string` |
 
 ## Sponsors
 
@@ -44,6 +74,8 @@ export default {
 | [![1stG Open Collective backers and sponsors](https://opencollective.com/1stG/organizations.svg)](https://opencollective.com/1stG) | [![RxTS Open Collective backers and sponsors](https://opencollective.com/rxts/organizations.svg)](https://opencollective.com/rxts) | [![UnTS Open Collective backers and sponsors](https://opencollective.com/unts/organizations.svg)](https://opencollective.com/unts) |
 
 ## Backers
+
+[![Backers](https://raw.githubusercontent.com/1stG/static/master/sponsors.svg)](https://github.com/sponsors/JounQin)
 
 | 1stG                                                                                                                             | RxTS                                                                                                                             | UnTS                                                                                                                             |
 | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |

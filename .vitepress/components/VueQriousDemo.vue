@@ -74,10 +74,20 @@
     <client-only>
       <a
         download="qrious-demo.png"
-        href
+        :href="dataUrl"
       >
-        <vue-qrious v-bind="qriousProps" />
+        <vue-qrious
+          v-bind="qriousProps"
+          @change="onChange"
+          @error="onError"
+        />
       </a>
+      <div
+        v-if="dataUrl"
+        class="data-url"
+      >
+        {{ dataUrl }}
+      </div>
     </client-only>
   </div>
 </template>
@@ -115,11 +125,20 @@ export default defineComponent({
       padding: 0,
       size: 100,
       value: 'http://www.1stg.me',
+      dataUrl: null,
     }
   },
   computed: {
     qriousProps() {
       return pick(this, QRIOUS_PROPS)
+    },
+  },
+  methods: {
+    onChange(dataUrl: string) {
+      this.dataUrl = dataUrl
+    },
+    onError(err: Error) {
+      window.alert(err.message)
     },
   },
 })
@@ -159,5 +178,10 @@ export default defineComponent({
   textarea {
     width: 100%;
   }
+}
+
+.data-url {
+  max-width: 100%;
+  overflow-x: auto;
 }
 </style>

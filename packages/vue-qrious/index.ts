@@ -23,14 +23,24 @@ export default defineComponent({
     padding: Number,
     size: Number,
   },
-  setup(props, { attrs }) {
+  setup(props, { attrs, emit }) {
     const qrious = new QRious(props)
 
-    const dataUrlRef = ref<string>(qrious.toDataURL(props.mime))
+    const toDataURL = () => {
+      try {
+        const dataUrl = qrious.toDataURL(props.mime)
+        emit('change', dataUrl)
+        return dataUrl
+      } catch (err) {
+        emit('error', err)
+      }
+    }
+
+    const dataUrlRef = ref<string | undefined>(toDataURL())
 
     watch(props, () => {
       qrious.set(props)
-      dataUrlRef.value = qrious.toDataURL(props.mime)
+      dataUrlRef.value = toDataURL()
     })
 
     return () =>

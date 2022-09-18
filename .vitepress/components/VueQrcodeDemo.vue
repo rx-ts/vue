@@ -152,13 +152,20 @@
     </ul>
     <a
       download="qrcode-demo.png"
-      href
+      :href="dataUrl"
     >
       <vue-qrcode
         v-bind="qrcodeProps"
+        @change="onChange"
         @error="onError"
       />
     </a>
+    <div
+      v-if="dataUrl"
+      class="data-url"
+    >
+      {{ dataUrl }}
+    </div>
   </div>
 </template>
 <script lang="ts">
@@ -212,6 +219,7 @@ export default defineComponent({
       quality: 0.92,
       value: DEFAULT_TEXT as QRCodeValue,
       manualMode: false,
+      dataUrl: null,
     }
   },
   computed: {
@@ -238,6 +246,9 @@ export default defineComponent({
     },
     removeValue(index: number) {
       ;(this.value as QRCodeSegment[]).splice(index, 1)
+    },
+    onChange(dataUrl: string) {
+      this.dataUrl = dataUrl
     },
     onError(err: Error) {
       window.alert(err.message)
@@ -280,5 +291,10 @@ export default defineComponent({
   textarea {
     width: 100%;
   }
+}
+
+.data-url {
+  max-width: 100%;
+  overflow-x: auto;
 }
 </style>
