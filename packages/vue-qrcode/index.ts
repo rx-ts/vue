@@ -1,7 +1,10 @@
 import type {
   QRCodeErrorCorrectionLevel,
+  QRCodeMaskPattern,
   QRCodeSegment,
   QRCodeToDataURLOptions,
+  QRCodeToDataURLOptionsJpegWebp,
+  QRCodeToSJISFunc,
 } from 'qrcode'
 import QRCode from 'qrcode'
 import { type PropType, defineComponent, h, ref, watch } from 'vue'
@@ -20,8 +23,6 @@ export const LEVELS = [
 // eslint-disable-next-line @typescript-eslint/no-magic-numbers
 export const MASK_PATTERNS = [0, 1, 2, 3, 4, 5, 6, 7] as const
 
-export type MaskPattern = typeof MASK_PATTERNS[number]
-
 export const MODES = ['alphanumeric', 'numeric', 'kanji', 'byte'] as const
 
 export { QRCodeSegment } from 'qrcode'
@@ -31,7 +32,7 @@ export type QRCodeValue = QRCodeSegment[] | string
 export const TYPES = ['image/png', 'image/jpeg', 'image/webp'] as const
 
 export type QRCodeProps = Omit<QRCodeToDataURLOptions, 'renderOptions'> &
-  QRCodeToDataURLOptions['rendererOpts'] & {
+  QRCodeToDataURLOptionsJpegWebp['rendererOpts'] & {
     value: QRCodeSegment[] | string
   }
 
@@ -51,11 +52,11 @@ export default defineComponent({
       validator: (level: QRCodeErrorCorrectionLevel) => LEVELS.includes(level),
     },
     maskPattern: {
-      type: Number,
-      validator: (maskPattern: MaskPattern) =>
+      type: Number as PropType<QRCodeMaskPattern>,
+      validator: (maskPattern: QRCodeMaskPattern) =>
         MASK_PATTERNS.includes(maskPattern),
     },
-    toSJISFunc: Function as PropType<QRCodeProps['toSJISFunc']>,
+    toSJISFunc: Function as PropType<QRCodeToSJISFunc>,
     margin: Number,
     scale: Number,
     width: Number,
@@ -78,7 +79,7 @@ export default defineComponent({
         quality === Number.parseFloat(String(quality)) &&
         quality >= 0 &&
         quality <= 1,
-      required: true,
+      required: false,
     },
     value: {
       type: [String, Array] as PropType<QRCodeSegment[] | string>,
@@ -88,26 +89,22 @@ export default defineComponent({
           return true
         }
         return value.every(
-          ({ data, mode }) => typeof data === 'string' && MODES.includes(mode),
+          it =>
+            typeof it.data === 'string' &&
+            'mode' in it &&
+            MODES.includes(it.mode),
         )
       },
     },
   },
-  setup(props: QRCodeProps, { attrs, emit }) {
+  setup(props, { attrs, emit }) {
     const dataUrlRef = ref<string>()
 
     const toDataURL = () => {
       const { quality, value, ...rest } = props
       QRCode.toDataURL(
         value,
-        Object.assign(
-          rest,
-          quality == null || {
-            renderOptions: {
-              quality,
-            },
-          },
-        ),
+        Object.assign(rest, quality == null || { renderOptions: { quality } }),
       )
         .then(dataUrl => {
           dataUrlRef.value = dataUrl

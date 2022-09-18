@@ -6,37 +6,6 @@
   "repository": "git@github.com:rx-ts/vue.git",
   "homepage": "https://github.com/rx-ts/vue/blob/master/packages/vue-qrcode",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
-  "donate": {
-    "recipients": [
-      {
-        "name": "unts",
-        "platform": "opencollective",
-        "address": "https://opencollective.com/unts",
-        "weight": 60
-      },
-      {
-        "name": "rxts",
-        "platform": "opencollective",
-        "address": "https://opencollective.com/rxts",
-        "weight": 20
-      },
-      {
-        "name": "1stG",
-        "email": "i@1stg.me",
-        "weight": 20,
-        "platforms": [
-          {
-            "platform": "opencollective",
-            "address": "https://opencollective.com/1stG"
-          },
-          {
-            "platform": "patreon",
-            "address": "https://www.patreon.com/1stG"
-          }
-        ]
-      }
-    ]
-  },
   "funding": "https://opencollective.com/rxts",
   "license": "MIT",
   "main": "./lib/index.cjs",
@@ -57,7 +26,7 @@
     "vue"
   ],
   "peerDependencies": {
-    "qrcode": "^1.0.0",
+    "qrcode": "^1.5.0",
     "vue": "^2.7.0 || ^3.0.0"
   },
   "dependencies": {
