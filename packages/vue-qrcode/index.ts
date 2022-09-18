@@ -108,6 +108,7 @@ export default defineComponent({
       )
         .then(dataUrl => {
           dataUrlRef.value = dataUrl
+          emit('change', dataUrl)
         })
         .catch((err: unknown) => emit('error', err))
     }
