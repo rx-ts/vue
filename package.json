@@ -48,7 +48,7 @@
     "vitepress": "^0.22.4",
     "vue": "^3.2.45",
     "vue-tsc": "^0.40.13",
-    "yarn-deduplicate": "^6.0.0"
+    "yarn-deduplicate": "^6.0.1"
   },
   "resolutions": {
     "prettier": "^2.7.1"
