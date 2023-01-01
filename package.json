@@ -37,7 +37,7 @@
     "@types/node": "^18.7.18",
     "@types/qrcode": "^1.5.0",
     "lodash-es": "^4.17.21",
-    "postcss": "^8.4.19",
+    "postcss": "^8.4.20",
     "qrcode": "^1.5.1",
     "qrious": "^4.0.2",
     "rimraf": "^3.0.2",
