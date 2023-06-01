@@ -33,7 +33,7 @@
     "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.24.4",
     "@d-ts/vue": "^1.0.0",
-    "@types/lodash-es": "^4.17.6",
+    "@types/lodash-es": "^4.17.7",
     "@types/node": "^18.7.18",
     "@types/qrcode": "^1.5.0",
     "lodash-es": "^4.17.21",
