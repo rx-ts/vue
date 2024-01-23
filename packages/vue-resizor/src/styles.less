@@ -1,0 +1,33 @@
+@indicator-border-color: #a1bfd5;
+
+.vue-resizor--indicator {
+  position: absolute;
+  z-index: 1;
+  border: 0 dashed transparent;
+  transform: translate3d(0, -50%, 0);
+
+  &.vue-resizor__dragging {
+    visibility: hidden;
+  }
+
+  &:hover {
+    cursor: row-resize;
+    border-color: rgba(@indicator-border-color, 0.4) !important;
+  }
+
+  &.vue-resizor__horizontal {
+    transform: translate3d(-50%, 0, 0);
+
+    &:hover {
+      cursor: col-resize;
+    }
+  }
+}
+
+.vue-resizor--container:hover > .vue-resizor--indicator {
+  border-color: rgba(@indicator-border-color, 0.1);
+}
+
+.dark:root .vue-resizor--container:hover > .vue-resizor--indicator {
+  border-color: rgba(@indicator-border-color, 0.2);
+}

@@ -5,7 +5,7 @@ import * as components from '../components'
 
 const config: Theme = {
   ...DefaultTheme,
-  enhanceApp({ app, router }) {
+  enhanceApp({ app }) {
     Object.entries(components).forEach(([name, component]) => {
       app.component(name, component)
     })

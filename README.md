@@ -40,10 +40,11 @@
 
 This repository is a monorepo managed by [Changesets][] what means we actually publish several packages to npm from same codebase, including:
 
-| Package                               | Description                                               | Version                                                                                                                                                                                                            |
-| ------------------------------------- | --------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [`vue-qrcode`](/packages/vue-qrcode/) | 🤳 A Vue component for QR code generation with [qrcode][] | [![npm](https://img.shields.io/npm/v/vue-qrcode.svg)](https://www.npmjs.com/package/vue-qrcode) [![View changelog](https://img.shields.io/badge/changelog-explore-brightgreen)](https://changelogs.xyz/vue-qrcode) |
-| [`vue-qrious`](/packages/vue-qrious/) | 🤳 A Vue component for QR code generation with [qrious][] | [![npm](https://img.shields.io/npm/v/vue-qrious.svg)](https://www.npmjs.com/package/vue-qrious) [![View changelog](https://img.shields.io/badge/changelog-explore-brightgreen)](https://changelogs.xyz/vue-qrious) |
+| Package                                 | Description                                               | Version                                                                                                                                                                                                               |
+| --------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`vue-qrcode`](/packages/vue-qrcode/)   | 🤳 A Vue component for QR code generation with [qrcode][] | [![npm](https://img.shields.io/npm/v/vue-qrcode.svg)](https://www.npmjs.com/package/vue-qrcode) [![View changelog](https://img.shields.io/badge/changelog-explore-brightgreen)](https://changelogs.xyz/vue-qrcode)    |
+| [`vue-qrious`](/packages/vue-qrious/)   | 🤳 A Vue component for QR code generation with [qrious][] | [![npm](https://img.shields.io/npm/v/vue-qrious.svg)](https://www.npmjs.com/package/vue-qrious) [![View changelog](https://img.shields.io/badge/changelog-explore-brightgreen)](https://changelogs.xyz/vue-qrious)    |
+| [`vue-resizor`](/packages/vue-resizor/) | 🖱 A Vue component for resizing with dragging             | [![npm](https://img.shields.io/npm/v/vue-resizor.svg)](https://www.npmjs.com/package/vue-resizor) [![View changelog](https://img.shields.io/badge/changelog-explore-brightgreen)](https://changelogs.xyz/vue-resizor) |
 
 ## Install
 

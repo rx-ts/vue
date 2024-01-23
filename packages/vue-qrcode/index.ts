@@ -33,7 +33,7 @@ export const TYPES = ['image/png', 'image/jpeg', 'image/webp'] as const
 
 export type QRCodeProps = Omit<QRCodeToDataURLOptions, 'renderOptions'> &
   QRCodeToDataURLOptionsJpegWebp['rendererOpts'] & {
-    value: QRCodeSegment[] | string
+    value: QRCodeValue
   }
 
 const MAX_QR_VERSION = 40
@@ -82,9 +82,9 @@ export default defineComponent({
       required: false,
     },
     value: {
-      type: [String, Array] as PropType<QRCodeSegment[] | string>,
+      type: [String, Array] as PropType<QRCodeValue>,
       required: true,
-      validator(value: QRCodeSegment[] | string) {
+      validator(value: QRCodeValue) {
         if (typeof value === 'string') {
           return true
         }

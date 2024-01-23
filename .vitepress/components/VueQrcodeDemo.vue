@@ -114,8 +114,8 @@
         </label>
         <ul v-if="manualMode">
           <li
-            v-for="(v, index) of value"
-            :key="v"
+            v-for="(v, index) of value as QRCodeSegment[]"
+            :key="v.data as string"
           >
             <label v-if="value.length > 0">
               <button @click="removeValue(index)">-</button>
@@ -135,7 +135,7 @@
             <div>
               <label>data</label>
               <textarea
-                v-model="v.data"
+                v-model="v.data as string"
                 rows="6"
                 cols="80"
               ></textarea>
@@ -144,7 +144,7 @@
         </ul>
         <textarea
           v-else
-          v-model="value"
+          v-model="value as string"
           rows="6"
           cols="80"
         ></textarea>
@@ -155,7 +155,7 @@
       :href="dataUrl"
     >
       <vue-qrcode
-        v-bind="qrcodeProps"
+        v-bind="qrcodeProps as any"
         @change="onChange"
         @error="onError"
       />
@@ -176,9 +176,9 @@ import VueQrcode, {
   LEVELS,
   MASK_PATTERNS,
   MODES,
-  QRCodeSegment,
   QRCodeValue,
   TYPES,
+  type QRCodeSegment,
 } from 'vue-qrcode'
 
 const DEFAULT_TEXT = 'http://www.1stg.me'
@@ -219,7 +219,7 @@ export default defineComponent({
       quality: 0.92,
       value: DEFAULT_TEXT as QRCodeValue,
       manualMode: false,
-      dataUrl: null,
+      dataUrl: undefined as string | undefined,
     }
   },
   computed: {
@@ -229,20 +229,12 @@ export default defineComponent({
   },
   watch: {
     manualMode() {
-      this.value = this.manualMode
-        ? [
-            {
-              data: DEFAULT_TEXT,
-            },
-          ]
-        : DEFAULT_TEXT
+      this.value = this.manualMode ? [{ data: DEFAULT_TEXT }] : DEFAULT_TEXT
     },
   },
   methods: {
     addValue() {
-      ;(this.value as QRCodeSegment[]).push({
-        data: DEFAULT_TEXT,
-      })
+      ;(this.value as QRCodeSegment[]).push({ data: DEFAULT_TEXT })
     },
     removeValue(index: number) {
       ;(this.value as QRCodeSegment[]).splice(index, 1)
