@@ -40,9 +40,10 @@ const indicators = ref<Indicator[]>()
 
 ## Available Props
 
-| prop         | type (range)  | default value |
-| ------------ | ------------- | ------------- |
-| `indicators` | `Indicator[]` | N/A           |
+| prop         | type (range)                      | default value |
+| ------------ | --------------------------------- | ------------- |
+| `indicators` | `Indicator[]`                     | N/A           |
+| `size`       | `number` (indicator width/height) | `2`           |
 
 ## Available Events
 

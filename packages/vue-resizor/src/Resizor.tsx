@@ -18,7 +18,10 @@ const bem = new Bem('vue-resizor')
 export default defineComponent({
   props: {
     indicators: Array<Indicator>,
-    size: Number,
+    size: {
+      type: Number,
+      default: 2,
+    },
   },
   setup(props, context) {
     const slots = context.slots as Required<ResizableSlots>
@@ -162,7 +165,7 @@ export default defineComponent({
               left,
               [horizontal ? 'height' : 'width']: '100%',
               [`border-${horizontal ? 'left' : 'top'}-width`]: pixel(
-                props.size ?? 2,
+                props.size,
               ),
             }}
             draggable
