@@ -9,7 +9,7 @@ export interface Indicator {
   horizontal: boolean
 }
 
-export interface ResizableSlots {
+export interface ResizorSlots {
   default?(): Array<VNode<HTMLElement>>
 }
 

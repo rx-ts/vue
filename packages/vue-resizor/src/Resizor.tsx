@@ -11,7 +11,7 @@ import {
   setElementHeight,
   setElementWidth,
 } from './helpers.js'
-import type { ClientRect, Indicator, ResizableSlots } from './types.js'
+import type { ClientRect, Indicator, ResizorSlots } from './types.js'
 
 const bem = new Bem('vue-resizor')
 
@@ -24,7 +24,7 @@ export default defineComponent({
     },
   },
   setup(props, context) {
-    const slots = context.slots as Required<ResizableSlots>
+    const slots = context.slots as Required<ResizorSlots>
     const children = slots.default()
 
     const innerIndicators = ref<Indicator[]>(props.indicators ?? [])
