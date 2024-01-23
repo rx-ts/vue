@@ -4,6 +4,7 @@ LICENSE
 *.json
 *.lock
 *.log
+*.ts
 *.tsbuildinfo
 *.yaml
 *.yml

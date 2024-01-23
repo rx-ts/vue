@@ -34,7 +34,7 @@
     "vue": "^2.7.0 || ^3.0.0"
   },
   "dependencies": {
-    "tslib": "^2.4.0"
+    "tslib": "^2.6.2"
   },
   "publishConfig": {
     "access": "public"

@@ -92,6 +92,7 @@ export default defineComponent({
           it =>
             typeof it.data === 'string' &&
             'mode' in it &&
+            it.mode &&
             MODES.includes(it.mode),
         )
       },

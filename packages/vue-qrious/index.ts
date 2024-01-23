@@ -3,7 +3,7 @@ import { type PropType, defineComponent, h, ref, watch } from 'vue'
 
 export const LEVELS = ['L', 'M', 'Q', 'H'] as const
 
-export type Level = typeof LEVELS[number]
+export type Level = (typeof LEVELS)[number]
 
 export default defineComponent({
   props: {
