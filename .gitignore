@@ -3,6 +3,7 @@
 .*cache
 .temp
 .type-coverage
+.vitepress/cache
 dist
 coverage
 lib

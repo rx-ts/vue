@@ -8,7 +8,6 @@ export default defineConfig({
   description,
   vite: {
     plugins: [
-      // @ts-expect-error
       vueJsx(),
     ],
   },
