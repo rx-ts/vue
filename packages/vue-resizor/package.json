@@ -1,6 +1,6 @@
 {
   "name": "vue-resizor",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "type": "module",
   "description": "🖱 A Vue component for resizing with dragging",
   "repository": "git@github.com:rx-ts/vue.git",
