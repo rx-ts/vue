@@ -6,7 +6,16 @@
     },
     {
       "path": "./packages/vue-qrious"
+    },
+    {
+      "path": "./packages/vue-resizor"
     }
+  ],
+  "include": [
+    ".vitepress/**/*.ts",
+    ".vitepress/**/*.vue",
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "exclude": ["**/test/**"]
 }

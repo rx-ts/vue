@@ -1,10 +1,12 @@
 dist
 lib
+packages/*/lib/*
 LICENSE
 *.json
 *.lock
 *.log
 *.ts
 *.tsbuildinfo
+*.tsx
 *.yaml
 *.yml

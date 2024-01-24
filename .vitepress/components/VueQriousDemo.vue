@@ -77,7 +77,7 @@
         :href="dataUrl"
       >
         <vue-qrious
-          v-bind="qriousProps"
+          v-bind="qriousProps as any"
           @change="onChange"
           @error="onError"
         />
@@ -125,7 +125,7 @@ export default defineComponent({
       padding: 0,
       size: 100,
       value: 'http://www.1stg.me',
-      dataUrl: null,
+      dataUrl: undefined as string | undefined,
     }
   },
   computed: {

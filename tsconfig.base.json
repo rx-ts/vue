@@ -2,12 +2,12 @@
   "extends": "@1stg/tsconfig/dom-lib",
   "compilerOptions": {
     "baseUrl": ".",
+    "jsxImportSource": "vue",
     "paths": {
-      "lodash": ["lodash-es"],
-      "vue-qrcode": ["./packages/vue-qrcode"],
-      "vue-qrious": ["./packages/vue-qrious"]
+      "vue-qrcode": ["./packages/vue-qrcode/src"],
+      "vue-qrious": ["./packages/vue-qrious/src"],
+      "vue-resizor": ["./packages/vue-resizor/src"]
     },
     "typeRoots": ["./node_modules/@types", "./node_modules/@d-ts"]
-  },
-  "include": [".vitepress/**/*.{ts,vue}", "**/*.ts"]
+  }
 }
