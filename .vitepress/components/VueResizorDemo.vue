@@ -1,6 +1,6 @@
 <template>
-  <div class="parent">
-    <vue-resizor v-model:indicators="indicators">
+  <div ref="parent" class="parent">
+    <vue-resizor :parent="parent" v-model:indicators="indicators">
       <div class="child">Child 1</div>
       <div class="child">Child 2</div>
     </vue-resizor>
@@ -11,6 +11,8 @@ import { ref } from 'vue'
 import VueResizor, { Indicator } from 'vue-resizor'
 
 import 'vue-resizor/styles.css'
+
+const parent = ref<HTMLElement>()
 
 const indicators = ref<Indicator[]>()
 </script>
