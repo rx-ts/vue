@@ -14,3 +14,19 @@ import 'vue-resizor/styles.css'
 
 const indicators = ref<Indicator[]>()
 </script>
+<style lang="less" scoped>
+.parent {
+  height: 200px;
+  background-color: pink;
+}
+
+.child {
+  height: 20%;
+
+  ~ .child {
+    height: 80%;
+    background-color: lightgreen;
+    min-height: 0;
+  }
+}
+</style>

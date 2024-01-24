@@ -1,4 +1,11 @@
-import { defineComponent, onMounted, onUnmounted, ref } from 'vue'
+import type { ComponentPublicInstance } from 'vue'
+import {
+  defineComponent,
+  getCurrentInstance,
+  onMounted,
+  onUnmounted,
+  ref,
+} from 'vue'
 
 import { Bem } from './bem.js'
 import {
@@ -14,6 +21,11 @@ import {
 import type { ClientRect, Indicator, ResizorSlots } from './types.js'
 
 const bem = new Bem('vue-resizor')
+
+const containerClassName = bem.element('container').toString()
+const draggingClassName = bem.modifier('dragging').toString()
+const indicatorClassName = bem.modifier('indicator').toString()
+const horizontalClassName = bem.modifier('horizontal').toString()
 
 export default defineComponent({
   props: {
@@ -36,7 +48,8 @@ export default defineComponent({
       innerIndicators.value = indicators
     }
 
-    const containerClassName = bem.element('container').toString()
+    let container: HTMLElement
+    let elements: HTMLElement[]
 
     // eslint-disable-next-line sonarjs/cognitive-complexity
     onMounted(() => {
@@ -44,7 +57,16 @@ export default defineComponent({
         return
       }
 
-      const container = children[0].el!.parentElement!
+      container =
+        children[0].el?.parentElement ??
+        // @ts-expect-error
+        ((getCurrentInstance()!.parent!.ctx as ComponentPublicInstance)
+          .$el as HTMLElement) // type-coverage:ignore-line -- we can't control
+
+      // eslint-disable-next-line unicorn/prefer-spread
+      elements = (Array.from(container.children) as HTMLElement[]).filter(
+        el => !el.classList.contains(indicatorClassName),
+      )
 
       container.classList.add(containerClassName)
 
@@ -61,18 +83,20 @@ export default defineComponent({
       let widthSum: number | undefined
       let heightSum: number | undefined
 
-      for (const [index, current] of Object.entries(children)) {
-        const currentElement = current.el!
-        const currentRect = currentElement.getBoundingClientRect()
+      for (const [index, curr] of Object.entries(children)) {
+        const currEl = curr.el ?? (elements.at(+index) as HTMLElement)
+        const currentRect = currEl.getBoundingClientRect()
 
-        const nextVNode = children.at(+index + 1)
+        const nextIndex = +index + 1
+
+        const nextVNode = children.at(nextIndex)
 
         if (!nextVNode) {
           break
         }
 
-        const nextElement = nextVNode.el!
-        const nextRect = nextElement.getBoundingClientRect()
+        const nextEl = nextVNode.el ?? (elements.at(+index + 1) as HTMLElement)
+        const nextRect = nextEl.getBoundingClientRect()
 
         const horizontal = currentRect.top === nextRect.top
         const top =
@@ -90,27 +114,19 @@ export default defineComponent({
           const offset = horizontal
             ? containerWidth * percentToRatio(indicator.left) - left
             : containerHeight * percentToRatio(indicator.top) - top
-          const currentRect = getClientRect(currentElement)
-          const nextRect = getClientRect(nextElement)
+          const currentRect = getClientRect(currEl)
+          const nextRect = getClientRect(nextEl)
           if (horizontal) {
             widthSum = setElementWidth(
-              nextElement,
+              nextEl,
               nextRect.width - offset,
-              setElementWidth(
-                currentElement,
-                currentRect.width + offset,
-                widthSum,
-              ),
+              setElementWidth(currEl, currentRect.width + offset, widthSum),
             )
           } else {
             heightSum = setElementHeight(
-              nextElement,
+              nextEl,
               nextRect.height - offset,
-              setElementHeight(
-                currentElement,
-                currentRect.height + offset,
-                heightSum,
-              ),
+              setElementHeight(currEl, currentRect.height + offset, heightSum),
             )
           }
         } else {
@@ -130,13 +146,11 @@ export default defineComponent({
         return
       }
 
-      children[0].el!.parentElement!.classList.remove(containerClassName)
+      container.classList.remove(containerClassName)
     })
 
-    const draggingClassName = bem.modifier('dragging').toString()
-
-    let previousRect: ClientRect
-    let currentRect: ClientRect
+    let prevRect: ClientRect
+    let currRect: ClientRect
     let indicatorRect: ClientRect
 
     // eslint-disable-next-line sonarjs/cognitive-complexity
@@ -144,22 +158,22 @@ export default defineComponent({
       const indicators = props.indicators || innerIndicators.value
 
       return children.flatMap((node, index) => {
-        const indicator = indicators.at(index - 1)
+        const indicator = index && indicators.at(index - 1)
 
-        if (!indicator || !index) {
+        if (!indicator) {
           return node
         }
 
         const { top, left, horizontal } = indicator
-        const previousElement = children.at(index - 1)!.el!
-        const currentElement = node.el!
+
+        const prevEl =
+          children.at(index - 1)!.el ?? (elements.at(index - 1) as HTMLElement)
+        const currEl = node.el ?? (elements.at(index) as HTMLElement)
 
         return [
           <div
-            class={[
-              bem.modifier('indicator'),
-              { [bem.modifier('horizontal').toString()]: horizontal },
-            ]}
+            key={`indicator-${index}`}
+            class={[indicatorClassName, { [horizontalClassName]: horizontal }]}
             style={{
               top,
               left,
@@ -171,8 +185,8 @@ export default defineComponent({
             draggable
             onDragstart={event => {
               document.addEventListener('dragover', preventDefault)
-              previousRect = getClientRect(previousElement)
-              currentRect = getClientRect(currentElement)
+              prevRect = getClientRect(prevEl)
+              currRect = getClientRect(currEl)
               indicatorRect = getClientRect(event.currentTarget as HTMLElement)
             }}
             onDrag={event => {
@@ -186,28 +200,28 @@ export default defineComponent({
               )
 
               if (horizontal) {
-                const previousWidth = previousRect.width + offset
-                const currentWidth = currentRect.width - offset
+                const prevWidth = prevRect.width + offset
+                const currWidth = currRect.width - offset
                 if (
-                  previousWidth > 0 &&
-                  previousWidth < width &&
-                  currentWidth > 0 &&
-                  currentWidth < width
+                  prevWidth > 0 &&
+                  prevWidth < width &&
+                  currWidth > 0 &&
+                  currWidth < width
                 ) {
-                  setElementWidth(previousElement, previousWidth)
-                  setElementWidth(currentElement, currentWidth)
+                  setElementWidth(prevEl, prevWidth)
+                  setElementWidth(currEl, currWidth)
                 }
               } else {
-                const previousHeight = previousRect.height + offset
-                const currentHeight = currentRect.height - offset
+                const prevHeight = prevRect.height + offset
+                const currHeight = currRect.height - offset
                 if (
-                  previousHeight > 0 &&
-                  previousHeight < height &&
-                  currentHeight > 0 &&
-                  currentHeight < height
+                  prevHeight > 0 &&
+                  prevHeight < height &&
+                  currHeight > 0 &&
+                  currHeight < height
                 ) {
-                  setElementHeight(previousElement, previousHeight)
-                  setElementHeight(currentElement, currentHeight)
+                  setElementHeight(prevEl, prevHeight)
+                  setElementHeight(currEl, currHeight)
                 }
               }
             }}
@@ -231,11 +245,11 @@ export default defineComponent({
                   true,
                 )
               } else if (horizontal) {
-                setElementWidth(previousElement, previousRect.width)
-                setElementWidth(currentElement, currentRect.width)
+                setElementWidth(prevEl, prevRect.width)
+                setElementWidth(currEl, currRect.width)
               } else {
-                setElementHeight(previousElement, previousRect.height)
-                setElementHeight(currentElement, currentRect.height)
+                setElementHeight(prevEl, prevRect.height)
+                setElementHeight(currEl, currRect.height)
               }
             }}
           />,

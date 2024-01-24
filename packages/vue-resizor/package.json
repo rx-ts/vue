@@ -27,9 +27,11 @@
   "keywords": [
     "vue-drag-resizable",
     "vue-drag-resize",
+    "vue-drag-resizer",
     "vue-draggable",
     "vue-resizable",
     "vue-resize",
+    "vue-resizer",
     "vue"
   ],
   "peerDependencies": {
