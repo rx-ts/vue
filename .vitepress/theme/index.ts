@@ -1,7 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import { Theme } from 'vitepress'
 
-import * as components from '../components'
+import * as components from '../components/index.js'
 
 const config: Theme = {
   ...DefaultTheme,

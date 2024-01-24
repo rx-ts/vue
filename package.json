@@ -1,6 +1,7 @@
 {
   "name": "@rxts/vue",
   "version": "0.0.0",
+  "type": "module",
   "description": "Make Vue greater with RxTS.",
   "repository": "git@github.com:rx-ts/vue.git",
   "author": "JounQin (https://www.1stG.me) <admin@1stg.me>",
@@ -12,7 +13,7 @@
   "packageManager": "yarn@1.22.21",
   "scripts": {
     "build": "run-p build:*",
-    "build:r": "r -e named -f cjs --vue-jsx",
+    "build:r": "r -e named -f cjs,esm, --vue-jsx",
     "build:styles": "lessc --source-map packages/vue-resizor/src/styles.less packages/vue-resizor/lib/styles.css",
     "build:ts": "tsc -b",
     "clean": "rimraf dist packages/*/{lib,*.tsbuildinfo}",
@@ -37,6 +38,7 @@
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^18.19.8",
     "@types/qrcode": "^1.5.5",
+    "@types/web": "^0.0.135",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "less": "^4.2.0",
     "lodash-es": "^4.17.21",
@@ -48,8 +50,7 @@
     "sass": "^1.70.0",
     "type-coverage": "^2.27.1",
     "typescript": "^5.3.3",
-    "vite": "^5.0.12",
-    "vitepress": "^0.22.4",
+    "vitepress": "^1.0.0-rc.40",
     "vue": "^3.4.15",
     "vue-tsc": "^1.8.27",
     "yarn-deduplicate": "^6.0.2"

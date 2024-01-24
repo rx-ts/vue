@@ -1,5 +1,5 @@
 {
-  "extends": "@1stg/tsconfig/dom-lib",
+  "extends": "@1stg/tsconfig/node16",
   "compilerOptions": {
     "baseUrl": ".",
     "jsxImportSource": "vue",

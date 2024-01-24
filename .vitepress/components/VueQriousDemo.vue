@@ -92,7 +92,7 @@
   </div>
 </template>
 <script lang="ts">
-import { pick } from 'lodash'
+import { pick } from 'lodash-es'
 import { defineComponent } from 'vue'
 
 import VueQrious, { LEVELS } from 'vue-qrious'

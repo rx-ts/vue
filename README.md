@@ -50,10 +50,10 @@ This repository is a monorepo managed by [Changesets][] what means we actually p
 
 ```shell
 # yarn
-yarn add vue-{qrcode,qrious}
+yarn add vue-{qrcode,qrious,resizor}
 
 # npm
-npm i vue-{qrcode,qrious}
+npm i vue-{qrcode,qrious,resizor}
 ```
 
 ## Sponsors
