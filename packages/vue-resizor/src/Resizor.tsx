@@ -1,7 +1,8 @@
-import type { ComponentPublicInstance } from 'vue'
+import type { ComponentPublicInstance, PropType } from 'vue'
 import {
   defineComponent,
   getCurrentInstance,
+  nextTick,
   onMounted,
   onUnmounted,
   ref,
@@ -29,6 +30,7 @@ const horizontalClassName = bem.modifier('horizontal').toString()
 
 export default defineComponent({
   props: {
+    parent: Object as PropType<HTMLElement>,
     indicators: Array<Indicator>,
     size: {
       type: Number,
@@ -52,16 +54,31 @@ export default defineComponent({
     let elements: HTMLElement[]
 
     // eslint-disable-next-line sonarjs/cognitive-complexity
-    onMounted(() => {
+    onMounted(async () => {
       if (children.length <= 1) {
         return
       }
 
-      container =
+      const hackingContainer =
         children[0].el?.parentElement ??
+        // prettier-ignore
         // @ts-expect-error
-        ((getCurrentInstance()!.parent!.ctx as ComponentPublicInstance)
-          .$el as HTMLElement) // type-coverage:ignore-line -- we can't control
+        // type-coverage:ignore-next-line -- we can't control
+        ((getCurrentInstance()?.parent.ctx as ComponentPublicInstance | undefined)?.$el as
+          | HTMLElement
+          | undefined)
+
+      if (hackingContainer) {
+        container = hackingContainer
+      } else {
+        await nextTick()
+        if (!props.parent) {
+          throw new Error(
+            'No `parent` provided nor hacking container can be auto injected, please provide `parent` correctly',
+          )
+        }
+        container = props.parent
+      }
 
       // eslint-disable-next-line unicorn/prefer-spread
       elements = (Array.from(container.children) as HTMLElement[]).filter(
