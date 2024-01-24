@@ -13,6 +13,7 @@
   "exports": {
     ".": {
       "types": "./lib/index.d.ts",
+      "import": "./lib/index.esm.mjs",
       "require": "./lib/index.cjs",
       "default": "./lib/index.js"
     },

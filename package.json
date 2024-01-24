@@ -13,7 +13,7 @@
   "packageManager": "yarn@1.22.21",
   "scripts": {
     "build": "run-p build:*",
-    "build:r": "r -e named -f cjs --vue-jsx",
+    "build:r": "r -e named -f cjs,esm, --vue-jsx",
     "build:styles": "lessc --source-map packages/vue-resizor/src/styles.less packages/vue-resizor/lib/styles.css",
     "build:ts": "tsc -b",
     "clean": "rimraf dist packages/*/{lib,*.tsbuildinfo}",
