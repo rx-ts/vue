@@ -25,7 +25,7 @@ export const MASK_PATTERNS = [0, 1, 2, 3, 4, 5, 6, 7] as const
 
 export const MODES = ['alphanumeric', 'numeric', 'kanji', 'byte'] as const
 
-export { QRCodeSegment } from 'qrcode'
+export type { QRCodeSegment } from 'qrcode'
 
 export type QRCodeValue = QRCodeSegment[] | string
 
