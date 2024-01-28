@@ -1,5 +1,11 @@
 # Change Log
 
+## 2.2.2
+
+### Patch Changes
+
+- [#179](https://github.com/rx-ts/vue/pull/179) [`842f1e2`](https://github.com/rx-ts/vue/commit/842f1e2bf965ab62e6d54055cc891e9a33324fce) Thanks [@JounQin](https://github.com/JounQin)! - fix: export `QRCodeSegment` as type
+
 ## 2.2.1
 
 ### Patch Changes
