@@ -10,7 +10,7 @@
   "workspaces": [
     "packages/*"
   ],
-  "packageManager": "yarn@1.22.21",
+  "packageManager": "yarn@1.22.22",
   "scripts": {
     "build": "run-p build:*",
     "build:r": "r -e named -f cjs,esm, --vue-jsx",
