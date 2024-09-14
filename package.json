@@ -42,7 +42,7 @@
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "less": "^4.2.0",
     "lodash-es": "^4.17.21",
-    "postcss": "^8.4.33",
+    "postcss": "^8.4.47",
     "qrcode": "^1.5.3",
     "qrious": "^4.0.2",
     "rimraf": "^5.0.5",
