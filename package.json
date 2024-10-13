@@ -50,7 +50,7 @@
     "sass": "^1.70.0",
     "type-coverage": "^2.27.1",
     "typescript": "^5.3.3",
-    "vitepress": "^1.0.0-rc.40",
+    "vitepress": "^1.4.1",
     "vue": "^3.4.15",
     "vue-tsc": "^1.8.27",
     "yarn-deduplicate": "^6.0.2"
