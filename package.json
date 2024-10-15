@@ -48,7 +48,7 @@
     "rimraf": "^5.0.5",
     "rxjs": "^7.8.1",
     "sass": "^1.70.0",
-    "type-coverage": "^2.27.1",
+    "type-coverage": "^2.29.7",
     "typescript": "^5.3.3",
     "vitepress": "^1.0.0-rc.40",
     "vue": "^3.4.15",
