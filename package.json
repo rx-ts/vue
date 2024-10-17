@@ -36,7 +36,7 @@
     "@d-ts/vue": "^1.0.0",
     "@pkgr/rollup": "^6.0.0",
     "@types/lodash-es": "^4.17.12",
-    "@types/node": "^18.19.8",
+    "@types/node": "^18.19.56",
     "@types/qrcode": "^1.5.5",
     "@types/web": "^0.0.135",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
