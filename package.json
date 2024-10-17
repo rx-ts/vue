@@ -38,7 +38,7 @@
     "@types/lodash-es": "^4.17.12",
     "@types/node": "^18.19.8",
     "@types/qrcode": "^1.5.5",
-    "@types/web": "^0.0.135",
+    "@types/web": "^0.0.173",
     "@vitejs/plugin-vue-jsx": "^3.1.0",
     "less": "^4.2.0",
     "lodash-es": "^4.17.21",

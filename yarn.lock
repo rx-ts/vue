@@ -3457,10 +3457,10 @@
   resolved "https://registry.yarnpkg.com/@types/web-bluetooth/-/web-bluetooth-0.0.20.tgz#f066abfcd1cbe66267cdbbf0de010d8a41b41597"
   integrity sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==
 
-"@types/web@^0.0.135":
-  version "0.0.135"
-  resolved "https://registry.yarnpkg.com/@types/web/-/web-0.0.135.tgz#d97bf78512db0e34273ebc1a995a635cb7ecfb7a"
-  integrity sha512-3fNGUqpXzakTUJ9FQVoplG+fpzVn1WhQRz3eIE7dTGY4uI8/ngi9KbAtaK4nrIUk8dAI0qYPMIvq2ydTLYbJyA==
+"@types/web@^0.0.173":
+  version "0.0.173"
+  resolved "https://registry.yarnpkg.com/@types/web/-/web-0.0.173.tgz#dddc0937d0f8dab9d909019ec87d25817000dcee"
+  integrity sha512-zl+kvkZvJLMLHwA0fscyydcnSbp1KDxiqOKpCOYl/ej8JrnACZqDLDZU9HEiA7DiiLl83NsKarBhtqk3DKe4KA==
 
 "@types/whatwg-mimetype@3.0.2":
   version "3.0.2"
